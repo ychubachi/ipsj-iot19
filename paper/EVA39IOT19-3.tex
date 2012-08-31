@@ -7,7 +7,6 @@
 %% [noauthor]
 %%
 
-%\documentclass[submit,techreq]{ipsj}
 \documentclass[submit,techreq,noauthor]{ipsj}
 
 \usepackage[dvips]{graphicx}
@@ -21,6 +20,7 @@
 \setcounter{page}{1}
 
 \input{dummy}
+
 \begin{document}
 
 
@@ -33,13 +33,11 @@ AIIT, Shinagawa, Tokyo 140--0011, Japan}
 \author{小山 裕司}{Hiroshi Koyama}{AIIT}
 
 \begin{abstract}
-本稿は，情報処理学会論文誌ジャーナルに投稿する原稿を執筆する際，および論
-文採択後に最終原稿を準備する際の注意点等をまとめたものである．大きく分け
-ると，論文投稿の流れと，\LaTeX と専用のスタイルファイルを用いた場合の論
-文フォーマットに関する指針，および論文の内容に関してするべきこと，するべ
-きでないことをまとめたべからずチェックリストからなる．本稿自体も \LaTeX 
-と専用のスタイルファイルを用いて執筆されているため，論文執筆の際に参考に
-なれば幸いである．
+ 産業技術大学院大学（以下，AIIT）ではPBLによる高度専門職人材の育成に取り
+ 組んでいる。AIITの学生はほとんどが社会人であるため，円滑なプロジェクト活
+ 動を支援するグループウェアなどの整備に取り組んできた．2012年度より新た
+ にBacklogシステムを導入しPBLでの利用を開始した．このシステムの導入およ
+ び現在までの運用において得られた知見を報告する．
 \end{abstract}
 
 \maketitle
@@ -48,16 +46,14 @@ AIIT, Shinagawa, Tokyo 140--0011, Japan}
 
 産業技術大学院大学（Advanced Institute of Industrial Technology）では，高
 度な職業人材を育成するために必要となる学修のための情報インフラストラクチャ
-を提供している．%\cite{中鉢欣秀:2012-03-15}
+を，在学生・修了生に対して提供している\cite{中鉢欣秀:2012-03-15, 小山裕%
+司:2011}．また，実践的な業務遂行能力を育成するために，1年間のプロジェクト
+型学修を必修とし，すべての学生が修士課程の2年次にプロジェクト活動を行なう
+ことがカリキュラムの柱となっている．
 
-本学では，実践的な業務遂行能力
-を育成する狙いで1年間のプロジェクト型学修を必修とし，すべての学生が修士課
-程の2年次にプロジェクト活動を行なっている．
+このプロジェクト活動を支援するためのグループウェアとして，
 
 このPBLを実施するために，グループウェアを導入している
-%\cite{中鉢欣秀:2009-05}．
-\cite{chubachi09:pbl}
-
 
 \begin{figure}[tb]
 \includegraphics[width=7.5cm]{./figure/backlog_screenshot.eps}
@@ -95,8 +91,83 @@ AIIT, Shinagawa, Tokyo 140--0011, Japan}
 \label{fig:Wiki2}
 \end{figure}
 
-\bibliographystyle{jplain}
-\bibliography{bibliography/chubachi}
+\section{Backlog活用の考察}
+本学では，2年次開講の情報システム学特別演習（情報アーキテクチャ専攻）及び
+イノベーションデザイン特別演習（創造技術専攻）の20組のプロジェクトでPBLが
+行われている．PBLでは，今年度（2012年度）からBacklogをプロジェクト支援ツー
+ルとして使い始めた．今年度，Backlogはツールとしての提供にとどめ，使用を強
+制したわけでは無い．Backlogの機能は先に示したように「課題管理」，「Wiki」，
+「ファイル共有」，「バージョン管理」から構成される．今年度前期が終わった
+8/31現在のBacklogのストレージの使用量を表1及び図1に示す．バージョン管理は
+SubversionとGitが利用できる．また，各プロジェクトごとの容量は5GBにし，大
+きめのファイルを扱いたいときは別途ファイルストレージを準備してもらうこと
+にした．
+
+Backlogの活用はプロジェクトごとに偏りがみられた．1/4程度のプロジェクトはまったく未使用である．ストレージの使用量だけをみるとファイル共有の消費が目立ち，実際ファイル共有だけに使っているプロジェクトが多い．Wikiは8プロジェクトのみが使い，バージョン管理は利用開始願いが必要であり，5プロジェクトだけがこれを使っている．
+
+表2及び図2に4/1から8/25までの課題アクション数をまとめた．8月は8/11の前期
+プロジェクト成果発表会でだいたいの活動は終了している．課題アクション数は
+新規課題の作成，コメント，作業進捗及び完了の報告の数である．情報アーキテ
+クチャ専攻では突出して利用しているプロジェクトとほとんど未使用だと思われ
+るプロジェクトがある等，程度の違いはあるが，すべてのプロジェクトで課題管
+理を使っているが，創造技術専攻では4プロジェクトがかろうじて使っているだ
+けであった．情報アーキテクチャ専攻では，各プロジェクトの3から6名のメンバ
+によって構成される．情報アーキテクチャ専攻の各プロジェクトのひとりあたり
+の課題アクション数を整理したものが，表3及び図3である．平均すると1メンバ
+あたり1日1件程度のアクションである．これを構成メンバの関与の程度を100%で
+				%示したものが図4である．メンバ間での役割
+				%に依存するが，3プロジェクトでは特定の1
+				%名が50%以上関与し，あるプロジェクトでは
+				%約87%が特定の1名のアクションであるよう
+				%に偏りがみられた．
+
+\begin{thebibliography}{10}
+\bibitem{中鉢欣秀:2012-03-15}
+	中鉢欣秀, 小山裕司, 石島 辰太郎: 産業技術大学院大学のICT環境
+	の運用と課題, 信学技報, 電子情報通信学会, Vol.111, No.485, pp.61--64（2012.03.15） 
+\bibitem{小山裕司:2011}
+	小山裕司, 中鉢欣秀: 外部アカウント認証を使った本人確認付き利用
+	者認証の試み, 産業技術大学院大学紀要, Vol.5（2011）
+
+@InProceedings{chubachi10:pbl,
+  author = 	 {Yoshihide Chubachi and Yuka Kato and Yoshio Tozawa},
+  title = 	 {Web-based groupware supporting PBL effectively},
+  booktitle = {1st Asia-Pacific Joint PBL Conference 2010},
+  year = 	 2010,
+  month = 	 10}
+
+@InProceedings{ishijima10,
+  author = 	 {Shintaro Ishijima and Hiroshi Koyama and Yoshihide Chubachi and Fumio Harashima},
+  title = 	 {ICT based Learning System of AIIT for Professional Education in Japan},
+  booktitle = {ITHET2010},
+  year = 	 2010,
+  organization = {IEEE},
+  address = 	 {Cappadocia, Turkey}
+}
+
+@InProceedings{chubachi10,
+  author = 	 {中鉢 欣秀 and 小山 裕司 and 石島 辰太郎},
+  title = 	 {ICTを基盤とした高度専門職教育},
+  booktitle = {情報教育シンポジウム },
+  year = 	 2010,
+  organization = {コンピュータと教育研究会},
+  publisher = {情報処理学会}}
+
+@article{中鉢欣秀:2009-05,
+  author="中鉢 欣秀 and 土屋 陽介 and 長尾 雄行",
+  title="グループウェア導入によるPBLの見える化",
+  journal="JeLA会誌",
+  ISSN="13490192",
+  publisher="日本e-Learning学会",
+  year="2009-05",
+  volume="9",
+  number="",
+  pages="129-135",
+  URL="http://ci.nii.ac.jp/naid/40016726932/",
+  DOI="",
+}
+
+\end{thebibliography}
 
 \end{document}
 
@@ -388,7 +459,7 @@ Adobeのpdf readerで読めることを確認した後，
 \subsubsection{句読点}
 
 句点には全角の「．」，読点には全角の「，」を用いる．ただし英文中や数式中
-で「.」や「,」を使う場合には，半角文字を使う．「。」や「、」は使わない．
+で「.」や「,」を使う場合には，半角文字を使う．「．」や「、」は使わない．
 
 %4.3.5
 \subsubsection{全角文字と半角文字}
