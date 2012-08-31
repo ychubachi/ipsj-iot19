@@ -1,509 +1,457 @@
 %% -*- coding:euc-jp -*-
 %%
-%% ¢±¢Ã ©Áª´«Ñ ©Ãª¿ªÐ(J\(B (J\¢ð\ªª\ª¡(B
+%% ¸¦µæÊó¹ðÍÑ¥¹¥¤¥Ã¥Á
 %% [techrep]
 %%
-%%  ¢ðª´¢±ª±   ªÀ ¢ð ¢ðªÂ(J\(B (J\¢ð\ªª\ª¡(etitle,jkeyword,eabstract,ekeyword¢ðªÁª®¢ð¡ëªØ)(B
+%% ²¤Ê¸É½µ­Ìµ¤·¤Î¥¹¥¤¥Ã¥Á(etitle,jkeyword,eabstract,ekeyword¤ÏÇ¤°Õ)
 %% [noauthor]
 %%
 
 %\documentclass[submit,techreq]{ipsj}
 \documentclass[submit,techreq,noauthor]{ipsj}
 
+
 \usepackage[dvips]{graphicx}
 \usepackage{latexsym}
-\usepackage{graphicx}
 
 \def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
 \def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
 \def\|{\verb|}
 
-\setcounter{¡­¢Ì¢Ä«Ô}{53}%vol53=2012
-\setcounter{ ©Á¢Ä«Ô}{2}
+\setcounter{´¬¿ô}{53}%vol53=2012
+\setcounter{¹æ¿ô}{2}
 \setcounter{page}{1}
 
 
 \begin{document}
 
 
-\title{AIIT¢ðª³¢ð¢ì¢ð¡Þ¢ð«³(J\¡ß\«¿\¢±\¡ø\¢´\ª²(B ¢Ä ©¬ ¢ð¢Âª´PBL¢Âª³¢ðªÂ¢ð¢Ä¢ð«¡¢ðªÂBacklog(J\(B (J\(B (J\©¡\«¢¢ðªÂ©¡(B ©¡©Ð}
+\title{AIIT¤Ë¤ª¤±¤ë¥×¥í¥¸¥§¥¯¥È·¿³Ø½¤¡ÊPBL¡Ë¤Î¤¿¤á¤ÎBacklog¥·¥¹¥Æ¥à¤ÎÆ³Æþ}
 
-\affiliate{AIIT}{ ¢ë¢ùª²   ªÐª¤«® ©¬¡Þ¢Âª¤«® ©¬\\
+\affiliate{AIIT}{»º¶Èµ»½ÑÂç³Ø±¡Âç³Ø\\
 AIIT, Shinagawa, Tokyo 140--0011, Japan}
 
-\author{ªª©Áª²  ¢ùªØ ¡¯}{Yoshihide Chubachi}{AIIT}[yc@aiit.ac.jp]
-\author{ ¢î   ª¿  ª´}{Hiroshi Koyama}{AIIT}
+\author{ÃæÈ­ ¶Õ½¨}{Yoshihide Chubachi}{AIIT}[yc@aiit.ac.jp]
+\author{¾®»³ Íµ»Ê}{Hiroshi Koyama}{AIIT}
 
 \begin{abstract}
-ª³ªä ©¡¢ðªÁ¢Â¢ð ©Ãª´«Ñ «²ª¿«ò ©¬ «ÐªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³¢ðª³ª©«´(B ©¡¢ð ¢ð«³¢±¢ù ©¡¢ð«Ò  ª±¢î¢ð ¢ð«³¢ëªò¢Â¢ð¢ð¢ì¢ð«²¢ðªÑªÁª¢
-ª´¢±¢ëªÂª¤«Ò¢±«©¢ðª³¢ëª® ¢ì¢±¢ù ©¡¢ð«Ò «¢ª²¡à¢ð ¢ð«³¢ëªò¢ðªÂªª«¿¡ëªØª©ª¢ª©«ã¢ð«Ò¢ð©°¢ðª²¢ð«¡¢ð¢Ä¢ð«¤¢ðªÂ¢ðª®¢ð¡ñ¢ð«³¢Â(J\ª¤«®¢ð(B ¢ð¢´ª´¢Ì¢ð¡Þ
-¢ð«³¢ðª²¢Â¢ðªÁª¢ª´¢±ª©«´ ©¡¢ðªÂªÂ¢î¢ð«À¢ðª²¢Â¢ð\LaTeX ¢ðª²ª¢«Àª¿ªÐ¢ðªÂ(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Òª¿ªÐ¢ð¢ð¢ð¢Ä(B «À «®¢ðªÂªÁª¢
-ª´¢±(J\ªØ\¢í¢Â(B (J\©°\ªª\ª²¢ðª³¡­©¬¢ð(B ¢ð«³ ©¬¢Äª³¢Â¢ð¢ð¢ì¢ð«²¢ðªÑªÁª¢ª´¢±¢ðªÂ©¡«¤ª¿©¡¢ðª³¡­©¬¢ð ¢ð©¡¢ð ¢ð«³¢ðªã¢ð ¢ð ¢ðª²¢Â¢ð¢ð ¢ð«³¢ðªã
-¢ð ¢ðª®¢ðª´¢ð¢ð¢ð ¢ðª²¢ð«Ò¢ð©°¢ðª²¢ð«¡¢ð¢Ä¢ðªã¢ð ¢ð«±¢ð¢ë(J\ª¡\¡ø\ªª\¢´\«´\(B (J\ª²¢ð(B ¢ð«±¢ðª´¢ð«³¢Â(J\ª³ªä(B ©¡  ª¤ªÂ¢ð«¤ \LaTeX 
-¢ðª²ª¢«Àª¿ªÐ¢ðªÂ(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Òª¿ªÐ¢ð¢ð¢ð©¡(B  ª±¢î¢ð ¢ð«À¢ð©¡¢ð¢ð¢ð«³¢ð¢Ä¢ð«¡¢Â¢ðªÁª¢ª´¢±  ª±¢î¢ðªÂ¢ëªò¢ðª³   ª¿¢ðª³
-¢ðª´¢ð«À¢ð  ¢Ì¢ð¢ð¢ðª®¢ð¡ñ¢ð«³¢Â(J\(B
+ËÜ¹Æ¤Ï¡¤¾ðÊó½èÍý³Ø²ñÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ë¤ËÅê¹Æ¤¹¤ë¸¶¹Æ¤ò¼¹É®¤¹¤ëºÝ¡¤¤ª¤è¤ÓÏÀ
+Ê¸ºÎÂò¸å¤ËºÇ½ª¸¶¹Æ¤ò½àÈ÷¤¹¤ëºÝ¤ÎÃí°ÕÅÀÅù¤ò¤Þ¤È¤á¤¿¤â¤Î¤Ç¤¢¤ë¡¥Âç¤­¤¯Ê¬¤±
+¤ë¤È¡¤ÏÀÊ¸Åê¹Æ¤ÎÎ®¤ì¤È¡¤\LaTeX ¤ÈÀìÍÑ¤Î¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤òÍÑ¤¤¤¿¾ì¹ç¤ÎÏÀ
+Ê¸¥Õ¥©¡¼¥Þ¥Ã¥È¤Ë´Ø¤¹¤ë»Ø¿Ë¡¤¤ª¤è¤ÓÏÀÊ¸¤ÎÆâÍÆ¤Ë´Ø¤·¤Æ¤¹¤ë¤Ù¤­¤³¤È¡¤¤¹¤ë¤Ù
+¤­¤Ç¤Ê¤¤¤³¤È¤ò¤Þ¤È¤á¤¿¤Ù¤«¤é¤º¥Á¥§¥Ã¥¯¥ê¥¹¥È¤«¤é¤Ê¤ë¡¥ËÜ¹Æ¼«ÂÎ¤â \LaTeX 
+¤ÈÀìÍÑ¤Î¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤òÍÑ¤¤¤Æ¼¹É®¤µ¤ì¤Æ¤¤¤ë¤¿¤á¡¤ÏÀÊ¸¼¹É®¤ÎºÝ¤Ë»²¹Í¤Ë
+¤Ê¤ì¤Ð¹¬¤¤¤Ç¤¢¤ë¡¥
 \end{abstract}
 
 \maketitle
 
 %1
-\section{¢ðªÁ¢ð¢±¢ð«¡¢ðª³}
+\section{¤Ï¤¸¤á¤Ë}
 
- ¢ë¢ùª²   ªÐª¤«® ©¬¡Þ¢Âª¤«® ©¬¢Âª´Advanced Institute of Industrial Technology¢Âª³¢ðª®¢ðªÁ¢Â¢ð «¤
-ª©ªã¢ðª´¢Ä¢Ã¢ùª²¢Äª¿¢ë«¢¢ð«Ò¡ë«±ª¢¢î¢ð ¢ð«³¢ð¢Ä¢ð«¡¢ðª³ª±¢Ìª¿¡ß¢ðª²¢ðª´¢ð«³ ©¬ ¢ð¢ðªÂ¢ð¢Ä¢ð«¡¢ðªÂ ©Ãª´«Ñ(J\¢ð\«Ñ\ªØ\«±\(B (J\ª²\«±\¢´\ª¡\«ª(B
-¢ð«Òª£«Ñ¢ù¢Â¢ð ¢ð©¡¢ð¢ð¢ð«³\cite{ªª©Áª² ¢ùªØ ¡¯:2012-03-15}¢Â(J\ª³ªä(B ©¬¢ðª®¢ðªÁ¢Â¢ð ª¤ª¡¢íª©¢ì¢ðª´¢ùª²ªÀ ¢Ä«³ ªÔª® ªÂªÁ
-¢ð«Ò¡ë«±ª¢¢î¢ð ¢ð«³ª¡ª¢¢ð¢ð¢ðª®1ª®¢´¡­ªÓ¢ðªÂ(J\¡ß\«¿\¢±\¡ø\¢´\ª²(B ¢Ä ©¬ ¢ð¢ð«Òª±¢Ì ¢ð¢ðª²¢ð ¢Â¢ð¢ð ¢ðªã¢ð©¡¢ðªÂ ©¬ª¢¢±¢ð¢Ì ¢ð ªÂ ªò
-ª£©Ì¢ðªÂ2ª®¢´ ¢Â¢ðª³(J\¡ß\«¿\¢±\¡ø\¢´\ª²(B «²©¡¡ë¢ð«Ò ªÔ¢ðª´¢ðªª¢ð©¡¢ð¢ð¢ð«³¢Â(J\(B
-
-¢ð ¢ðªÂPBL¢ð«Ò ª¤ ªä¢ð ¢ð«³¢ð¢Ä¢ð«¡¢ðª³¢Â¢ð(J\¡ë\«³¢Â(B (J\¡ß\¢Ã\¡ø\¡ñ¢ð«Ò©¡(B ©¡©Ð¢ð ¢ð©¡¢ð¢ð¢ð«³\cite{ªª©Áª² ¢ùªØ ¡¯:2009-05}¢Â(J\(B
-
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/backlog_screenshot.eps}
-\caption{AIIT¢ðª®ª¿©Ìª¿ªÐ¢ð ¢ð©¡¢ð¢ð¢ð«³Backlog¢ðªÂ(J\ª²\ªª\¡ß(B «²ªÀªÀ}
-\label{fig:backlog}
-\end{figure}
-
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/File.eps}
-\caption{(J\¡ß\«¿\¢±\¡ø\¢´\ª²¢ðª®¢ðªÂ\ªØ\¢Â\¢ð\«³¢ðªÂ¢ù¢Ãª¿(B }
-\label{fig:File}
-\end{figure}
-
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/Git.eps}
-\caption{Git¢ð«Òª¿©Ìª¿ªÐ¢ð ¢ð¢Ä(J\(B ¢Â (J\(B (J\(B ¢Â (J\ª±¢ðªÂ¢ù¢Ãª¿(B }
-\label{fig:Git}
-\end{figure}
-
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/Issue.eps}
-\caption{ ªòª¤«´¡­ª±ª¿«ò¢ð«Òª¿©Ìª¿ªÐ¢ð ¢ð©¡¢ð¢ð¢ð«³ «²ªÀªÀ}
-\label{fig:Issue}
-\end{figure}
-
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/Wiki1.eps}
-\caption{Wiki¢ð«Òª¿©Ìª¿ªÐ¢ð ¢ð¢Ä ª£ «ÓªÁ¢Ä¢ðªÂ¢ë«Âª¢¢î}
-\label{fig:Wiki1}
-\end{figure}
-
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/Wiki2.eps}
-\caption{Wiki¢ðªÂª¿©Ìª¿ªÐªÂ«ª}
-\label{fig:Wiki2}
-\end{figure}
-
-\bibliographystyle{jplain}
-\bibliography{bibliography/chubachi}
-
-\end{document}
+¾ðÊó½èÍý³Ø²ñ¤Ç¤Ï¡¤´ð´´ÏÀÊ¸»ï¤È¤·¤ÆÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ë¤ÎÈ¯¹Ô¤ò¹Ô¤Ã¤Æ¤¤¤ë¡¥¤³
+¤ì¤Þ¤ÇÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¤Ç¤Ï¡¤ÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ë¤ÎÏÀÊ¸·ÇºÜ»þ¤Î¥Õ¥©¡¼
+¥Þ¥Ã¥È¤È¤·¤ÆA4²£·¿2ÃÊÁÈ¤òºÎÍÑ¤·¤Æ¤­¤¿¤¬¡¤²ñ°÷¤«¤é¤ÎÂ¿¤¯¤ÎÍ×Ë¾¤Ë´ð¤Å¤­¡¤
+A4½Ä·¿2ÃÊÁÈ¤ËÊÑ¹¹¤¹¤ë¤³¤È¤Ë¤·¤¿¡¥¤Þ¤¿¡¤¤³¤ì¤Þ¤Ç¤ÏÅê¹Æ»þ¤È·ÇºÜ»þ¤Î·Á¼°¤¬
+°Û¤Ê¤Ã¤Æ¤¤¤¿¤¬¡¤º£²ó¤Î¥Õ¥©¡¼¥Þ¥Ã¥ÈÊÑ¹¹¤Ë¹ç¤ï¤»¤Æ¡¤Åê¹Æ»þ¤â·ÇºÜ»þ¤ÈÆ±ÍÍ¤Î
+A4½Ä·¿2ÃÊÁÈ¤Ç¼õ¤±ÉÕ¤±¤ë¤³¤È¤Ë¤·¤¿¡¥
 
 
-\section{¢ðªÁ¢ð¢±¢ð«¡¢ðª³}
-
- ©Ãª´«Ñ «²ª¿«ò ©¬ «Ð¢ðª®¢ðªÁ¢Â¢ð¡­©Ã¡­¡­ªÁª¢ª´¢± «Á¢ðª²¢ð ¢ð©¡ªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³¢ðªÂª²¢´(B ªÔ¢ð«Ò ªÔ¢ðªª¢ð©¡¢ð¢ð¢ð«³¢Â(J\¢ð(B 
-¢ð«À¢ð©°¢ðª®ªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢ðª®¢ðªÁ¢Â¢ðªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³¢ðªÂªÁª¢ª´¢±(B ª®¢ëªä ©Ð¢ðªÂ(J\ªØ\¢í¢Â(B 
-(J\©°\ªª\ª²¢ðª²¢ð(B ¢ð©¡A4 ¡ò ¢Ä2ªªª´ª¡ª²¢ð«Ò¢ëªÂª¿ªÐ¢ð ¢ð©¡¢ð ¢ð¢Ä¢ð¢Ì¢Â¢ð «Ð¡ë¡à¢ð ¢ð«±¢ðªÂª¤¢Ä¢ð¢´¢ðªÂª¿¡ßª³ ¢ðª³¡­©Ã¢ðª©¢ð ¢Â¢ð
-A4 ª£ ¢Ä2ªªª´ª¡ª²¢ðª³ª´ªÐ  ¢ð ¢ð«³¢ð ¢ðª²¢ðª³¢ð ¢ð¢Ä¢Â(J\¢ð©°¢ð¢Ä¢Â¢ð¢ð(B ¢ð«À¢ð©°¢ðª®¢ðªÁª©«´ ©¡ ©Ð¢ðª² ª®¢ëªä ©Ð¢ðªÂ ª¡ ¡ë¢ð¢Ì
-¡ëªå¢ðª´¢ðªª¢ð©¡¢ð¢ð¢ð¢Ä¢ð¢Ì¢Â¢ð¢ë¡ò «Ñ¢ðªÂ(J\ªØ\¢í¢Â(B (J\©°\ªª\ª²ª´ªÐ(B  ¢ðª³ «®¢ð«Á¢ð ¢ð©¡¢Â¢ðª©«´ ©¡ ©Ð¢ð«¤ ª®¢ëªä ©Ð¢ðª²©¡¡Þª¿ª¿¢ðªÂ
-A4 ª£ ¢Ä2ªªª´ª¡ª²¢ðª® «Ø¢ð¡Þª±ªØ¢ð¡Þ¢ð«³¢ð ¢ðª²¢ðª³¢ð ¢ð¢Ä¢Â(J\(B
-
-
-¢ð ¢ð«À¢ðª³ª² ¢ð¢ð¢Â¢ð\LaTeX ¢ðªÂ(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«¤¢Ä(B ¢ð ¢ð¢ð¢ð«¤¢ðªÂ¢ðª³ª´ªÐ  ¢ð ¢ð¢Ä¢Â(J\ª³ªä(B ©¡¢ðª®¢ðªÁ¢Â¢ð
-¢ð©°¢ð¢ë¢ð ¢ðªÂ(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Òª¿ªÐ¢ð¢ð¢ð¢ÄªÁª¢ª´¢±¢ðªÂ\ªØ\¢í¢Â(B (J\©°\ªª\ª²¢ðª³¡­©¬¢ð(B ¢ð©¡ ªÒ¢ðªã¢ð«³¢Â(J\¢Ä(B ¢ð¢Ä¢ðª´
-(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ðª®¢ðªÁ¢Â¢ð¢ùª³ªÂªÁ©¡ªªª´ªÀ¢ðª´\(B (J\©°\«Ñ\ª±¢ðªÁ(B ª²¢ð«Á¢ð¢ë¢ðª³¢Â¢ðª±¢± «¢ª©¢ì¢ðª´ \LaTeX ¢ðªÂ(J\(B 
-(J\¢Ä\¢ð\«³¢ð«Ò©¡¡ø(B ¡Þ¢ð ¢ð©¡¢ð¢ð¢ð«³¢Â(J\ªÁª¢ª´¢±\ªØ\¢í¢Â(B (J\©°\ªª\ª²¢ðª³¡­©¬¢ð(B ¢ð©¡¢ðªÁ¢Â¢ð\ref{sec:format}~ ªÁ¢ðª®
-¢±«© ªÒ¢ð ¢ð«³ ©¬¢Äª³¢ðª³  ¢ðªª¢ð©¡ª£¢ë¢ð¢´¢ð¢Ì¢Â¢ð¢ð ¢ð ¢ðª³ ¢Ìª£«´¢ð ¢ð«À¢ð©¡¢ð¢ð¢ð«³¢ð ¢ðª²¡ëª´ ¡ë¢ðªÁª±¢± «¢ª©¢ì¢ðª´\LaTeX 
-¢ðªÂ(J\(B (J\©°\«Ñ\ª±¢ð«Ò¢ð(B ¢ðªÂ¢ð©°¢ð©° ª²¢ð¢Ã¢ð ¢ðª²¢ð¢Ì¢ðª®¢ð ¢ð«³¢Â(J\ª³ªä(B ©¡¢ðªÁ¢Â¢ð¢ð ¢ðªÂ(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Ò(B ª¤¢ëªò
-¢ðª³ ª²¢ðªª¢ð©¡¢ð¢ð¢ð«³¢ðªÂ¢ðª®¢Â¢ðªÁª¢ª´¢±  ª±¢î¢ðªÂ¢ëªò¢ðª³   ª¿¢ðª³¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+¤³¤ì¤ËÈ¼¤¤¡¤\LaTeX ¤Î¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤â¿·¤·¤¤¤â¤Î¤ËÊÑ¹¹¤·¤¿¡¥ËÜ¹Æ¤Ç¤Ï¡¤
+¤Þ¤º¤½¤Î¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤òÍÑ¤¤¤¿ÏÀÊ¸¤Î¥Õ¥©¡¼¥Þ¥Ã¥È¤Ë´Ø¤·¤Æ½Ò¤Ù¤ë¡¥¿·¤¿¤Ê
+¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤Ç¤Ï¡¤¶ËÎÏÆÃÊÌ¤Ê¥³¥Þ¥ó¥É¤Ï»È¤ï¤º¤Ë¡¤É¸½àÅª¤Ê \LaTeX ¤Î¥¹
+¥¿¥¤¥ë¤òÆ§½±¤·¤Æ¤¤¤ë¡¥ÏÀÊ¸¥Õ¥©¡¼¥Þ¥Ã¥È¤Ë´Ø¤·¤Æ¤Ï¡¤\ref{sec:format}~¾Ï¤Ç
+¸å½Ò¤¹¤ë»Ø¿Ë¤Ë½¾¤Ã¤ÆÄº¤¯¤¬¡¤¤½¤³¤Ëµ¬Äê¤µ¤ì¤Æ¤¤¤ë¤³¤È°Ê³°¤ÏÉ¸½àÅª¤Ê\LaTeX 
+¤Î¥³¥Þ¥ó¥É¤ò¤½¤Î¤Þ¤Þ»È¤¦¤³¤È¤¬¤Ç¤­¤ë¡¥ËÜ¹Æ¤Ï¡¤¤½¤Î¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤ò¼ÂºÝ
+¤Ë»È¤Ã¤Æ¤¤¤ë¤Î¤Ç¡¤ÏÀÊ¸¼¹É®¤ÎºÝ¤Ë»²¹Í¤Ë¤µ¤ì¤¿¤¤¡¥
 
 
-\footnotetext{ª³ªäª´¢±¢ðªÁ ª¤¢ëªò¢ðª³¢ðªÁªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢ðª®¢ë«Âª¢¢î¢ð ¢ð¢Ä¢ð«¤¢ðªÂ¢ðª®¢ð¡ñ¢ð«³¢Â(J\}(B
+\footnotetext{ËÜÊ¸¤Ï¼ÂºÝ¤Ë¤ÏÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¤ÇºîÀ®¤·¤¿¤â¤Î¤Ç¤¢¤ë¡¥}
 
-¢ð©°¢ð¢Ä¢Â¢ðªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢ðª®¢ðªÁ¢Â¢ðªÁª¢ª´¢±¢ðªÂ  ª±¢î¢ð ¢ð«³¢ëªò¢ðª³¢Â¢ðªª©Ì ªÔ¢ð¢Ì¢ð ¢ð«³¢ðªã¢ð 
-¢ð ¢ðª²¢Â¢ð¢ð ¢ð«³¢ðªã¢ð ¢ðª®¢ðª´¢ð¢ð¢ð ¢ðª²¢ð«Ò¢ÂªÓ¢ðªã¢ð ¢ð«±¢ð¢ë ¢±¢Â¡ß¢ðª²¢ð ¢ð©¡¢ð©°¢ðª²¢ð«¡¢ð¢Ä¢Â(J\ª³ªä(B ©¡¢ðªÂ¢±«©ª² ¢ðª³¢Â¢ðªÁª¢
-ª´¢±¢ðªÂ©¡«¤ª¿©¡¢ðª³¡­©¬¢ð ¢ð«³ ©¬¢Äª³¢ðª³¢ðª´¢ð«³¢ð«²¢ð¢Ã¢ðª³¢Â¢ð¢ÂªÓ¢ðªã¢ð ¢ð«±¢ð¢ë ¢±¢Â¡ß¢ðªÂ©¡«¤ª¿©¡¢ð«Ò(J\ª¡\¡ø\ªª\¢´\«´\(B (J\ª²¢ðª²(B
-¢ð ¢ð©¡¢ðª£¢ð¡Þ¢ð©¡¢ð¢ð¢ð«³¢ðªÂ¢ðª®¢Â¢ðª©«´ ©¡¢ð ¢ð«³ª¡¡ë¢ðªÂ©¡«¤ª¿©¡¢ðªÂ(J\ª¡\¡ø\ªª\¢´¢ðª³ª¿©Ìª¿ªÐ¢ð(B ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+¤Þ¤¿¡¤ÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¤Ç¤Ï¡¤ÏÀÊ¸¤Î¼¹É®¤¹¤ëºÝ¤Ë¡¤Ãø¼Ô¤¬¤¹¤ë¤Ù¤­
+¤³¤È¡¤¤¹¤ë¤Ù¤­¤Ç¤Ê¤¤¤³¤È¤ò¡Ö¤Ù¤«¤é¤º½¸¡×¤È¤·¤Æ¤Þ¤È¤á¤¿¡¥ËÜ¹Æ¤Î¸åÈ¾¤Ë¡¤ÏÀ
+Ê¸¤ÎÆâÍÆ¤Ë´Ø¤¹¤ë»Ø¿Ë¤Ë¤Ê¤ë¤è¤¦¤Ë¡¤¡Ö¤Ù¤«¤é¤º½¸¡×¤ÎÆâÍÆ¤ò¥Á¥§¥Ã¥¯¥ê¥¹¥È¤È
+¤·¤Æ¤Ä¤±¤Æ¤¤¤ë¤Î¤Ç¡¤Åê¹Æ¤¹¤ëÁ°¤ÎÆâÍÆ¤Î¥Á¥§¥Ã¥¯¤ËÍøÍÑ¤µ¤ì¤¿¤¤¡¥
 
 %2
-\section{ª©«´ ©¡¢ðªÂªÂ¢î¢ð«À}
+\section{Åê¹Æ¤ÎÎ®¤ì}
 
 %2.1
-\subsection{ «¢ª²¡à}
+\subsection{½àÈ÷}
 
- ©Ãª´«Ñ «²ª¿«ò ©¬ «ÐªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³¢ðªÂ \LaTeX \(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Ò¡­©°¢ð«¢ªÁª¢ª´¢±(B  ª±¢î(J\(B (J\ªª(B
-(J\ª²¢ðªÁ(B
+¾ðÊó½èÍý³Ø²ñÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ë¤Î \LaTeX ¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤ò´Þ¤àÏÀÊ¸¼¹É®¥­¥Ã
+¥È¤Ï
 \begin{quote}
 \small
 \|http://www.ipsj.or.jp/jip/submit/style.html|
 \end{quote}
-¢ð ¢ð«±(J\ª¢\¢Ã\«Ñ\«¿¢Â(B (J\ª±¢ð(B ¢ð«³¢ð ¢ðª²¢ð¢Ì¢ðª®¢ð ¢ð«³¢Â(J\ªÁª¢ª´¢±(B  ª±¢î(J\(B (J\ªª\ª²¢ðªÁ¡ëª´(B  ¢ðªÂ(J\ªØ\¢Â\¢ð\«³¢ð«Ò¡­©°¢ð«Ñ¢ðª®(B
-¢ð¢ð¢ð«³¢Â(J\(B
+¤«¤é¥À¥¦¥ó¥í¡¼¥É¤¹¤ë¤³¤È¤¬¤Ç¤­¤ë¡¥ÏÀÊ¸¼¹É®¥­¥Ã¥È¤Ï°Ê²¼¤Î¥Õ¥¡¥¤¥ë¤ò´Þ¤ó¤Ç
+¤¤¤ë¡¥
 \begin{enumerate}
-\item \|ipsj.cls      |: ¢ëª® ¢ì¢±¢ù ©¡ª¿ªÐ(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³(B
-\item \|ipsjdraft.sty |: ª©«´ ©¡ª¿ªÐ(J\(B (J\¢Ä\¢ð\«³¢Âª´¢ë¢ë©¡ª±ª¿ªÐ¢Âª³(B
-\item \|ipsjpref.sty  |:  ©Ìª´¢±ª¿ªÐ(J\(B (J\¢Ä\¢ð\«³(B
-\item \|jsample.tex   |: ª³ªä ©¡¢ðªÂ(J\(B ¢Â (J\(B (J\ªØ\¢Â\¢ð\«³(B
-\item \|esample.tex   |: ¡ÞªÐª´¢±(J\(B (J\«Ñ\¡ß\«³¢ðªÂ\(B ¢Â (J\(B (J\ªØ\¢Â\¢ð\«³(B
+\item \|ipsj.cls      |: ºÇ½ª¸¶¹ÆÍÑ¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë
+\item \|ipsjdraft.sty |: Åê¹ÆÍÑ¥¹¥¿¥¤¥ë¡ÊººÆÉÍÑ¡Ë
+\item \|ipsjpref.sty  |: ½øÊ¸ÍÑ¥¹¥¿¥¤¥ë
+\item \|jsample.tex   |: ËÜ¹Æ¤Î¥½¡¼¥¹¥Õ¥¡¥¤¥ë
+\item \|esample.tex   |: ±ÑÊ¸¥µ¥ó¥×¥ë¤Î¥½¡¼¥¹¥Õ¥¡¥¤¥ë
 \end{enumerate}
-(J\(B (J\ªª\ª²¢ðªÁUnixª¿ªÐ¢Â¢ðWindows (DOS)ª¿ªÐ¢Â¢ðMacintoshª¿ªÐ¢ðª´¢ðª±¢ð¢Ìª¿ªÐ¡ëªØ¢ð(B ¢ð«À¢ð©¡¢ð¢ì¢ð«´¢Â¢ðªª©Ì ªÔ¢ðªÂ
-¢ë«Â¢ùª²¡­ª£¢ù ¢ðª³¡Þ©Ð¢ð¢±¢ð¢Ä¢ð«¤¢ðªÂ¢ð«Òª¡¢ìª¤«Ò¢ðª®¢ð ¢ð«³¢ð«²¢ð¢Ã¢ðª³¢ðª´¢ðªª¢ð©¡¢ð¢ð¢ð«³¢Â(J\¢ð©°¢ð¢Ä¢Â¢ð(B ª¤ ªÔ¡­ª£¢ù ¢ðª²¢ð ¢ð©¡¢ðªÁ 
-\LaTeXe ¢ð«Òª¡¡ëª£«Ñ¢ðª²¢ð ¢ð©¡¢ð¢ð¢ð«³¢ðªÂ¢ðª®¢Â¢ð «¢ª²¡à¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+¥­¥Ã¥È¤ÏUnixÍÑ¡¤Windows (DOS)ÍÑ¡¤MacintoshÍÑ¤Ê¤É¤¬ÍÑ°Õ¤µ¤ì¤Æ¤ª¤ê¡¤Ãø¼Ô¤Î
+ºî¶È´Ä¶­¤Ë±þ¤¸¤¿¤â¤Î¤òÁªÂò¤Ç¤­¤ë¤è¤¦¤Ë¤Ê¤Ã¤Æ¤¤¤ë¡¥¤Þ¤¿¡¤¼Â¹Ô´Ä¶­¤È¤·¤Æ¤Ï 
+\LaTeXe ¤òÁ°Äó¤È¤·¤Æ¤¤¤ë¤Î¤Ç¡¤½àÈ÷¤µ¤ì¤¿¤¤¡¥
 
-Microsoft Word¢ðª³¡­©¬¢ð ¢ð©¡¢ðªÁ¢Â¢ðª©«´ ©¡¢ð ¢ð«À¢ð¢Ä(J\ªØ\¢í¢Â(B (J\©°\ªª\ª²¢ð«Ò¡­©Ã¢ðª³¢Â¢ð¢ùª²(B ªÔ¢ð¢Ì \LaTeX ¢ðª³
-ª´ªÐ¡­ ¢ð ¢ð©¡ª¡ª²ª²ª®¢ð«Ò ªÔ¢ð¢Ã¢ðªÂ¢ðª®¢Â¢ð¢ð¡ñ¢ð¢´¢ð©°¢ðª®¢ð«¤   ª¿¢ðª²¢ð ¢ð©¡¢ð ¢ð  ª²¢ð«Á¢ðª´¢ð¢ð¢ð ¢ðª²¢ð«Ò  ªªªÂ¢ð ¢ð©¡ª£¢ë
-¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+Microsoft Word¤Ë´Ø¤·¤Æ¤Ï¡¤Åê¹Æ¤µ¤ì¤¿¥Õ¥©¡¼¥Þ¥Ã¥È¤ò´ð¤Ë¡¤¶È¼Ô¤¬ \LaTeX ¤Ë
+ÊÑ´¹¤·¤ÆÁÈÈÇ¤ò¹Ô¤¦¤Î¤Ç¡¤¤¢¤¯¤Þ¤Ç¤â»²¹Í¤È¤·¤Æ¤·¤«»È¤ï¤Ê¤¤¤³¤È¤ò¾µÃÎ¤·¤ÆÄº
+¤­¤¿¤¤¡¥
 
 %2.2
-\subsection{¢ëª® ¢ì¢±¢ù ©¡¢ðªÂ¢ë«Âª¢¢î¢ðª²ª©«´ ©¡}
+\subsection{ºÇ½ª¸¶¹Æ¤ÎºîÀ®¤ÈÅê¹Æ}
 
-ª³ªä ©¡¢ðª³  ¢ðªª¢ð©¡ª¿ªÐ¡ëªØ¢ð ¢ð¢Äª©«´ ©¡ª¿ªÐ¢±¢ù ©¡¢ðªÂ \LaTeX (J\(B ¢Â (J\(B ¢ð ¢ð«±pdf(J\ªØ\¢Â\¢ð\«³¢ð«Ò¢ë«Âª¢¢î¢ð(B ¢Â¢ð
-Adobe¢ðªÂpdf reader¢ðª®©¡ª±¢ð«¡¢ð«³¢ð ¢ðª²¢ð«Ò ªÂª®¡ø¢ð ¢ð¢Ä¢±«©¢Â¢ð
+ËÜ¹Æ¤Ë½¾¤Ã¤ÆÍÑ°Õ¤·¤¿Åê¹ÆÍÑ¸¶¹Æ¤Î \LaTeX ¥½¡¼¥¹¤«¤épdf¥Õ¥¡¥¤¥ë¤òºîÀ®¤·¡¤
+Adobe¤Îpdf reader¤ÇÆÉ¤á¤ë¤³¤È¤ò³ÎÇ§¤·¤¿¸å¡¤
 \begin{quote}
 \small
 \|https://www.ipsj.or.jp/prms/author_pre_submit.do|
 \end{quote}
-¢ðªÂPRMS (Paper Review Management System)¢ðª³(J\«¡¢Â(B (J\«³\¡ñ\ª±\«À\(B ¢ð«Òª© ªÁ¢Ä¢ð ¢Â¢ðª¡¡à¢ð«±¢ð«À
-¢ð¢Ä¢ð ¢ð¢Ä(J\«¡¢Â(B (J\«³¢ðª³(B  ¢ðªª¢ð©¡¢Â¢ð ©¬ª£«´¢ð ¢ð«À¢ð¢ÄURL¢ð ¢ð«±ª©«´ ©¡¢ð ¢ð«³¢Â(J\ª©«´(B ©¡¢ðªÂªÂ¢î¢ð«À¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ¢Â¢ð
+¤ÎPRMS (Paper Review Management System)¤Ë¥á¡¼¥ë¥¢¥É¥ì¥¹¤òÅÐÏ¿¤·¡¤Á÷¤é¤ì
+¤¿¤­¤¿¥á¡¼¥ë¤Ë½¾¤Ã¤Æ¡¤»ØÄê¤µ¤ì¤¿URL¤«¤éÅê¹Æ¤¹¤ë¡¥Åê¹Æ¤ÎÎ®¤ì¤Ë¤Ä¤¤¤Æ¤Ï¡¤
 \begin{quote}
 \small
 \|http://www.ipsj.or.jp/journal/submit/manual/|
 \|manual_j_for_Author.pdf|
 \end{quote}
-¢ð«Ò   ª²¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+¤ò»²¾È¤µ¤ì¤¿¤¤¡¥
 
-¢ðª´¢ð¢ì¢Â¢ð ©Ãª´«Ñ «²ª¿«ò ©¬ «ÐªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³¢ðª®¢ðªÁ¢Â¢ðªÁª¢ª´¢±¢ðªÂªª©Ì(B ªÔ¢ð¢Ì¢ë¢ë©¡ª± ªÔ¢ðªÂªÀ ª¡¡ë¢ð«ÒªªªÂ¢ð«³¢ð 
-¢ðª²¢ð¢Ì¢ðª´¢ð¢ð¢ðª¢¢ð¡Þ¢ðª´¢ð¢´¢Â¢ð¢ë¢ë©¡ª± ªÔ¢ð«¤ªª©Ì ªÔ¢ðªÂªÀ ª¡¡ë¢ð«ÒªªªÂ¢ð«±¢ðª´¢ð¢ð(J\ª¢\ªÓ\«³\ªÓ\«±\¢ð\«Ñ\ª±¢ðªÂ¢ë¢ë©¡ª±¢ð«Ò(B «²
-¢ð«´©¡©Ð¢ð«À¢ð©¡¢ð¢ð¢ð«³¢Â(J\¢ð(B ¢ðªÂ¢ð¢Ä¢ð«¡¢Â¢ðª©«´ ©¡ª²ª®¢ðª®¢ðªÁ¢Â¢ð¢±¢ù ©¡¢ðª³ªª©Ì ªÔªÀ ¢ðª²¢ð ¢ðªÂ «´ª¤¡ë¢ðªÁª±  ¡¯¢ð ¢ðª´¢ð¢ð¢ð«²
-¢ð¢Ã¢ðª³¢ð ¢ð«³ª±¢Ìª¿¡ß¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\(B
+¤Ê¤ª¡¤¾ðÊó½èÍý³Ø²ñÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ë¤Ç¤Ï¡¤ÏÀÊ¸¤ÎÃø¼Ô¤¬ººÆÉ¼Ô¤ÎÌ¾Á°¤òÃÎ¤ë¤³
+¤È¤¬¤Ê¤¤¤À¤±¤Ê¤¯¡¤ººÆÉ¼Ô¤âÃø¼Ô¤ÎÌ¾Á°¤òÃÎ¤é¤Ê¤¤¥À¥Ö¥ë¥Ö¥é¥¤¥ó¥É¤ÎººÆÉ¤ò¼è
+¤êÆþ¤ì¤Æ¤¤¤ë¡¥¤³¤Î¤¿¤á¡¤Åê¹ÆÈÇ¤Ç¤Ï¡¤¸¶¹Æ¤ËÃø¼ÔÌ¾¤È¤½¤Î½êÂ°¤ÏÉ½¼¨¤·¤Ê¤¤¤è
+¤¦¤Ë¤¹¤ëÉ¬Í×¤¬¤¢¤ë¡¥
 
 %2.3
-\subsection{¢ëª® ¢ì¢±¢ù ©¡¢ðªÂ¢ë«Âª¢¢î¢ðª²(J\ªØ\¢Â\¢ð\«³¢ðªÂª¡¡àª±ªØ}(B
+\subsection{ºÇ½ª¸¶¹Æ¤ÎºîÀ®¤È¥Õ¥¡¥¤¥ë¤ÎÁ÷ÉÕ}
 
-ª©«´ ©¡¢ð ¢ð¢ÄªÁª¢ª´¢±¢ðªÂ¢ëªÂªÁ¢Ä¢ð¢Ì «²ª£«´¢ð ¢ð¢Ä¢ð«±¢Â¢ð¢ë¢ë©¡ª± ªÔ¢ð ¢ð«±¢ðªÂ(J\(B (J\«¡\«Ñ\ª²¢ðª´¢ðª±¢ðª³¢ð(B ¢ð¢Ä¢ð¢Ì¢ðªª¢ð©¡¢±¢ù ©¡
-¢ð«Ò ¢ðª¢ ¢ð ¢Â¢ðªª©Ì ªÔ ªÒ ©Ã¢ðª´¢ðª±ª©«´ ©¡ ©Ð¢ðª³¢ðª´¢ð ¢ðªª¢ð¢Ä «¢ªÀªä¢ð¢Ì¢ð¡ñ¢ð«À¢ð ª£ª± ªª¢ð ¢ð«³¢Â(J\¢ð©°¢ð¢Ä¢Ä©°ª±(B ¢ðª´¢ðª±
-¢ðªÂ(J\«À\¢ð\¡ñ\¢Ã\ª²¢ð«¤¢ëª®(B ¢ìª©¢ì¢ðª´¢ð«¤¢ðªÂ¢ðª²¢ð ¢ð«³¢Â(J\¢ðª´¢ð¢ì¢±«©¢ðªÂ(B  ª¢ ¢ðªÂ «´¡­ªÓ¢ð«Ò¢ëª® ¢î¢ðª³¢ð ¢ð«³¢ð¢Ä¢ð«¡¢ðª³¢Â¢ð
-¢ð ¢ðªÂªªª´ ¢Ì¢ðª®   ªÒ¢ðªÂ¢±«¿¢ð«´¢ðª´¢ðª±¢ð«Ò¡­¡ëª¡¡­¢ðª³ «ä «Â¢ð ¢ð«³¢ð«²¢ð¢Ã¢ðª³ªÀª´ªÀ¢í¢ðª³(J\ª¡\¡ø\ªª\¢´¢ð(B ¢ð©¡ª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+Åê¹Æ¤·¤¿ÏÀÊ¸¤ÎºÎÏ¿¤¬·èÄê¤·¤¿¤é¡¤ººÆÉ¼Ô¤«¤é¤Î¥³¥á¥ó¥È¤Ê¤É¤Ë¤·¤¿¤¬¤Ã¤Æ¸¶¹Æ
+¤ò½¤Àµ¤·¡¤Ãø¼Ô¾Ò²ð¤Ê¤ÉÅê¹Æ»þ¤Ë¤Ê¤«¤Ã¤¿¹àÌÜ¤¬¤¢¤ì¤ÐÄÉ²Ã¤¹¤ë¡¥¤Þ¤¿¿ÞÉ½¤Ê¤É
+¤Î¥ì¥¤¥¢¥¦¥È¤âºÇ½ªÅª¤Ê¤â¤Î¤È¤¹¤ë¡¥¤Ê¤ª¸å¤Î¹»Àµ¤Î¼ê´Ö¤òºÇ¾®¤Ë¤¹¤ë¤¿¤á¤Ë¡¤
+¤³¤ÎÃÊ³¬¤Çµ­½Ò¤Î¸í¤ê¤Ê¤É¤ò´°Á´¤Ë½üµî¤¹¤ë¤è¤¦¤ËÌÊÌ©¤Ë¥Á¥§¥Ã¥¯¤·¤ÆÄº¤­¤¿¤¤¡¥
 
-¢ëª® ¢ìª²ª®¢ðª®¢ðªÁ¢Â¢ðªª©Ì ªÔªÀ ¢ð¢ì¢ð«²¢ðªÑ¢ð ¢ðªÂ «´ª¤¡ë¢ð«Òª±  ¡¯¢ð ¢ð«³¢ðª²©¡¡Þ ©Ð¢ðª³¢Â¢ð ©¬ «Ð¢ð«²¢ð«´ ©¬ ¡¯¢ð ¢ð«À¢ð¢Ä¡­¢Ì
-¢Ä«Ô¢Â¢ð ©Á¢Ä«Ô¢Â¢ðª¢«²©¡¢Ì(J\ªâ¢Â(B (J\¢±ª²ªÓ(B ©Á¢Â¢ð «Øª±ªØ¢Â¢Ä¢ëªÂªÁ¢Äª®¢´ «Â©¡«ä¢Âª´ª®¢´¢ðªÁª¢ ªÂ«Ð¢Âª³¢ð«Ò   ªÒ¢ð ¢ð«³¢Â(J\¢ðª´¢ð¢ì(B ©¬
- «Ð¢ð ¢ð«±¢ðªÂ ©¬ ¡¯¢ð¢Ì¢ðª´¢ð¢ð «¢ªÀªä¢ðª³¡­©¬¢ð ¢ð©¡¢ðªÁ¢Â¢ð   ªÒ¢ð ¢ðª´¢ð¢´¢ð©¡¢ð«²¢ð¢ð¢Â(J\(B
+ºÇ½ªÈÇ¤Ç¤Ï¡¤Ãø¼ÔÌ¾¤ª¤è¤Ó¤½¤Î½êÂ°¤òÉ½¼¨¤¹¤ë¤ÈÆ±»þ¤Ë¡¤³Ø²ñ¤è¤ê»Ø¼¨¤µ¤ì¤¿´¬
+¿ô¡¤¹æ¿ô¡¤ÀèÆ¬¥Ú¡¼¥¸ÈÖ¹æ¡¤¼õÉÕ¡¿ºÎÏ¿Ç¯·îÆü¡ÊÇ¯¤ÏÀ¾Îñ¡Ë¤òµ­½Ò¤¹¤ë¡¥¤Ê¤ª³Ø
+²ñ¤«¤é¤Î»Ø¼¨¤¬¤Ê¤¤¹àÌÜ¤Ë´Ø¤·¤Æ¤Ï¡¤µ­½Ò¤·¤Ê¤¯¤Æ¤è¤¤¡¥
 
- ©¬ «Ð¢ð©¬¢ðªÁ{\bf \LaTeX (J\ªØ\¢Â\¢ð\«³¢Âª´¢ð«Ò¢ð©°¢ðª²¢ð«¡¢ð¢Ä¢ð«¤¢ðªÂ¢Âª³¢ðª²\ªÁ¢Â(B (J\ª±\(B (J\ªÔ¢Â(B ¢ðªÂª¡ ª´«ò¢ð«Ò}ª¡¡à
-ª±ªØ¢ð ¢ð«³¢Â(J\ª¡¡àª±ªØ¢ð(B ¢ð«³(J\ªØ\¢Â\¢ð\«³(B  ¢ðªÂª±¢± «¢ª©¢ì¢ðª´  ª¢¢î¢ðªÁ \|.tex| ¢ðª² \|.bbl| ¢ðª®¢ð¡ñ¢ð«´¢Â¢ð¢ð 
-¢ðªÂª¤ ¢ðª³PostScript(J\ªØ\¢Â\¢ð\«³¢ð«£©¡ªªª´ªÀ¢ðª´\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð¢Ì¢ð¡ñ¢ð«À¢ð(B ª±ªØ ªª¢ð ¢ð«³¢Â(J\¢ðª´¢ð¢ì (B
-\|.tex| ¢ðªÁ¡ë«Ø¢ë©Ð¢ùª² ªÔ¢ð¢Ì ¢ðª¢ ¢ð ¢ð«³¢ð ¢ðª²¢ð¢Ì¢ð¡ñ¢ð«³¢ðªÂ¢ðª®¢Â¢ð{ª±¢Ì¢ð¢ë¡ë«À¢ðª£¢ðªÂ(J\ªØ\¢Â\¢ð\«³¢ðª³¢ð(B ¢ð«³}¢Â(J\(B
-¢ð©°¢ð¢Äª±¢Ìª¿¡ß¢ðª´(J\ªØ\¢Â\¢ð\«³¢ð¢Ìª¡¡­¢ð©¡¢ð(B ¢ð«¿¢ðªª¢ð©¡¢ð¢ð¢ð«³¢ð ¢ðª²¢Â¢ð©¡ªª¢ðª³©¡ªªª´ªÀ¢ðª´(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ðª³¡ÞªÀ(B
-¢ð«À¢ð¢Ì¢ðª´¢ð¢ð¢ð ¢ðª²¢ð«Ò¢Â¢ðªª«¿¡ëªØ¢Ä ¢ð¢´ ªÂª®¡ø¢ð ¢ð©¡ª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+³Ø²ñ¤Ø¤Ï{\bf \LaTeX ¥Õ¥¡¥¤¥ë¡Ê¤ò¤Þ¤È¤á¤¿¤â¤Î¡Ë¤È¥Ï¡¼¥É¥³¥Ô¡¼¤ÎÁÐÊý¤ò}Á÷
+ÉÕ¤¹¤ë¡¥Á÷ÉÕ¤¹¤ë¥Õ¥¡¥¤¥ë·²¤ÎÉ¸½àÅª¤Ê¹½À®¤Ï \|.tex| ¤È \|.bbl| ¤Ç¤¢¤ê¡¤¤³
+¤ÎÂ¾¤ËPostScript¥Õ¥¡¥¤¥ë¤äÆÃÊÌ¤Ê¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤¬¤¢¤ì¤ÐÉÕ²Ã¤¹¤ë¡¥¤Ê¤ª 
+\|.tex| ¤Ï°õºþ¶È¼Ô¤¬½¤Àµ¤¹¤ë¤³¤È¤¬¤¢¤ë¤Î¤Ç¡¤{É¬¤º°ì¤Ä¤Î¥Õ¥¡¥¤¥ë¤Ë¤¹¤ë}¡¥
+¤Þ¤¿É¬Í×¤Ê¥Õ¥¡¥¤¥ë¤¬Á´¤Æ¤½¤í¤Ã¤Æ¤¤¤ë¤³¤È¡¤ÆÃ¤ËÆÃÊÌ¤Ê¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤Ë±Ì
+¤ì¤¬¤Ê¤¤¤³¤È¤ò¡¤Ãí°Õ¿¼¤¯³ÎÇ§¤·¤ÆÄº¤­¤¿¤¤¡¥
 
-(J\ªØ\¢Â\¢ð\«³¢ðªÂª¡¡àª±ªØª´«òª³¢Â¢ðª´¢ðª±¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ¢Â¢ð¢ëªÂªÁ¢Äª£ªÀªªªÂ¢ðª²¢ðª²¢ð«¤¢ðª³(B ©¬ «Ð «ÓªÀ ¢ùª±¢ð ¢ð«±ª¡¡à¢ð«±¢ð«À¢ð«³
- ©¬ ¡¯¢ðª³  ¢ð¢Ã¢Â(J\(B
+¥Õ¥¡¥¤¥ë¤ÎÁ÷ÉÕÊýË¡¤Ê¤É¤Ë¤Ä¤¤¤Æ¤Ï¡¤ºÎÏ¿ÄÌÃÎ¤È¤È¤â¤Ë³Ø²ñ»öÌ³¶É¤«¤éÁ÷¤é¤ì¤ë
+»Ø¼¨¤Ë½¾¤¦¡¥
 
 %2.4
-\subsection{ªª©Ì ªÔ  ª¢ ¢Â¢Ãª¡ª²ª²ª®¢Â¢Ã  ª²ª®}
+\subsection{Ãø¼Ô¹»Àµ¡¦ÁÈÈÇ¡¦½ÐÈÇ}
 
- ©¬ «Ð¢ðª®¢ðªÁª¿ªÐ¢±«À¢ð«£ª¿ªÐ «â¢ð«Ò¡ë«Àª£«´¢ðªÂ¡­©Ã «¢¢ðª³  ¢ðªª¢ð©¡ ¢ðª¢ ¢ð ¢ð«³¢ð ¢ðª²¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\¢ð©°¢ð¢Ä \LaTeX ¢ðªÂ(B
- ª¤ ªÔ¡­ª£¢ù ¢ðªÂ¢ë ¡ëªå¢ðª´¢ðª±¢ðª³¢ð«²¢ðªª¢ð©¡ªª©Ì ªÔ¢ð¢Ì¢ë«Âª¢¢î¢ð ¢ð¢Ä(J\ªÁ¢Â(B (J\ª±\(B (J\ªÔ¢Â(B ¢ðª² ª¤¢ëªò¢ðªÂª¡ª²ª²ª® «³ ªÀ¢ð¢Ìª²«ã
-ªÀ¢´¢ðª³¡ëªå¢ðª´¢ð«³¢ð ¢ðª²¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\¢ð(B ¢ð«À¢ð«±¢ðªÂ ¢ðª¢ ¢ð«£¢ë ¡ëªå¢ð¢ÌªÀ«£ª¤«´¢ðª´¢ð¢ð¢ð ¢ð«Ò¢ëª® ¢ìª©¢ì¢ðª³ ªÂª®¡ø¢ð ¢ð«³¢ð¢Ä
-¢ð«¡¢ðª³¢Â¢ðªª©Ì ªÔ¢ðª³(J\(B (J\«±¢ë©Ð¢ð«´¢ð¢Ìª¡¡à¢ð«±¢ð«À¢ð«³¢ðªÂ¢ðª®¢Â¢ð¢ð«¤¢ð(B ªÀ«£ª¤«´¢ð¢Ì¢ð¡ñ¢ð«À¢ð  «³ «Ð¢ðª³¢ð«²¢ðªª¢ð©¡ ©¬ª©¢Ã¢ð ¢ð©¡
-ª´ªÓª¡¡à¢ð ¢ð«³¢Â(J\¢ðª´¢ð¢ì{\bf ¢ð(B ¢ðªÂªªª´ ¢Ì¢ðª®¢ðªÂ   ªÒ¢±«¿¢ð«´¢ðªÂ ¢ðª¢ ¢ðªÁ¢±¢ùª¤¡ø¢ðª²¢ð ¢ð©¡ª®¡ø¢ð«¡¢ð«±¢ð«À¢ðª´¢ð¢ð}¢ðªÂ
-¢ðª®¢Â¢ð¢±¢ù ©¡ª¡¡àª±ªØ ©Ð¢ðª³¢ëªã¢Ä¡­¢ðªÂªª«¿¡ëªØ¢ð«Òª´¡ø¢ðªª¢ð©¡¢ð¢ð¢ð¢Ä¢ðª¢¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+³Ø²ñ¤Ç¤ÏÍÑ¸ì¤äÍÑ»ú¤ò°ìÄê¤Î´ð½à¤Ë½¾¤Ã¤Æ½¤Àµ¤¹¤ë¤³¤È¤¬¤¢¤ë¡¥¤Þ¤¿ \LaTeX ¤Î
+¼Â¹Ô´Ä¶­¤Îº¹°Û¤Ê¤É¤Ë¤è¤Ã¤ÆÃø¼Ô¤¬ºîÀ®¤·¤¿¥Ï¡¼¥É¥³¥Ô¡¼¤È¼ÂºÝ¤ÎÁÈÈÇ·ë²Ì¤¬Èù
+Ì¯¤Ë°Û¤Ê¤ë¤³¤È¤¬¤¢¤ë¡¥¤³¤ì¤é¤Î½¤Àµ¤äº¹°Û¤¬ÌäÂê¤Ê¤¤¤«¤òºÇ½ªÅª¤Ë³ÎÇ§¤¹¤ë¤¿
+¤á¤Ë¡¤Ãø¼Ô¤Ë¥²¥éºþ¤ê¤¬Á÷¤é¤ì¤ë¤Î¤Ç¡¤¤â¤·ÌäÂê¤¬¤¢¤ì¤Ð¼ë½ñ¤Ë¤è¤Ã¤Æ»ØÅ¦¤·¤Æ
+ÊÖÁ÷¤¹¤ë¡¥¤Ê¤ª{\bf ¤³¤ÎÃÊ³¬¤Ç¤Îµ­½Ò¸í¤ê¤Î½¤Àµ¤Ï¸¶Â§¤È¤·¤ÆÇ§¤á¤é¤ì¤Ê¤¤}¤Î
+¤Ç¡¤¸¶¹ÆÁ÷ÉÕ»þ¤ËºÙ¿´¤ÎÃí°Õ¤òÊ§¤Ã¤Æ¤¤¤¿¤À¤­¤¿¤¤¡¥
 
-¢ð ¢ðªÂ¢±«©¢Â¢ðªª©Ì ªÔ¢ðªÂ  ª¢ ¢ðª³¡­©Ã¢ðª©¢ð ¢ëª® ¢ìª©¢ì¢ðª´ª¡ª²ª²ª®¢ð«Ò ªÔ¢ðª´¢ð¢ð¢Â¢ð(J\¢ì\«Ñ\«±\¢ð\«Ñ(B  ª²ª®¢ð ¢ð«³¢Â(J\(B
+¤½¤Î¸å¡¤Ãø¼Ô¤Î¹»Àµ¤Ë´ð¤Å¤­ºÇ½ªÅª¤ÊÁÈÈÇ¤ò¹Ô¤Ê¤¤¡¤¥ª¥ó¥é¥¤¥ó½ÐÈÇ¤¹¤ë¡¥
 
 %3
-\section{ªÁª¢ª´¢±(J\ªØ\¢í¢Â(B (J\©°\ªª\ª²¢ðªÂ(B ©¬¢Äª³}
+\section{ÏÀÊ¸¥Õ¥©¡¼¥Þ¥Ã¥È¤Î»Ø¿Ë}
 \label{sec:format}
 
-¡ëª´  ¢Â¢ð ©Ãª´«Ñ «²ª¿«ò ©¬ «ÐªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª¿ªÐ\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Òª¿ªÐ¢ð¢ð¢ð¢ÄªÁª¢ª´¢±\ªØ\¢í¢Â(B (J\©°\ªª(B
-(J\ª²¢ðªÂ(B ©¬¢Äª³¢ðª³¢ðª£¢ð¢ð¢ð©¡ ªÒ¢ðªã¢ð«³¢ðªÂ¢ðª®¢Â¢ð¢ð ¢ð«À¢ðª³  ¢ðªª¢ð©¡¢±¢ù ©¡¢ð«Òª¿ªÐ¡ëªØª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\\LaTeX ¢ð«Òª¿ªÐ(B
-¢ð¢ð¢ð¢Ä¡ë«Àª²ªÀª©¢ì¢ðª´ª´¢± ªÁ¢ë«Âª¢¢î   ªÐ¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ¢Â¢ð\cite{okumura, companion} ª©«ã¢ð«Ò   ª¿¢ðª³
-¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+°Ê²¼¡¤¾ðÊó½èÍý³Ø²ñÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÍÑ¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤òÍÑ¤¤¤¿ÏÀÊ¸¥Õ¥©¡¼¥Þ¥Ã
+¥È¤Î»Ø¿Ë¤Ë¤Ä¤¤¤Æ½Ò¤Ù¤ë¤Î¤Ç¡¤¤³¤ì¤Ë½¾¤Ã¤Æ¸¶¹Æ¤òÍÑ°ÕÄº¤­¤¿¤¤¡¥\LaTeX ¤òÍÑ
+¤¤¤¿°ìÈÌÅª¤ÊÊ¸¾ÏºîÀ®µ»½Ñ¤Ë¤Ä¤¤¤Æ¤Ï¡¤\cite{okumura, companion} Åù¤ò»²¹Í¤Ë
+¤µ¤ì¤¿¤¤¡¥
 
 %4
-\section{ªÁª¢ª´¢±¢ðªÂ  ª¢¢î}
+\section{ÏÀÊ¸¤Î¹½À®}
 \label{config}
 
-(J\ªØ\¢Â\¢ð\«³¢ðªÁ(B ¢Â¢ðªÂ¢ð«²¢ð¢Ã¢ðª³¢ðª´¢ð«³¢Â(J\(B  ª¢©Ðª±«Ô¢ðªÁª©«´ ©¡ ©Ð¢ðª³ ª´ªÂ¢Ì ª£ª® ¢ðª´¢ð«¤¢ðªÂ¢Â(J\¢ð©°¢ð¢Ä\ª²\«±\«Ñ\¢ù\¢´(B
-(J\(B (J\«®\«Ñ©¡ªªª¿(B (J\(B (J\©°\«Ñ\ª±¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ \ref{sig}~ª¢«¡¢ð«Ò(B   ª²¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+¥Õ¥¡¥¤¥ë¤Ï¼¡¤Î¤è¤¦¤Ë¤Ê¤ë¡¥²¼ÀþÉô¤ÏÅê¹Æ»þ¤Ë¾ÊÎ¬²ÄÇ½¤Ê¤â¤Î¡¥¤Þ¤¿¥È¥é¥ó¥¶¥¯
+¥·¥ç¥óÆÃÍ­¥³¥Þ¥ó¥É¤Ë¤Ä¤¤¤Æ¤Ï \ref{sig}~Àá¤ò»²¾È¤µ¤ì¤¿¤¤¡¥
 
 \noindent
-\|\documentclass[submit]{ipsj}|¢ð©°¢ð¢Ä¢ðªÁ\\
-\|\documentclass[submit,draft]{ipsj}|\footnote{{\tt [draft]}¢ðªÁª©«´ ©¡ª¿ªÐ¢Â¢ð
-(J\(B (J\¢Ä\¢ð\«³\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÁ\ref{option}ª¢«¡(B   ª²¢Â(J\}(B
+\|\documentclass[submit]{ipsj}|¤Þ¤¿¤Ï\\
+\|\documentclass[submit,draft]{ipsj}|\footnote{{\tt [draft]}¤ÏÅê¹ÆÍÑ¡¤
+¥¹¥¿¥¤¥ë¥ª¥×¥·¥ç¥ó¤Ï\ref{option}Àá»²¾È¡¥}
 \\
-\quad ª±¢Ìª¿¡ß¢ðª´¢ð«±¢ð (J\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÂ\(B (J\¢Ä\¢ð\«³¢ð«Òª£ª±(B ªª\\
-\Underline{\|\setcounter{|{\bf ¡­¢Ì¢Ä«Ô}\|}{<¡­¢Ì¢Ä«Ô>}|}\\
-\Underline{\|\setcounter{|{\bf  ©Á¢Ä«Ô}\|}{< ©Á¢Ä«Ô>}|}\\
-\Underline{\|\setcounter{|{\bf page}\|}{<ª¢«²©¡¢Ì(J\ªâ¢Â(B (J\¢±>}|}\\(B
-\Underline{\|\|{\bf  «Øª±ªØ}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|}\\
-\Underline{\|\|{\bf ¢ëªÂªÁ¢Ä}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|}\\
-\quad ª±¢Ìª¿¡ß¢ðª´¢ð«±¢ð (J\©Á¢Â(B (J\¢ù¢ðªÂ\©°\¢´\«¿¢ð«Ò¢ð(B ¢ð ¢ðª³   ªÒ\\
+\quad É¬Í×¤Ê¤é¤Ð¥ª¥×¥·¥ç¥ó¤Î¥¹¥¿¥¤¥ë¤òÄÉ²Ã\\
+\Underline{\|\setcounter{|{\bf ´¬¿ô}\|}{<´¬¿ô>}|}\\
+\Underline{\|\setcounter{|{\bf ¹æ¿ô}\|}{<¹æ¿ô>}|}\\
+\Underline{\|\setcounter{|{\bf page}\|}{<ÀèÆ¬¥Ú¡¼¥¸>}|}\\
+\Underline{\|\|{\bf ¼õÉÕ}\|{<Ç¯>}{<·î>}{<Æü>}|}\\
+\Underline{\|\|{\bf ºÎÏ¿}\|{<Ç¯>}{<·î>}{<Æü>}|}\\
+\quad É¬Í×¤Ê¤é¤Ð¥æ¡¼¥¶¤Î¥Þ¥¯¥í¤ò¤³¤³¤Ëµ­½Ò\\
 \|\begin{document}|\\
-\|\title{ª± ª¤«´(ªÁª¤ª´¢±)}|\\
-\|\etitle{ª± ª¤«´(¡ÞªÐª´¢±)}|\\
-\Underline{\|\affiliate{ «´ª¤¡ë(J\«±\ªã\«³}{<ªÁª¤ª´¢±(B «´ª¤¡ë>\\<¡ÞªÐª´¢± «´ª¤¡ë>}|}\\
-\quad ª±¢Ìª¿¡ß¢ðª´¢ð«±¢ð  \|\paffiliate| ¢ðª³¢ð«²¢ð«´¢± ¢ë©Î¢ðªÂ «´ª¤¡ë¢ð«Òª¢«³¢±ª¢¢ð ¢ð«³\\
-\Underline{\|\paffiliate{¢±  «´ª¤¡ë(J\«±\ªã\«³}{<ªÁª¤¢±(B  «´ª¤¡ë>\\<¡ÞªÐ¢±  «´ª¤¡ë>}|}\\\\
-\Underline{\|\author{ ©Ãª´«Ñ ª¤ª¢ªÁ¢ë}{Taro Joho}|}\\
-\Underline{\|          {< «´ª¤¡ë(J\«±\ªã\«³>}[E-mail]|}\\(B
-\Underline{\|\author{ «²ª¿«ò  ªÓ ªÒ}{Hanako Shori}|}\\
-\Underline{\|          {< «´ª¤¡ë(J\«±\ªã\«³2,¢±(B  «´ª¤¡ë(J\«±\ªã\«³3>}|}\\\\(B
+\|\title{É½Âê(ÏÂÊ¸)}|\\
+\|\etitle{É½Âê(±ÑÊ¸)}|\\
+\Underline{\|\affiliate{½êÂ°¥é¥Ù¥ë}{<ÏÂÊ¸½êÂ°>\\<±ÑÊ¸½êÂ°>}|}\\
+\quad É¬Í×¤Ê¤é¤Ð \|\paffiliate| ¤Ë¤è¤ê¸½ºß¤Î½êÂ°¤òÀë¸À¤¹¤ë\\
+\Underline{\|\paffiliate{¸½½êÂ°¥é¥Ù¥ë}{<ÏÂ¸½½êÂ°>\\<±Ñ¸½½êÂ°>}|}\\\\
+\Underline{\|\author{¾ðÊó ÂÀÏº}{Taro Joho}|}\\
+\Underline{\|          {<½êÂ°¥é¥Ù¥ë>}[E-mail]|}\\
+\Underline{\|\author{½èÍý ²Ö»Ò}{Hanako Shori}|}\\
+\Underline{\|          {<½êÂ°¥é¥Ù¥ë2,¸½½êÂ°¥é¥Ù¥ë3>}|}\\\\
 \|\begin{abstract}|\\
-\|<  ª¿¡ß¢Âª´ªÁª¤ª´¢±¢Âª³>|\\
+\|<³µÍ×¡ÊÏÂÊ¸¡Ë>|\\
 \|\end{abstract}|\\
 \|\begin{jkeyword}|\\
-\|<(J\(B ¢Â (J\«Á¢Â(B (J\ª±>|\\(B
+\|<¥­¡¼¥ï¡¼¥É>|\\
 \|\end{jkeyword}|\\
 \|\begin{eabstract}|\\
-\|<  ª¿¡ß¢Âª´¡ÞªÐª´¢±¢Âª³>|\\
+\|<³µÍ×¡Ê±ÑÊ¸¡Ë>|\\
 \|\end{eabstract}|
 \|\begin{ekeyword}|\\
 \|<KeyWords>|\\
 \|\end{ekeyword}|\\
 \|\maketitle|\\
-\|\section{|ª¤«²1ª¢«¡¢ðªÂª± ª¤«´\|}|\\
+\|\section{|Âè1Àá¤ÎÉ½Âê\|}|\\
 \dots\dots\dots\dots\dots\\
-\quad \|<ª³ªäª´¢±>|\\
+\quad \|<ËÜÊ¸>|\\
 \dots\dots\dots\dots\dots\\
- ªØ  ¢ð¢Ì¢ð¡ñ¢ð«³ «À «®¢ðªÁ\\
+¼Õ¼­¤¬¤¢¤ë¾ì¹ç¤Ï\\
 \|\begin{acknowledgment}|\\
 \|\end{acknowledgment}|\\\\
 \|\begin{thebibliography}{99}%9 or 99|\\
 \|\bibitem{1}|\\
 \|\bibitem{2}|\\
 \|\end{thebibliography}|\\\\
-ª±ªØªÁ¢Ä¢ð¢Ì¢ð¡ñ¢ð«³ «À «®¢ðªÁ\\
+ÉÕÏ¿¤¬¤¢¤ë¾ì¹ç¤Ï\\
 \|\appendix|\\
-\|\section{|ª±ªØªÁ¢Ä1ª¢«¡¢ðªÂª± ª¤«´\|}|\\\\
+\|\section{|ÉÕÏ¿1Àá¤ÎÉ½Âê\|}|\\\\
 \Underline{\|\begin{biography}|}\\
-\Underline{\|\profile{<X>}{<ª±ª£ «â ªÀ ª¡¡ë>}{<(J\¡ß\«¿\ªØ\¡ò¢Â(B (J\«³ª´¢±(B ªÁ>}|}\\
+\Underline{\|\profile{<X>}{<ÉÄ»ú Ì¾Á°>}{<¥×¥í¥Õ¥£¡¼¥ëÊ¸¾Ï>}|}\\
 \Underline{\|\end{biography}|}\\
 \|\end{document}|
 
 
 %4.1
-\subsection{(J\¢ì\¡ß\(B (J\«®\«Ñ¢Â¢Ã\(B (J\¢Ä\¢ð\«³}(B
+\subsection{¥ª¥×¥·¥ç¥ó¡¦¥¹¥¿¥¤¥ë}
 
-\label{option} \|\documentclass{ipsj}|¢ðªÂ(J\¢ì\¡ß\(B (J\«®\«Ñ\footnote{¢±¢Ã(B ©Á «Ðª¿ªÐ¢ðªÂ(J\¢ì(B
-(J\¡ß\(B (J\«®\«Ñ¢ðªÁ \ref{sig}~ª¢«¡¢ðª®ª¢«¤ªÀª¢¢ð(B ¢ð«³¢Â(J\}¢ðª²¢ð(B ¢ð©¡¢Â¢ð¡ëª´  ¢ðªÂ¢ð«¤¢ðªÂ¢ð«Òª¿ªÐ¡ëªØ¢ð ¢ð©¡¢ð¡ñ¢ð«³¢Â(J\(B
-{\bf  ¢Ä¢ð«¤ª£«´ ª¡¢ð ¢ðª´¢ð¡Þ¢ð«À¢ð ªÁª¤ª´¢±ªÁª¢ª´¢±ª¿ªÐ¢ðªÂª±¢± «¢(J\(B (J\¢Ä\¢ð\«³}¢ðª²¢ðª´¢ð«³¢ð¢Ì¢Â¢ð¢ë¡ò(B «Ñ¢Â¢ðª¡ª²ª²ª®¢ðªÂ¢ëªò
-¢ðª³ªÁª¤ª´¢±ªÁª¢ª´¢±¢ðªÂ(J\¢Ä\¢ð\ª²\«³¢Â¢ðªÁª¤ª´¢±ªÁª¢ª´¢±(B «Áª´ªÀ¢ðª³¢ÂªÓ{\bf ª¤ª¢(J\©Î\«Ñ}¢Â¡ß¢ÂªÓ{\bf ª¤ª¢\¡­}¢Â¡ß¢ðªÂ\ªØ\¢í(B
-(J\«Ñ\ª²¢ð«Ò(B ª²ª¿ªÐ¢ð ¢ð©¡¢ð¢ð¢ð«³¢ð¢Ä¢ð«¡¢Â¢ð\TeX ª±¢± «¢(J\ªØ\¢í\«Ñ\ª²¢ðª³ªªªÓ¢ð(B ¡­ ¢ð¡¯¢ð«³ \|submit| ¢ðª²¢ð¢ð¢ð¢Ã(J\¢ì(B
-(J\¡ß\(B (J\«®\«Ñ¢ð«Òª¿ªÐ¡ëªØ¢ð(B ¢ð¢Ä¢Â(J\(B
+\label{option} \|\documentclass{ipsj}|¤Î¥ª¥×¥·¥ç¥ó\footnote{¸¦µæ²ñÍÑ¤Î¥ª
+¥×¥·¥ç¥ó¤Ï \ref{sig}~Àá¤ÇÀâÌÀ¤¹¤ë¡¥}¤È¤·¤Æ¡¤°Ê²¼¤Î¤â¤Î¤òÍÑ°Õ¤·¤Æ¤¢¤ë¡¥
+{\bf ²¿¤âÄêµÁ¤·¤Ê¤±¤ì¤ÐÏÂÊ¸ÏÀÊ¸ÍÑ¤ÎÉ¸½à¥¹¥¿¥¤¥ë}¤È¤Ê¤ë¤¬¡¤º£²ó¡¤ÁÈÈÇ¤ÎºÝ
+¤ËÏÂÊ¸ÏÀÊ¸¤Î¥¿¥¤¥È¥ë¡¤ÏÂÊ¸ÏÀÊ¸¼ïÊÌ¤Ë¡Ö{\bf ÂÀ¥ß¥ó}¡×¡Ö{\bf ÂÀ¥´}¡×¤Î¥Õ¥©
+¥ó¥È¤ò»ÈÍÑ¤·¤Æ¤¤¤ë¤¿¤á¡¤\TeX É¸½à¥Õ¥©¥ó¥È¤ËÃÖ¤­´¹¤¨¤ë \|submit| ¤È¤¤¤¦¥ª
+¥×¥·¥ç¥ó¤òÍÑ°Õ¤·¤¿¡¥
 
 \begin{enumerate}
-\item\|submit         | (J\ªØ\¢í\«Ñ\ª²ªªªÓ¡­(B ª¿ªÐ
-\item\|draft          | ª©«´ ©¡ª¿ªÐ
-\item\|invited        |   ª¤ªÔªÁª¢ª´¢±
-\item\|sigrecommended | ¢Ä«£ª¡¢ÃªÁª¢ª´¢±
-\item\|technote       | (J\©¡\¢´\ª³\(B (J\«³\ªÂ¢Â(B (J\ª²ª¿ªÐ(B
-\item\|preface        |  ©Ìª´¢±ª¿ªÐ
-\item\|JIP            | ¡ÞªÐª´¢±ª¿ªÐ
+\item\|submit         | ¥Õ¥©¥ó¥ÈÃÖ´¹ÍÑ
+\item\|draft          | Åê¹ÆÍÑ
+\item\|invited        | ¾·ÂÔÏÀÊ¸
+\item\|sigrecommended | ¿äÁ¦ÏÀÊ¸
+\item\|technote       | ¥Æ¥¯¥Ë¥«¥ë¥Î¡¼¥ÈÍÑ
+\item\|preface        | ½øÊ¸ÍÑ
+\item\|JIP            | ±ÑÊ¸ÍÑ
 \end{enumerate}
-¢ð ¢ð«À¢ð«±¢ðªÂ(J\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÁª®¢ð¡ëªØ¢ðªÂª¡ª²(B «®¢ð ¢ðª® ª²ª¿ªÐ¢ð¢Ì ª£ª® ¢ðª®¢ð¡ñ¢ð«³¢Â(J\(B
+¤³¤ì¤é¤Î¥ª¥×¥·¥ç¥ó¤ÏÇ¤°Õ¤ÎÁÈ¹ç¤»¤Ç»ÈÍÑ¤¬²ÄÇ½¤Ç¤¢¤ë¡¥
 
-\|\documentclass[submit,draft]{ipsj}|¢ðª²¢ð ¢ð«À¢ð ¢Â¢ð
-ª©«´ ©¡ª¿ªÐ¢ðªÂ(J\(B (J\¢Ä\¢ð\«³¢ðª²¢ðª´¢ð«³¢Â\(B
+\|\documentclass[submit,draft]{ipsj}|¤È¤¹¤ì¤Ð¡¤
+Åê¹ÆÍÑ¤Î¥¹¥¿¥¤¥ë¤È¤Ê¤ë¡¥
 
-¢ðª´¢ð¢ì¢Â¢ð\|\usepackage| ¢ðª®ª´«£ «Øª©¢ì¢ðª´(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Ò(B ©¬ª£«´¢ð ¢ð¢Ä «À «®¢ðª³¢ðªÁ¢Â¢ð¢ëª® ¢ì
-¢±¢ù ©¡ª¿ªÐ¢ðªÂ(J\ªØ\¢Â\¢ð\«³(B  ¢ðª³ª±¢Ì¢ð¢ë(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Ò¡­©°¢ð«¡¢ð«³¢Â\¢ð¢Ä¢ðª¢¢ð(B ¢Â¢ð\LaTeXe ¢ðªÂª±¢± «¢
-ª®ªåª±ªå¢ðª³¡­©°¢ð©°¢ð«À¢ð©¡¢ð¢ð¢ð«³¢ð«¤¢ðªÂ¢Âª´¢ð¢Ä¢ðª²¢ð¡¯¢ð  \|graphicx|¢Âª³¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ©¡¡Þª±«Ø¢ðªÂª±¢Ìª¿¡ß¢ðªÁ¢ðª´¢ð¢ð¢Â(J\(B
+¤Ê¤ª¡¤\|\usepackage| ¤ÇÊä½õÅª¤Ê¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤ò»ØÄê¤·¤¿¾ì¹ç¤Ë¤Ï¡¤ºÇ½ª
+¸¶¹ÆÍÑ¤Î¥Õ¥¡¥¤¥ë·²¤ËÉ¬¤º¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤ò´Þ¤á¤ë¡¥¤¿¤À¤·¡¤\LaTeXe ¤ÎÉ¸½à
+ÇÛÉÛ¤Ë´Þ¤Þ¤ì¤Æ¤¤¤ë¤â¤Î¡Ê¤¿¤È¤¨¤Ð \|graphicx|¡Ë¤Ë¤Ä¤¤¤Æ¤ÏÆ±Éõ¤ÎÉ¬Í×¤Ï¤Ê¤¤¡¥
 
-(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ðª³¢ð«²¢ðªª¢ð©¡¢ðªÁªÁª¢ª´¢±(B «Á(J\(B (J\¢Ä\¢ð\«³¢ðª²ªÀ(B  «¤¢ð ¢ð«³¢ð«²¢ð¢Ã¢ðª´¢ð«¤¢ðªÂ¢ð«¤¢ð¡ñ¢ð«³¢ðªÂ¢ðª®¢Â¢ð
-ªª«¿¡ëªØ¢ð ¢ð©¡ ª²ª¿ªÐ¢ð ¢ð©¡ª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤Ë¤è¤Ã¤Æ¤ÏÏÀÊ¸»ï¥¹¥¿¥¤¥ë¤ÈÌ·½â¤¹¤ë¤è¤¦¤Ê¤â¤Î¤â¤¢¤ë¤Î¤Ç¡¤
+Ãí°Õ¤·¤Æ»ÈÍÑ¤·¤ÆÄº¤­¤¿¤¤¡¥
 
 %4.2
-\subsection{ª± ª¤«´¢Â¢Ãªª©Ì ªÔªÀ ª©«ã}
+\subsection{É½Âê¡¦Ãø¼ÔÌ¾Åù}
 
-ª± ª¤«´¢Â¢ðªª©Ì ªÔªÀ ¢ðª²¢ð ¢ðªÂ «´ª¤¡ë¢Â¢ð¢ð¢ì¢ð«²¢ðªÑ  ª¿¡ß¢ð«Òª¡¡ë ªÒ¢ðªÂ(J\(B (J\©°\«Ñ\ª±¢ð«£¡­ª£¢ù(B ¢ðª³¢ð«²¢ð«´{\bf ªÁª¤ª´¢±¢ðª²
-¡ÞªÐª´¢±¢ðªÂª¡ ª´«ò¢ðª³¢ðª£¢ð¢ð¢ð©¡}ª£«´ ª¡¢ð ¢ð¢Ä¢±«©¢Â¢ð\|\maketitle| ¢ðª³¢ð«²¢ðªª¢ð©¡  ªÂªÁ¢ð ¢ð«³¢Â(J\(B
+É½Âê¡¤Ãø¼ÔÌ¾¤È¤½¤Î½êÂ°¡¤¤ª¤è¤Ó³µÍ×¤òÁ°½Ò¤Î¥³¥Þ¥ó¥É¤ä´Ä¶­¤Ë¤è¤ê{\bf ÏÂÊ¸¤È
+±ÑÊ¸¤ÎÁÐÊý¤Ë¤Ä¤¤¤Æ}ÄêµÁ¤·¤¿¸å¡¤\|\maketitle| ¤Ë¤è¤Ã¤Æ½ÐÎÏ¤¹¤ë¡¥
 
 %4.2.1
-\subsubsection{ª± ª¤«´} 
+\subsubsection{É½Âê} 
 
-ª± ª¤«´¢ðªÁ¢Â¢ð\|\title| ¢ð¢ì¢ð«²¢ðªÑ \|\etitle| ¢ðª®ª£«´ ª¡¢ð ¢ð¢Äª± ª¤«´¢ðªÁ(J\(B (J\«Ñ\¢Ä\«´\«Ñ\¡ë¢ð(B ¢ð«À¢ð«³¢Â(J\(B
-ª´¢± «â¢Ä«Ô¢ðªÂª¤¢Ä¢ð¢ð¢ð«¤¢ðªÂ¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ¢Â¢ðª©¢Ì   \|\\| ¢ð«Òª¡©°©¡©Ð¢ð ¢ð©¡ ©Ð ªÔ¢ð ¢ð«³¢Â(J\(B
+É½Âê¤Ï¡¤\|\title| ¤ª¤è¤Ó \|\etitle| ¤ÇÄêµÁ¤·¤¿É½Âê¤Ï¥»¥ó¥¿¥ê¥ó¥°¤µ¤ì¤ë¡¥
+Ê¸»ú¿ô¤ÎÂ¿¤¤¤â¤Î¤Ë¤Ä¤¤¤Æ¤Ï¡¤Å¬µ¹ \|\\| ¤òÁÞÆþ¤·¤Æ²þ¹Ô¤¹¤ë¡¥
 
 %4.2.2
-\subsubsection{ªª©Ì ªÔªÀ ¢Â¢Ã «´ª¤¡ë} 
+\subsubsection{Ãø¼ÔÌ¾¡¦½êÂ°} 
 
- ©¡ªª©Ì ªÔ¢ðªÂ «´ª¤¡ë¢ð«Òª¤«²¡ë«Àªª©Ì ªÔ¢ð ¢ð«± «®¢ðª³ \|\affiliate| ¢ð«Òª¿ªÐ¢ð¢ð¢ð©¡(J\«±\ªã\«³¢Âª´ª¤«²1¡ë«â¢Ä«Ô¢Âª³¢ð«Ò(B
-ª±ªØ¢ð¡Þ¢ðª´¢ð¢Ì¢ð«±ª£«´ ª¡¢ð ¢ð«³¢ðª²¢Â¢ð ªÑªª«¿¢ðª³ª²ªÓ ©Á¢ð«Òª±ªØ¢ð¡Þ¢ð©¡ «´ª¤¡ë¢ð¢Ì  ªÂªÁ¢ð ¢ð«À¢ð«³¢Â(J\¢ðª´¢ð¢ì¢Â¢ðª´¡ò¢Ä«Ô¢ðªÂªª©Ì(B
- ªÔ¢ð¢Ì©¡¡Þ¢ð¢± «´ª¤¡ë¢ðª®¢ð¡ñ¢ð«³ «À «®¢ðª³¢ðªÁ¢Â¢ð¡ë«Àª©ªãª£«´ ª¡¢ð ¢ð«³¢ðª¢¢ð¡Þ¢ðª®ªÂª±¢ð¢ð¢Â(J\(B
+³ÆÃø¼Ô¤Î½êÂ°¤òÂè°ìÃø¼Ô¤«¤é½ç¤Ë \|\affiliate| ¤òÍÑ¤¤¤Æ¥é¥Ù¥ë¡ÊÂè1°ú¿ô¡Ë¤ò
+ÉÕ¤±¤Ê¤¬¤éÄêµÁ¤¹¤ë¤È¡¤µÓÃí¤ËÈÖ¹æ¤òÉÕ¤±¤Æ½êÂ°¤¬½ÐÎÏ¤µ¤ì¤ë¡¥¤Ê¤ª¡¤Ê£¿ô¤ÎÃø
+¼Ô¤¬Æ±¤¸½êÂ°¤Ç¤¢¤ë¾ì¹ç¤Ë¤Ï¡¤°ìÅÙÄêµÁ¤¹¤ë¤À¤±¤ÇÎÉ¤¤¡¥
 
-¢± ¢ë©Î¢ðªÂ «´ª¤¡ë¢ðªÁ \|\paffiliate| ¢ð«Òª¿ªÐ¢ð¢ð¢Â¢ð©¡¡Þª¿ª¿¢ðª³(J\«±\ªã\«³¢Â¢ð(B «´ª¤¡ëª¢«²¢ð«Ò   ªÒ¢ð ¢ð«³¢Â(J\(B «´ª¤¡ë
-ª¢«²¢ðª³¢ðªÁ  ©¡¡ë¢ðª®¢ÂªÓ¢± ¢ë©Î¢Â¡ß¢Â¢ð\|\\|¢ðªÂ ©Ð ªÔ¢ðª®¢ÂªÓPresently with¢Â¡ß¢ð¢Ìª¡©°©¡©Ð¢ð ¢ð«À¢ð«³¢Â(J\ªª©Ì(B ªÔ
-ªÀ ¢ðªÁ \|\author| ¢ðª®ª£«´ ª¡¢ð ¢ð«³¢Â(J\(B ©¡ªª©Ì ªÔªÀ ¢ðªÂª£ ¢±«©¢ðª³¢Â¢ð¡ÞªÐª´¢±ªª©Ì ªÔªÀ ¢Â¢ð «´ª¤¡ë(J\«±\ªã\«³¢ðª²\«¡¢Â(B 
-(J\«³\¡ñ\ª±\«À\(B ¢ð«Ò  ©¡©Ð¢ð ¢ð«³¢Â(J\ªª©Ì(B ªÔ¢ð¢Ìª´¡ò¢Ä«Ô¢ðªÂ «À «®¢ðªÁ \|\author| ¢ð«Ò  ¢ð«´ª´ªÓ¢ð ¢ð ¢ðª²¢ðª®¢Â¢ð2
-¢Äª¿¢Â¢ð3¢Äª¿¢Â¢ð\dots ¢ðª²ª¡«ò¢ð¡¯¢ð©¡¢ð¢ð¢ð¢´¢Â(J\¢±(B ¢ë©Î¢ðªÂ «´ª¤¡ë¢ð«£¢Â¢ðª´¡ò¢Ä«Ô¢ðªÂ «´ª¤¡ëª¢«²¢ð«Òª£ª± ªª¢ð ¢ð«³ «À «®¢ðª³
-¢ðªÁ¢Â¢ð «´ª¤¡ë(J\«±\ªã\«³¢ð«Ò\(B (J\«Ñ\©°¢ðª®¢ù«²ª¢ªâ¢ð«´¢Â¢ðª£ª±(B ªª¢ð ¢ð«À¢ð ¢ð«²¢ð¢ð¢Â(J\(B
+¸½ºß¤Î½êÂ°¤Ï \|\paffiliate| ¤òÍÑ¤¤¡¤Æ±ÍÍ¤Ë¥é¥Ù¥ë¡¤½êÂ°Àè¤òµ­½Ò¤¹¤ë¡¥½êÂ°
+Àè¤Ë¤Ï¼«Æ°¤Ç¡Ö¸½ºß¡×¡¤\|\\|¤Î²þ¹Ô¤Ç¡ÖPresently with¡×¤¬ÁÞÆþ¤µ¤ì¤ë¡¥Ãø¼Ô
+Ì¾¤Ï \|\author| ¤ÇÄêµÁ¤¹¤ë¡¥³ÆÃø¼ÔÌ¾¤ÎÄ¾¸å¤Ë¡¤±ÑÊ¸Ãø¼ÔÌ¾¡¤½êÂ°¥é¥Ù¥ë¤È¥á¡¼
+¥ë¥¢¥É¥ì¥¹¤òµ­Æþ¤¹¤ë¡¥Ãø¼Ô¤¬Ê£¿ô¤Î¾ì¹ç¤Ï \|\author| ¤ò·«¤êÊÖ¤¹¤³¤È¤Ç¡¤2
+¿Í¡¤3¿Í¡¤\dots ¤ÈÁý¤¨¤Æ¤¤¤¯¡¥¸½ºß¤Î½êÂ°¤ä¡¤Ê£¿ô¤Î½êÂ°Àè¤òÄÉ²Ã¤¹¤ë¾ì¹ç¤Ë
+¤Ï¡¤½êÂ°¥é¥Ù¥ë¤ò¥«¥ó¥Þ¤Ç¶èÀÚ¤ê¡¤ÄÉ²Ã¤¹¤ì¤Ð¤è¤¤¡¥
 
-¢ð©°¢ð¢Ä¢Â¢ð(J\«¡¢Â(B (J\«³\¡ñ\ª±\«À\(B ª±«Ôª´¢Ì¢ðªÁ ª´ªÂ¢Ì¢ð¢Ì ª£ª® ¢ðª¢¢ð¢Ì¢Â¢ðª±¢Ì¢ð¢ëª¤«©ª±  ªÔ¢ðªÂ(J\¡ñ\ª±\«À\(B ¢ðªÁª±¢Ìª¿¡ß¢ðª²¢ðª´
-¢ð«³¢Â(J\¢ðª´¢ð¢ì¢Â¢ðªÁª¤ª´¢±ªª©Ì(B ªÔªÀ ¢Â¢ð¡ÞªÐª´¢±ªª©Ì ªÔªÀ ¢ðªÁ¢Â¢ðª¢ ¢ðª²ªÀ ¢ð«Òª²  ªÐ¢Âª´ASCII¢Âª³¢ðªÂ¢ù«Øª®«Ò¢ðª®¢ù«²ª¢ªâ¢ð«³¢Â(J\(B
+¤Þ¤¿¡¤¥á¡¼¥ë¥¢¥É¥ì¥¹ÉôÊ¬¤Ï¾ÊÎ¬¤¬²ÄÇ½¤À¤¬¡¤É¬¤ºÂåÉ½¼Ô¤Î¥¢¥É¥ì¥¹¤ÏÉ¬Í×¤È¤Ê
+¤ë¡¥¤Ê¤ª¡¤ÏÂÊ¸Ãø¼ÔÌ¾¡¤±ÑÊ¸Ãø¼ÔÌ¾¤Ï¡¤À«¤ÈÌ¾¤òÈ¾³Ñ¡ÊASCII¡Ë¤Î¶õÇò¤Ç¶èÀÚ¤ë¡¥
 
 %4.2.3
-\subsubsection{  ª¿¡ß} 
+\subsubsection{³µÍ×} 
 
-ªÁª¤ª´¢±¢ðªÂ  ª¿¡ß¢ðªÁ \|abstract| ¡­ª£¢ù ¢ðªÂªª©Á¢ðª³¢Â¢ð
-¡ÞªÐª´¢±¢ðªÂ  ª¿¡ß¢ðªÁ \|eabstract| ¡­ª£¢ù ¢ðªÂªª©Á¢ðª³¢Â¢ð¢ð ¢ð«À¢ð ¢ð«À   ªÒ¢ð ¢ð«³¢Â(J\(B
+ÏÂÊ¸¤Î³µÍ×¤Ï \|abstract| ´Ä¶­¤ÎÃæ¤Ë¡¤
+±ÑÊ¸¤Î³µÍ×¤Ï \|eabstract| ´Ä¶­¤ÎÃæ¤Ë¡¤¤½¤ì¤¾¤ìµ­½Ò¤¹¤ë¡¥
 
 %4.2.4
-\subsubsection{(J\(B ¢Â (J\«Á¢Â(B (J\ª±} (B
+\subsubsection{¥­¡¼¥ï¡¼¥É} 
 
-ªÁª¤ª´¢±¢ðªÂ  ª¿¡ß¢ðªÁ \|jkeyword| ¡­ª£¢ù ¢ðªÂªª©Á¢ðª³¢Â¢ð
-¡ÞªÐª´¢±¢ðªÂ  ª¿¡ß¢ðªÁ \|ekeyword| ¡­ª£¢ù ¢ðªÂªª©Á¢ðª³¢Â¢ð¢ð ¢ð«À¢ð ¢ð«À1¢Âª¡5¢±«À   ªÒ¢ð ¢ð«³¢Â(J\(B
+ÏÂÊ¸¤Î³µÍ×¤Ï \|jkeyword| ´Ä¶­¤ÎÃæ¤Ë¡¤
+±ÑÊ¸¤Î³µÍ×¤Ï \|ekeyword| ´Ä¶­¤ÎÃæ¤Ë¡¤¤½¤ì¤¾¤ì1¡Á5¸ìµ­½Ò¤¹¤ë¡¥
 
 %4.3
-\subsection{ª³ªäª´¢±}
+\subsection{ËÜÊ¸}
 
 %4.3.1
-\subsubsection{¢±   ¢ð }
+\subsubsection{¸«½Ð¤·}
 
-ª¢«¡¢ð«£ ¢îª¢«¡¢ðªÂ¢±   ¢ð ¢ðª³¢ðªÁ \|\section|, \|\subsection|, \|\subsubsection|,
-\|\paragraph| ¢ðª²¢ð¢ð¢ðªª¢ð¢Ä(J\(B (J\©°\«Ñ\ª±¢ð«Ò(B ª²ª¿ªÐ¢ð ¢ð«³¢Â(J\(B
+Àá¤ä¾®Àá¤Î¸«½Ð¤·¤Ë¤Ï \|\section|, \|\subsection|, \|\subsubsection|,
+\|\paragraph| ¤È¤¤¤Ã¤¿¥³¥Þ¥ó¥É¤ò»ÈÍÑ¤¹¤ë¡¥
 
-\<¢ÂªÓª£«´ ª¡¢Â¡ß¢Â¢ð¢ÂªÓª£«´ª¿«ò¢Â¡ß¢ðª´¢ðª±¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ¢Â¢ð\|\newtheorem|¢ðª®ª©¢Ì  ¡­ª£¢ù ¢ð«Òª¢«³¢±ª¢¢ð ¢Â¢ð¢ð 
-¢ðªÂ¡­ª£¢ù ¢ð«Òª¿ªÐ¢ð¢ð¢ð©¡   ªÒ¢ð ¢ð«³¢Â(J\(B
+\<¡ÖÄêµÁ¡×¡¤¡ÖÄêÍý¡×¤Ê¤É¤Ë¤Ä¤¤¤Æ¤Ï¡¤\|\newtheorem|¤ÇÅ¬µ¹´Ä¶­¤òÀë¸À¤·¡¤¤½
+¤Î´Ä¶­¤òÍÑ¤¤¤Æµ­½Ò¤¹¤ë¡¥
 
 %4.3.2
-\subsubsection{ ªÔª¡¡à¢ð«´}
+\subsubsection{¹ÔÁ÷¤ê}
 
-2ªªª´ª¡ª²¢ð«Ò¢ëªÂª¿ªÐ¢ð ¢ð©¡¢ð¢ì¢ð«´¢Â¢ð¢ë¢±¡Þ¢Ã¢ðªÂªªª´¢ðª® ªÔ¢ðªÂ¡­©Ã «¢ª¢©Ð¢ðªÂ¡ëªÀªªªÓ¢ð¢Ì¡ë«Àªª¡ß¢ð ¢ð«³¢ð ¢ðª²¢ð«Ò¢±¢ùª¤¡ø¢ðª²¢ð 
-¢ð©¡¢ð¢ð¢ð«³¢Â(J\¢ð©°¢ð¢Ä¢Â¢ðª¢«¡¢±(B   ¢ð ¢ðª´¢ðª±¢Â¢ð ªÔ¢ðªÂ¡­ªÓ ªÓ¢ð«Òª¤ ¢ð«²¢ð«´¢ð¢Ä¢ð¢´¢ð ¢ð«Ñ¢ðª²¢ðªª¢ð¢Äª´«ò¢ð¢Ì©¡ª±¢ð©Î¢ð«£¢ð ¢ð¢ð
- «À «´¢ðª®¢ðªÁ¢Â¢ð¢ð ¢ðªÂ¢±¢ùª¤¡ø¢ð«Ò «±¢ð«³¢ð«²¢ð¢Ã¢ðª³(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð¢Ì(B  ©¡¡ëª©¢ì¢ðª³(J\(B (J\ªâ¢Â(B (J\(B ¢ð«Òª¡©°©¡©Ð¢ð 
-¢ð«³¢Â(J\¢ð(B ¢ð¢Ä¢ð¢Ì¢ðªª¢ð©¡ª³ªäª´¢±ªª©Á¢ðª®¢ðªÁ \|\vspace| ¢ð«£ \|\vskip| ¢ð«Òª¿ªÐ¢ð¢ð¢ð¢Ä(J\(B (J\ªâ¢Â(B (J\(B ¢ðªÂª£¡­ª¢¡ë
-¢ð«Ò ªÔ¢ðª´¢ð«Á¢ðª´¢ð¢ð¢ð«²¢ð¢Ã¢ðª³¢ð ¢ð«³¢ð ¢ðª²¢Â(J\(B
+2ÃÊÁÈ¤òºÎÍÑ¤·¤Æ¤ª¤ê¡¤º¸±¦¤ÎÃÊ¤Ç¹Ô¤Î´ð½àÀþ¤Î°ÌÃÖ¤¬°ìÃ×¤¹¤ë¤³¤È¤ò¸¶Â§¤È¤·
+¤Æ¤¤¤ë¡¥¤Þ¤¿¡¤Àá¸«½Ð¤·¤Ê¤É¡¤¹Ô¤Î´Ö³Ö¤òÂ¾¤è¤ê¤¿¤¯¤µ¤ó¤È¤Ã¤¿Êý¤¬ÆÉ¤ß¤ä¤¹¤¤
+¾ì½ê¤Ç¤Ï¡¤¤³¤Î¸¶Â§¤ò¼é¤ë¤è¤¦¤Ë¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤¬¼«Æ°Åª¤Ë¥¹¥Ú¡¼¥¹¤òÁÞÆþ¤¹
+¤ë¡¥¤·¤¿¤¬¤Ã¤ÆËÜÊ¸Ãæ¤Ç¤Ï \|\vspace| ¤ä \|\vskip| ¤òÍÑ¤¤¤¿¥¹¥Ú¡¼¥¹¤ÎÄ´À°
+¤ò¹Ô¤Ê¤ï¤Ê¤¤¤è¤¦¤Ë¤¹¤ë¤³¤È¡¥
 
 %4.3.3
-\subsubsection{(J\ªØ\¢í\«Ñ\ª²\(B (J\¢ð\¢ë}(B
+\subsubsection{¥Õ¥©¥ó¥È¥µ¥¤¥º}
 
-(J\ªØ\¢í\«Ñ\ª²\(B (J\¢ð\¢ë¢ðªÁ¢Â¢ð\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ðª³¢ð«²¢ðªª¢ð©¡(B  ©¡¡ëª©¢ì¢ðª³ª¢©Îª£«´¢ð ¢ð«À¢ð«³¢ð¢Ä¢ð«¡¢Â¢ð¡­©Ãª³ªäª©¢ì
-¢ðª³¢ðªÁªª©Ì ªÔ¢ð¢Ì  ª´¢Ì¢ðª®(J\ªØ\¢í\«Ñ\ª²\(B (J\¢ð\¢ë¢ð«Òª´ªÐ(B  ¢ð ¢ð«³ª±¢Ìª¿¡ß¢ðªÁ¢ðª´¢ð¢ð¢Â(J\(B
+¥Õ¥©¥ó¥È¥µ¥¤¥º¤Ï¡¤¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤Ë¤è¤Ã¤Æ¼«Æ°Åª¤ËÀßÄê¤µ¤ì¤ë¤¿¤á¡¤´ðËÜÅª
+¤Ë¤ÏÃø¼Ô¤¬¼«Ê¬¤Ç¥Õ¥©¥ó¥È¥µ¥¤¥º¤òÊÑ¹¹¤¹¤ëÉ¬Í×¤Ï¤Ê¤¤¡¥
 
 %4.3.4
-\subsubsection{¢ù«®©¡ª±ª©ª¢}
+\subsubsection{¶çÆÉÅÀ}
 
-¢ù«®ª©ª¢¢ðª³¢ðªÁª¡¡­ ªÐ¢ðªÂ¢ÂªÓ¢Â(J\¢Â¡ß¢Â¢ð©¡ª±ª©ª¢¢ðª³¢ðªÁª¡¡­(B ªÐ¢ðªÂ¢ÂªÓ¢Â¢ð¢Â¡ß¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\¢ð¢Ä¢ðª¢¢ð(B ¡ÞªÐª´¢±ªª©Á¢ð«£¢Ä«Ô ¡ëªª©Á
-¢ðª®¢ÂªÓ.¢Â¡ß¢ð«£¢ÂªÓ,¢Â¡ß¢ð«Ò ª²¢ð¢Ã «À «®¢ðª³¢ðªÁ¢Â¢ðª²  ªÐª´¢± «â¢ð«Ò ª²¢ð¢Ã¢Â(J\¢ÂªÓ¢Â¡ò¢Â¡ß¢ð«£¢ÂªÓ¢Â¡ñ¢Â¡ß¢ðªÁ(B ª²¢ð«Á¢ðª´¢ð¢ð¢Â(J\(B
+¶çÅÀ¤Ë¤ÏÁ´³Ñ¤Î¡Ö¡¥¡×¡¤ÆÉÅÀ¤Ë¤ÏÁ´³Ñ¤Î¡Ö¡¤¡×¤òÍÑ¤¤¤ë¡¥¤¿¤À¤·±ÑÊ¸Ãæ¤ä¿ô¼°Ãæ
+¤Ç¡Ö.¡×¤ä¡Ö,¡×¤ò»È¤¦¾ì¹ç¤Ë¤Ï¡¤È¾³ÑÊ¸»ú¤ò»È¤¦¡¥¡Ö¡£¡×¤ä¡Ö¡¢¡×¤Ï»È¤ï¤Ê¤¤¡¥
 
 %4.3.5
-\subsubsection{ª¡¡­ ªÐª´¢± «â¢ðª²ª²  ªÐª´¢± «â}
+\subsubsection{Á´³ÑÊ¸»ú¤ÈÈ¾³ÑÊ¸»ú}
 
-ª¡¡­ ªÐª´¢± «â¢ðª²ª²  ªÐª´¢± «â¢ðªÂªÂ ª´«ò¢ðª³¢ð¡ñ¢ð«³ª´¢± «â¢ðªÁ ¢Â¢ðªÂ¢ð«²¢ð¢Ã¢ðª³ ª²¢ð¢ðª´¢Ì¢ð¡Þ¢ð«³¢Â(J\(B
+Á´³ÑÊ¸»ú¤ÈÈ¾³ÑÊ¸»ú¤ÎÎ¾Êý¤Ë¤¢¤ëÊ¸»ú¤Ï¼¡¤Î¤è¤¦¤Ë»È¤¤Ê¬¤±¤ë¡¥
 
 \begin{enumerate}
-\item  «®¢±ªÀ¢ðªÁª¡¡­ ªÐ¢ðªÂ¢ÂªÓ¢Âª´¢Â¡ß¢ðª²¢ÂªÓ¢Âª³¢Â¡ß¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\ªª¡ñ¢ð(B ¢Â¢ð¡ÞªÐª´¢±¢ðªÂ  ª¿¡ß¢Â¢ð¢Ä©°ª± ¢±   ¢ð ¢Â¢ð
- «Ð «Á(J\ª®¢Â(B (J\¢Ä¢ðª®¢ðªÁª²(B  ªÐ¢ðªÂ¢ÂªÓ(¢Â¡ß¢ðª²¢ÂªÓ)¢Â¡ß¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\(B
+\item ³ç¸Ì¤ÏÁ´³Ñ¤Î¡Ö¡Ê¡×¤È¡Ö¡Ë¡×¤òÍÑ¤¤¤ë¡¥Ã¢¤·¡¤±ÑÊ¸¤Î³µÍ×¡¤¿ÞÉ½¸«½Ð¤·¡¤
+½ñ»ï¥Ç¡¼¥¿¤Ç¤ÏÈ¾³Ñ¤Î¡Ö(¡×¤È¡Ö)¡×¤òÍÑ¤¤¤ë¡¥
 
-\item ¡ÞªÐ¢Ä«Ô «â¢Â¢ð¢ù«Øª®«Ò¢Â¢ð   ©ÁªÂ«¢¢ðªÁª²  ªÐª´¢± «â¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\¢ð¢Ä¢ðª¢¢ð(B ¢Â¢ð¢ù«®©¡ª±ª©ª¢¢ðª³¡­©¬¢ð ¢ð©¡¢ðªÁ¢Â¢ð
-ª¡¡ë «¢¢ðª® ªÒ¢ðªã¢ð¢Ä¢ð«²¢ð¢Ã¢ðª´ªÂ«ª ¡ë¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\(B
+\item ±Ñ¿ô»ú¡¤¶õÇò¡¤µ­¹æÎà¤ÏÈ¾³ÑÊ¸»ú¤òÍÑ¤¤¤ë¡¥¤¿¤À¤·¡¤¶çÆÉÅÀ¤Ë´Ø¤·¤Æ¤Ï¡¤
+Á°¹à¤Ç½Ò¤Ù¤¿¤è¤¦¤ÊÎã³°¤¬¤¢¤ë¡¥
 
-\item (J\(B (J\¢Ä\(B (J\ª´¢ðªÁª¡¡­(B ªÐª´¢± «â¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\(B
+\item ¥«¥¿¥«¥Ê¤ÏÁ´³ÑÊ¸»ú¤òÍÑ¤¤¤ë¡¥
 
-\item ¡ë«âª¿ªÐª±«£¢ðª®¢ðªÁ  ¢ð ¢ðª²ª´ª£¢ð¢±¢ð«Ò¢ù«²ª´ªÀ¢ð ¢ð«³¢Â(J\(B
-  ¢ð ¢ðª³¢ðªÁ \|``| ¢ð«Òª¿ªÐ¢ð¢ð¢Â¢ðª´ª£¢ð¢±¢ðª³¢ðªÁ\|''| ¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\(B
+\item °úÍÑÉä¤Ç¤Ï³«¤­¤ÈÊÄ¤¸¤ò¶èÊÌ¤¹¤ë¡¥
+³«¤­¤Ë¤Ï \|``| ¤òÍÑ¤¤¡¤ÊÄ¤¸¤Ë¤Ï\|''| ¤òÍÑ¤¤¤ë¡¥
 \end{enumerate}
 
 %4.3.6
-\subsubsection{ ªØ «Ò «Ð}
+\subsubsection{²Õ¾ò½ñ}
 
- ªØ «Ò «Ð¢ðª³¡­©¬¢ð ¢ð«³ ª¡ ¡ë¢ð«Ò©¡ªª¢ðª³ª£«´¢ð«¡¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢Â(J\(B «À «®¢ðª³¡Þ©Ð¢ð¢±¢ð©¡ª±¢± «¢ª©¢ì¢ðª´ \|enumerate|,
-\|itemize|, \|description| ¢ðªÂ¡­ª£¢ù ¢ð«Òª¿ªÐ¢ð¢ð¢ð©¡¢ð«²¢ð¢ð¢Â(J\(B
+²Õ¾ò½ñ¤Ë´Ø¤¹¤ë·Á¼°¤òÆÃ¤ËÄê¤á¤Æ¤¤¤Ê¤¤¡¥¾ì¹ç¤Ë±þ¤¸¤ÆÉ¸½àÅª¤Ê \|enumerate|,
+\|itemize|, \|description| ¤Î´Ä¶­¤òÍÑ¤¤¤Æ¤è¤¤¡¥
 
 
 %4.3.7
-\subsubsection{ ªÑªª«¿}
+\subsubsection{µÓÃí}
 
- ªÑªª«¿¢ðªÁ \|\footnote| (J\(B (J\©°\«Ñ\ª±¢ð«Ò(B ª²¢ðªª¢ð©¡ «Ð¢ð¢´¢ðª²¢Â¢ð(J\ªâ¢Â(B (J\¢±ªª¡Þ¡ëªÀ¢ðª³\footnote{(B ªÑªª«¿¢ðªÂ
-ªÂ«ª¢Â(J\}¢ð«£\footnote{©¡«Ñ¢ðª£¢ð«¡¢ðªÂ(B ªÑªª«¿¢Â(J\}¢ðªÂ¢ð«²¢ð¢Ã¢ðª´(B   ª²   ©Á¢ðª²¢ðª²¢ð«¤¢ðª³ ªÑªª«¿¢ð¢Ìª¢¢±ª¢¢î¢ð ¢ð«À¢ð«³¢Â(J\(B
-¢ðª´¢ð¢ì¢Â¢ð(J\ªâ¢Â(B (J\¢±©¡«¤¢ðª³ª´¡ò¢Ä«Ô¢ðªÂ(B ªÑªª«¿¢ð¢Ì¢ð¡ñ¢ð«³ «À «®¢Â¢ð   ª²   ©Á¢ðªÁ \LaTeX ¢ð«Ò2 «Ñ ª¤ ªÔ¢ð ¢ðª´¢ð¢ð
-¢ðª²ª¢ ¢ð ¢ð¢´¢ðª´¢ð«±¢ðª´¢ð¢ð¢ð ¢ðª²¢ðª³ªª«¿¡ëªØ¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+µÓÃí¤Ï \|\footnote| ¥³¥Þ¥ó¥É¤ò»È¤Ã¤Æ½ñ¤¯¤È¡¤¥Ú¡¼¥¸Ã±°Ì¤Ë\footnote{µÓÃí¤Î
+Îã¡¥}¤ä\footnote{Æó¤Ä¤á¤ÎµÓÃí¡¥}¤Î¤è¤¦¤Ê»²¾Èµ­¹æ¤È¤È¤â¤ËµÓÃí¤¬À¸À®¤µ¤ì¤ë¡¥
+¤Ê¤ª¡¤¥Ú¡¼¥¸Æâ¤ËÊ£¿ô¤ÎµÓÃí¤¬¤¢¤ë¾ì¹ç¡¤»²¾Èµ­¹æ¤Ï \LaTeX ¤ò2²ó¼Â¹Ô¤·¤Ê¤¤
+¤ÈÀµ¤·¤¯¤Ê¤é¤Ê¤¤¤³¤È¤ËÃí°Õ¤µ¤ì¤¿¤¤¡¥
 
-¢ð©°¢ð¢Ä «À «®¢ðª³¢ð«²¢ðªª¢ð©¡¢ðªÁ¢Â¢ð ªÑªª«¿¢ð«Ò¢ðª£¢ð¡Þ¢ð¢Ä¡ëªÀªªªÓ¢ðª² ªÑªª«¿ª³ªäª¤ªÂ¢ðª²¢ð«Òª´ªÀ¢ðªÂªªª´¢ðª³ªªªÓ¢ð¢´ª´«ò¢ð¢Ì¢ð«²¢ð¢ð¢ð 
-¢ðª²¢ð«¤¢ð¡ñ¢ð«³¢Â(J\¢ð(B ¢ðªÂ «À «®¢ðª³¢ðªÁ¢Â¢ð\|\footnotemark| (J\(B (J\©°\«Ñ\ª±¢ð«£ \|\footnotetext| \(B 
-(J\©°\«Ñ\ª±¢ð«Ò(B ª²¢ðªª¢ð©¡ª¤  «²¢ð ¢ð©¡¢ð¢ð¢ð¢Ä¢ðª¢¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+¤Þ¤¿¾ì¹ç¤Ë¤è¤Ã¤Æ¤Ï¡¤µÓÃí¤ò¤Ä¤±¤¿°ÌÃÖ¤ÈµÓÃíËÜÂÎ¤È¤òÊÌ¤ÎÃÊ¤ËÃÖ¤¯Êý¤¬¤è¤¤¤³
+¤È¤â¤¢¤ë¡¥¤³¤Î¾ì¹ç¤Ë¤Ï¡¤\|\footnotemark| ¥³¥Þ¥ó¥É¤ä \|\footnotetext| ¥³
+¥Þ¥ó¥É¤ò»È¤Ã¤ÆÂÐ½è¤·¤Æ¤¤¤¿¤À¤­¤¿¤¤¡¥
 
-¢ðª´¢ð¢ì¢Â¢ð ªÑªª«¿ª²ªÓ ©Á¢ðªÁªÁª¢ª´¢±©¡«¤¢ðª®ª£ªÀ¢ð ª²ªÓ ©Á¢ðª®  ªÂªÁ¢ð ¢ð«À¢ð«³¢Â(J\(B
+¤Ê¤ª¡¤µÓÃíÈÖ¹æ¤ÏÏÀÊ¸Æâ¤ÇÄÌ¤·ÈÖ¹æ¤Ç½ÐÎÏ¤µ¤ì¤ë¡¥
 
 %4.3.8
-\subsubsection{Overfull¢ðª²Underfull}
+\subsubsection{Overfull¤ÈUnderfull}
 
-ª¡ª²ª²ª® ©Ð¢ðª³¢ðªÁoverfull¢ð«Ò ¢´¢ð ¢ð ¢ðª´¢ð¢ð¢ð ¢ðª²¢ð«Ò¢±¢ùª¤¡ø¢ðª²¢ð ¢ð©¡¢ð¢ð¢ð«³¢Â(J\(B  ¢ðªª¢ð©¡¢Â¢ð¢ð©°¢ð¢ëª£«Ñ  ¢ð ¢ð«³
-(J\(B ¢Â (J\(B ¢ð¢Ìªª©Ì ªÔ¢ðªÂ¡­ª£¢ù ¢ðª®overfull¢ð«Ò ¢´¢ð ¢ð ¢ðª´¢ð¢ð¢ð«²¢ð¢Ã¢ðª³¢Â¢ðª´¢± ªÁ¢ð«Ò ¢íª±¡ß¢ð ¢ð«³¢ðª´¢ðª±¢ðªÂ¢ëª®ª¡¡Þ
-¢ðªÂª©©¬ªÂªÁ¢ð«Òª´¡ø¢ðªª¢ð©¡¢ð¢ð¢ð¢Ä¢ðª¢¢ð ¢ð¢Ä¢ð¢ð¢Â(J\ªª¡ñ¢ð(B ¢Â¢ð\|flushleft| ¡­ª£¢ù ¢Â¢ð\|\\|¢Â¢ð
-\|\linebreak| ¢ðª´¢ðª±¢ðª³¢ð«²¢ð«³ªÂ ªª ª¤ ¢ð¡¯¢ð«Ò¢ð ¢ðª´¢ð¢ð ª¡¢ðª®¢ðªÂoverfull¢ðªÂ «Ñª²«Ò¢ðªÁ¢Â¢ð¢ðª®¢ð ¢ð«³¢ðª¢
-¢ð¡Þª²«Ò¢ð¡Þ¢ð©¡¢ð¢ð¢ð¢Ä¢ðª¢¢ð ¢ð¢Ä¢ð¢ð¢Â(J\¢ð©°¢ð¢Äªª©Ì(B ªÔ¢ðªÂ  ª±¢î ©Ðª©ª¢¢ðª®¢ðªÁª²¢´ª¢¢±¢ð ¢ðª´¢ð¢ðoverfull¢ð¢Ì¢Â¢ðª¡ª²ª²ª® ©Ð
-¢ðªÂ¡­ª£¢ù ¢ðª®¢ðªÁª²¢´ª¢¢±¢ð ¢ð«³¢ð ¢ðª²¢ð«¤¢ð¡ñ¢ð«³¢Â(J\¢ð(B ¢ðªÂ¢ð«²¢ð¢Ã¢ðª´ «Óª¤ªÓ¢ð«Ò¢ðª®¢ð ¢ð«³¢ðª¢¢ð¡Þ «Ñª²«Ò¢ð ¢ð«³¢ð¢Ä¢ð«¡¢ðª³¢Â¢ð
-ª´¢±ªª©Á¢ðªÂª£ ¢ð¢ð¢Ä«Ô ¡ë¢ð«£ \|\verb| ¢ð«Òª²«Ò¢ð¡Þ¢ð«³¢Â¢ð(J\ªÐ\«±\¡ë\«±\ªØ¢ðªÂª¢«²©¡¢Ìª±ªØ¢ù«¡¢ðª®¢ðªÁª£(B ¢ð¢ð¡ÞªÐªª¡Þ¢±«À¢ð«Ò
- ª²ª¿ªÐ¢ð ¢ðª´¢ð¢ð¢Â¢ð¢ðª´¢ðª±¢ðªÂªª«¿¡ëªØ¢ð«Òª´¡ø¢ð¢Ã¢ð«²¢ð¢Ã¢ðª³¢ð ¢ð©¡ª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+ÁÈÈÇ»þ¤Ë¤Ïoverfull¤òµ¯¤³¤µ¤Ê¤¤¤³¤È¤ò¸¶Â§¤È¤·¤Æ¤¤¤ë¡¥½¾¤Ã¤Æ¡¤¤Þ¤ºÄó½Ð¤¹¤ë
+¥½¡¼¥¹¤¬Ãø¼Ô¤Î´Ä¶­¤Çoverfull¤òµ¯¤³¤µ¤Ê¤¤¤è¤¦¤Ë¡¤Ê¸¾Ï¤ò¹©É×¤¹¤ë¤Ê¤É¤ÎºÇÁ±
+¤ÎÅØÎÏ¤òÊ§¤Ã¤Æ¤¤¤¿¤À¤­¤¿¤¤¡¥Ã¢¤·¡¤\|flushleft| ´Ä¶­¡¤\|\\|¡¤
+\|\linebreak| ¤Ê¤É¤Ë¤è¤ëÎ¾Ã¼Â·¤¨¤ò¤·¤Ê¤¤·Á¤Ç¤Îoverfull¤Î²óÈò¤Ï¡¤¤Ç¤­¤ë¤À
+¤±Èò¤±¤Æ¤¤¤¿¤À¤­¤¿¤¤¡¥¤Þ¤¿Ãø¼Ô¤Î¼¹É®»þÅÀ¤Ç¤ÏÈ¯À¸¤·¤Ê¤¤overfull¤¬¡¤ÁÈÈÇ»þ
+¤Î´Ä¶­¤Ç¤ÏÈ¯À¸¤¹¤ë¤³¤È¤â¤¢¤ë¡¥¤³¤Î¤è¤¦¤Ê»öÂÖ¤ò¤Ç¤­¤ë¤À¤±²óÈò¤¹¤ë¤¿¤á¤Ë¡¤
+Ê¸Ãæ¤ÎÄ¹¤¤¿ô¼°¤ä \|\verb| ¤òÈò¤±¤ë¡¤¥Ñ¥é¥°¥é¥Õ¤ÎÀèÆ¬ÉÕ¶á¤Ç¤ÏÄ¹¤¤±ÑÃ±¸ì¤ò
+»ÈÍÑ¤·¤Ê¤¤¡¤¤Ê¤É¤ÎÃí°Õ¤òÊ§¤¦¤è¤¦¤Ë¤·¤ÆÄº¤­¤¿¤¤¡¥
 
 %4.4
-\subsection{¢Ä«Ô ¡ë}\label{sec:Item}
+\subsection{¿ô¼°}\label{sec:Item}
 
 %4.4.1
-\subsubsection{ª³ªäª´¢±ªª©Á¢ðªÂ¢Ä«Ô ¡ë}
+\subsubsection{ËÜÊ¸Ãæ¤Î¿ô¼°}
 
-ª³ªäª´¢±ªª©Á¢ðªÂ¢Ä«Ô ¡ë¢ðªÁ \|$| ¢ðª² \|$|, \|\(| ¢ðª² \|\)|, ¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁ \|math| ¡­ª£¢ù ¢ðªÂ¢ð¢ð¢ð¢ë
-¢ð«À¢ðª®¡ëªÁ¢ð«Ñ¢ðª®¢ð«¤¢ð«²¢ð¢ð¢Â(J\(B
+ËÜÊ¸Ãæ¤Î¿ô¼°¤Ï \|$| ¤È \|$|, \|\(| ¤È \|\)|, ¤¢¤ë¤¤¤Ï \|math| ´Ä¶­¤Î¤¤¤º
+¤ì¤Ç°Ï¤ó¤Ç¤â¤è¤¤¡¥
 
 %4.4.2
-\subsubsection{ª´ªÀª¡ª²¢ðªÂ¢Ä«Ô ¡ë}
+\subsubsection{ÊÌÁÈ¤Î¿ô¼°}
 
-ª´ªÀª¡ª²¢Ä«Ô ¡ë(displayed math)¢ðª³¢ðª£¢ð¢ð¢ð©¡¢ðªÁ \|$$| ¢ðª² \|$$| ¢ðªÁ ª²ª¿ªÐ¢ð ¢ð¢ë¢ðª³¢Â¢ð\|\[| ¢ðª² 
-\|\]| ¢ðª®¡ëªÁ¢ð«¢¢ð ¢Â¢ð\|displaymath|, \|equation|, \|eqnarray| ¢ðªÂ¢ð¢ð¢ð¢ë¢ð«À¢ð ¢ðªÂ¡­ª£
-¢ù ¢ð«Òª¿ªÐ¢ð¢ð¢ð«³¢Â(J\¢ð(B ¢ð«À¢ð«±¢ðªÁ
+ÊÌÁÈ¿ô¼°(displayed math)¤Ë¤Ä¤¤¤Æ¤Ï \|$$| ¤È \|$$| ¤Ï»ÈÍÑ¤»¤º¤Ë¡¤\|\[| ¤È 
+\|\]| ¤Ç°Ï¤à¤«¡¤\|displaymath|, \|equation|, \|eqnarray| ¤Î¤¤¤º¤ì¤«¤Î´Ä
+¶­¤òÍÑ¤¤¤ë¡¥¤³¤ì¤é¤Ï
 %
 \begin{equation}
 \Delta_l = \sum_{i=l|1}^L\delta_{pi}
 \end{equation}
 %
-¢ðªÂ¢ð«²¢ð¢Ã¢ðª³¢Â¢ð(J\(B (J\«Ñ\¢Ä\«´\«Ñ\¡ë¢ðª®¢ðªÁ¢ðª´¢ð¢´¢±ª®ª£«´(B «â  ¢ð ¢ðª®¢Ä«Ô ¡ë¢ð«Ò  ªÂªÁ¢ð ¢Â¢ð¢ð ¢ðª£ª®©¬¢ð¢Ì «¤¢ð¢ð¢Ä«Ô ¡ë
-¢ðª³¢ð«²¢ð«³ ªÔª¡¡à¢ð«´¢ðªÂª¿©Ã¢ð«À¢ð«Ò ªå «ò¢ð ¢ð«³ ¢Âª® ¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\(B
+¤Î¤è¤¦¤Ë¡¤¥»¥ó¥¿¥ê¥ó¥°¤Ç¤Ï¤Ê¤¯¸ÇÄê»ú²¼¤²¤Ç¿ô¼°¤ò½ÐÎÏ¤·¡¤¤«¤ÄÇØ¤¬¹â¤¤¿ô¼°
+¤Ë¤è¤ë¹ÔÁ÷¤ê¤ÎÍð¤ì¤òµÛ¼ý¤¹¤ëµ¡Ç½¤¬¤¢¤ë¡¥
 
 %4.4.3
-\subsubsection{eqnarray¡­ª£¢ù }
+\subsubsection{eqnarray´Ä¶­}
 
-¢±©Î¢ð¢ð¢ðª³¡­©¬ªÁ¡ñ¢ð ¢ð«³ª´ªÀª¡ª²¢ðªÂ¢Ä«Ô ¡ë¢ð¢Ì2 ªÔ¡ëª´ «©ªÁ¡ñª¤ ¢ð ¢ð©¡¢± ¢ð«À¢ð«³ «À «®¢ðª³¢ðªÁ¢Â¢ðªª¡Þ¢ðª³\|\[| ¢ðª² 
-\|\]|¢Â¢ð¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁ \|\begin{equation}| ¢ðª²\|\end{equation}| ¢ðª®¡ëªÁ¢ðªª¢ð¢Ä¢Ä«Ô ¡ë¢ð«Ò «Ð
-¢ð ª´ª¤¢ðªã¢ð«³¢ðªÂ¢ðª®¢ðªÁ¢ðª´¢ð¢´¢Â¢ð\|\begin|\allowbreak\|{eqnarray}| ¢ðª² 
-\|\end{eqnarray}| ¢ð«Ò ª²¢ðªª¢ð©¡¢Â¢ðª©«ã ©Á¢Âª´¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁª±ªÔª©«ã ©Á¢Âª³¢ðªÂ¡ëªÀªªªÓ¢ðª® ª£ª¤ ¢ð¡¯¢ð«Ò ªÔ¢ðª´¢ðªª
-¢ð¢Äª´«ò¢ð¢Ì©¡ª±¢ð©Î¢ð«£¢ð ¢ð¢ð¢Â(J\(B
+¸ß¤¤¤Ë´ØÏ¢¤¹¤ëÊÌÁÈ¤Î¿ô¼°¤¬2¹Ô°Ê¾åÏ¢Â³¤·¤Æ¸½¤ì¤ë¾ì¹ç¤Ë¤Ï¡¤Ã±¤Ë\|\[| ¤È 
+\|\]|¡¤¤¢¤ë¤¤¤Ï \|\begin{equation}| ¤È\|\end{equation}| ¤Ç°Ï¤Ã¤¿¿ô¼°¤ò½ñ
+¤­ÊÂ¤Ù¤ë¤Î¤Ç¤Ï¤Ê¤¯¡¤\|\begin|\allowbreak\|{eqnarray}| ¤È 
+\|\end{eqnarray}| ¤ò»È¤Ã¤Æ¡¤Åù¹æ¡Ê¤¢¤ë¤¤¤ÏÉÔÅù¹æ¡Ë¤Î°ÌÃÖ¤Ç½ÄÂ·¤¨¤ò¹Ô¤Ê¤Ã
+¤¿Êý¤¬ÆÉ¤ß¤ä¤¹¤¤¡¥
 
 %4.4.4
-\subsubsection{¢Ä«Ô ¡ë¢ðªÂ(J\ªØ\¢í\«Ñ\ª²}(B
+\subsubsection{¿ô¼°¤Î¥Õ¥©¥ó¥È}
 
-\LaTeX ¢ð¢Ìª±¢± «¢ª©¢ì¢ðª³(J\(B (J\ªò¢Â(B (J\ª²¢ð(B ¢ð©¡¢ð¢ð¢ð«³¢ð«¤¢ðªÂ¡ëª´ ¡ë¢ðªÂ©¡ªª «À¢ðª´¢Ä«Ô ¡ëª¿ªÐ(J\ªØ\¢í\«Ñ\ª²¢ðªÁ¢Â¢ð¢ðª®¢ð(B 
-¢ð«³¢ðª¢¢ð¡Þ ª²¢ð«Á¢ðª´¢ð¢ð¢ð«²¢ð¢Ã¢ðª³¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\¢ðª±¢ð¢Ã¢ð(B ¢ð©¡¢ð«¤ ª²ª¿ªÐ¢ð ¢ðª´¢ð¡Þ¢ð«À¢ð ¢ðª´¢ð«±¢ðª´¢ð¢ð «À «®¢ðª³¢ðªÁ¢Â¢ð
-¢ð ¢ðªÂ ªò¢Ä ¢ð   ¢ð©¡ª£¢ë¢ð¢´¢ðª²¢ðª²¢ð«¤¢ðª³¢Â¢ðª¡ª²ª²ª® ¢íª£©Ì¢ðª³¢Ä ¢ð¢´¡­©¬ª¿¢Ä¢ð ¢ð©¡ª£¢ë¢ð¢´¢ð ¢ðª²¢ð«¤¢ð¡ñ¢ð«³¢ð ¢ðª²¢ðª³ªÂ¡Þ
-¡ëªØ¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\(B
+\LaTeX ¤¬É¸½àÅª¤Ë¥µ¥Ý¡¼¥È¤·¤Æ¤¤¤ë¤â¤Î°Ê³°¤ÎÆÃ¼ì¤Ê¿ô¼°ÍÑ¥Õ¥©¥ó¥È¤Ï¡¤¤Ç¤­
+¤ë¤À¤±»È¤ï¤Ê¤¤¤è¤¦¤Ë¤µ¤ì¤¿¤¤¡¥¤É¤¦¤·¤Æ¤â»ÈÍÑ¤·¤Ê¤±¤ì¤Ð¤Ê¤é¤Ê¤¤¾ì¹ç¤Ë¤Ï¡¤
+¤½¤Î»Ý¿½¤·½Ð¤ÆÄº¤¯¤È¤È¤â¤Ë¡¤ÁÈÈÇ¹©Äø¤Ë¿¼¤¯´ØÍ¿¤·¤ÆÄº¤¯¤³¤È¤â¤¢¤ë¤³¤È¤ËÎ±
+°Õ¤µ¤ì¤¿¤¤¡¥
 
 \begin{figure}[tb]
 \setbox0\vbox{
 \hbox{\|\begin{figure}[tb]|}
-\hbox{\quad \|<|¢Ä©°ª³ªäª¤ªÂ¢ðªÂ ©¬ª£«´\|>|}
-\hbox{\|\caption{<|ªÁª¤ª´¢±¢±   ¢ð \|>}|}
-\hbox{\|\ecaption{<|¡ÞªÐª´¢±¢±   ¢ð \|>}|}
+\hbox{\quad \|<|¿ÞËÜÂÎ¤Î»ØÄê\|>|}
+\hbox{\|\caption{<|ÏÂÊ¸¸«½Ð¤·\|>}|}
+\hbox{\|\ecaption{<|±ÑÊ¸¸«½Ð¤·\|>}|}
 \hbox{\|\label{| $\ldots$ \|}|}
 \hbox{\|\end{figure}|}
 }
 \centerline{\fbox{\box0}}
-\caption{1ªªª´ª±«ò¢ðªÂ¢Ä©°}
+\caption{1ÃÊÉý¤Î¿Þ}
 \ecaption{Single column figure with caption\\
 explicitly broken by $\backslash\backslash$.}
 \label{fig:single}
 \end{figure}
 
 %4.5
-\subsection{¢Ä©°}
+\subsection{¿Þ}
 
-1ªªª´¢ðªÂª±«ò¢ðª³¢ð¢ì¢ð ¢ð©°¢ð«³¢Ä©°¢ðªÁ¢Â¢ð\figref{fig:single} ¢ðªÂ ª¡ ¡ë¢ðª® ©¬ª£«´¢ð ¢ð«³¢Â(J\¡ëªÀªªªÓ¢ðªÂ(B ©¬ª£«´
-¢ðª³ \|h| ¢ðªÁ ª²¢ð«Á¢ðª´¢ð¢ð¢Â(J\¢ð©°¢ð¢Ä¢Â¢ð¢Ä©°¢ðªÂ(B  ¢ðª³ªÁª¤ª´¢±¢ðª²¡ÞªÐª´¢±¢ðªÂª¡ ª´«ò¢ðªÂ¢±   ¢ð ¢ð«Ò¢Â¢ð
-\|\caption| ¢ðª² \|\ecaption| ¢ðª® ©¬ª£«´¢ð ¢ð«³¢Â(J\ª´¢±(B «â¢Ä«Ô¢ð¢Ìª¤¢Ä¢ð¢ð¢±   ¢ð ¢ðªÁ¢ðªÁ  ©¡¡ëª©¢ì¢ðª³ ©Ð
- ªÔ¢ð ¢ð©¡¢ëª®ª¤«®ª±«ò¢ðªÂ ªÔ¢ð«Ò¡­©Ã «¢¢ðª³(J\(B (J\«Ñ\¢Ä\«´\«Ñ\¡ë¢ð(B ¢ð«³¢ð¢Ì¢Â¢ð¢±   ¢ð ¢ð¢Ì2 ªÔ¢ðª³¢ðª´¢ð«³ «À «®¢ðª³¢ðªÁª©¢Ì
-   \|\\| ¢ð«Òª¡©°©¡©Ð¢ð ¢ð©¡ ©Ð ªÔ¢ð ¢ð¢Ä¢ðªå¢ð¢Ã¢ð¢ÌªÂª±¢ð¢ð «³ ªÀ¢ðª²¢ðª´¢ð«³¢ð ¢ðª²¢ð¢Ì¢ð ¢ð ¢ð ¢ð ¢ð¡ñ¢ð«³
-¢Âª´\figref{fig:single} ¢ðªÂ¡ÞªÐª´¢±¢±   ¢ð ¢ð«Ò   ª²¢Âª³¢Â(J\¢Ä©°¢ðªÂ(B   ª²¢ðªÁ \|\figref{<|(J\«±\ªã(B
-(J\«³\|>}| ¢ð«Òª¿ªÐ¢ð¢ð¢ð©¡(B ªÔ¢ðª´¢ð¢Ã¢Â(J\(B
+1ÃÊ¤ÎÉý¤Ë¤ª¤µ¤Þ¤ë¿Þ¤Ï¡¤\figref{fig:single} ¤Î·Á¼°¤Ç»ØÄê¤¹¤ë¡¥°ÌÃÖ¤Î»ØÄê
+¤Ë \|h| ¤Ï»È¤ï¤Ê¤¤¡¥¤Þ¤¿¡¤¿Þ¤Î²¼¤ËÏÂÊ¸¤È±ÑÊ¸¤ÎÁÐÊý¤Î¸«½Ð¤·¤ò¡¤
+\|\caption| ¤È \|\ecaption| ¤Ç»ØÄê¤¹¤ë¡¥Ê¸»ú¿ô¤¬Â¿¤¤¸«½Ð¤·¤Ï¤Ï¼«Æ°Åª¤Ë²þ
+¹Ô¤·¤ÆºÇÂçÉý¤Î¹Ô¤ò´ð½à¤Ë¥»¥ó¥¿¥ê¥ó¥°¤¹¤ë¤¬¡¤¸«½Ð¤·¤¬2¹Ô¤Ë¤Ê¤ë¾ì¹ç¤Ë¤ÏÅ¬
+µ¹ \|\\| ¤òÁÞÆþ¤·¤Æ²þ¹Ô¤·¤¿¤Û¤¦¤¬ÎÉ¤¤·ë²Ì¤È¤Ê¤ë¤³¤È¤¬¤·¤Ð¤·¤Ð¤¢¤ë
+¡Ê\figref{fig:single} ¤Î±ÑÊ¸¸«½Ð¤·¤ò»²¾È¡Ë¡¥¿Þ¤Î»²¾È¤Ï \|\figref{<|¥é¥Ù
+¥ë\|>}| ¤òÍÑ¤¤¤Æ¹Ô¤Ê¤¦¡¥
 
 \begin{figure}[tb]
 \begin{minipage}[t]{0.5\columnwidth}
@@ -525,13 +473,13 @@ explicitly broken by $\backslash\backslash$.}
 \hbox{\|\end{minipage}|}}
 \hbox{}
 \centerline{\fbox{\box0}}
-\caption{\protect\tabref*{tab:right} ¢ðªÂªª©Á¢Äª²}
+\caption{\protect\tabref*{tab:right} ¤ÎÃæ¿È}
 \ecaption{Contents of Table \protect\ref{tab:right}.}
 \label{fig:left}
 \end{minipage}%
 \begin{minipage}[t]{0.5\columnwidth}
 \CaptionType{table}
-\caption{\protect\figref*{fig:left} ¢ðª®¢ë«Âª¢¢î¢ð ¢ð¢Äª± }
+\caption{\protect\figref*{fig:left} ¤ÇºîÀ®¤·¤¿É½}
 \ecaption{A table built by\\ Fig.\,\protect\ref{fig:left}.}
 \label{tab:right}
 \vskip1mm
@@ -546,54 +494,54 @@ L2&C2&R2\\\hline
 \begin{figure*}[tb]
 \setbox0\vbox{\large
 \hbox{\|\begin{figure*}[t]|}
-\hbox{\quad \|<|¢Ä©°ª³ªäª¤ªÂ¢ðªÂ ©¬ª£«´\|>|}
-\hbox{\|\caption{<|ªÁª¤ª´¢±¢±   ¢ð \|>}|}
-\hbox{\|\ecaption{<|¡ÞªÐª´¢±¢±   ¢ð \|>}|}
+\hbox{\quad \|<|¿ÞËÜÂÎ¤Î»ØÄê\|>|}
+\hbox{\|\caption{<|ÏÂÊ¸¸«½Ð¤·\|>}|}
+\hbox{\|\ecaption{<|±ÑÊ¸¸«½Ð¤·\|>}|}
 \hbox{\|\label{| $\ldots$ \|}|}
 \hbox{\|\end{figure*}|}}
 \centerline{\fbox{\hbox to.9\textwidth{\hss\box0\hss}}}
-\caption{2ªªª´ª±«ò¢ðªÂ¢Ä©°}
+\caption{2ÃÊÉý¤Î¿Þ}
 \ecaption{Double column figure.}
 \label{fig:double}
 \end{figure*}
 
 
-¢ð©°¢ð¢Ä ©ÁªÀªÀ(J\(B (J\ªâ¢Â(B (J\(B ¢ðªÂª¢«¡ªÀ«Ñ¢ðªÂ¢ð¢Ä¢ð«¡¢ðª³¢Â¢ð1¢ðª£¢ðªÂ \|figure|¢Âª´¢ð©°¢ð¢Ä¢ðªÁ \|table|¢Âª³¡­ª£¢ù ¢ðªÂ
-ªª©Á¢ðª³ª´¡ò¢Ä«Ô¢ðªÂ¢Ä©°ª± ¢ð«Òª´ª¤¢ðªã¢ð©¡ª±  ¡¯¢ð ¢ð¢Ä¢ð¢ð «À «®¢ðª³¢ðªÁ¢Â¢ð\figref{fig:left} ¢ðª² 
-\tabref{tab:right} ¢ðªÂ¢ð«²¢ð¢Ã¢ðª³¢±ª£¢Â ¢ðªÂ¢Ä©°ª± ¢ðª² ©¡¢Â ¢ðªÂ \|\caption|/\|\ecaption| 
-¢ð«Ò \|minipage| ¡­ª£¢ù ¢ðª³©¡©Ð¢ð«À¢ð«³¢ð ¢ðª²¢ðª® ª¤¢± ¢ðª®¢ð ¢ð«³¢Â(J\¢ðª´¢ð¢ì¢Ä©°¢ðª²ª±(B ¢ð¢Ì¢ë¢î¢ë©Î¢ð ¢ð«³ «À «®¢Â¢ð
-\|minipage| ¡­ª£¢ù ¢ðªÂªª©Á¢ðª®\|\CaptionType{figure}| ¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁ \|\CaptionType|
-\|{table}| ¢ð«Ò ©¬ª£«´¢ð ¢ð«À¢ð ¢Â¢ð ¡ëª¤¢Ã¢ðªÂ¡­ª£¢ù ¢ð¢Ì \|figure| ¢ðª®¢ð¡ñ¢ðªª¢ð©¡¢ð«¤ \|table| ¢ðª®¢ð¡ñ¢ðªª
-¢ð©¡¢ð«¤ ©¬ª£«´¢ð ¢ð«À¢ð¢Ä¢±   ¢ð ¢ð¢Ì©¡ª¢¢ð«±¢ð«À¢ð«³¢Â(J\(B
+¤Þ¤¿»æÌÌ¥¹¥Ú¡¼¥¹¤ÎÀáÌó¤Î¤¿¤á¤Ë¡¤1¤Ä¤Î \|figure|¡Ê¤Þ¤¿¤Ï \|table|¡Ë´Ä¶­¤Î
+Ãæ¤ËÊ£¿ô¤Î¿ÞÉ½¤òÊÂ¤Ù¤ÆÉ½¼¨¤·¤¿¤¤¾ì¹ç¤Ë¤Ï¡¤\figref{fig:left} ¤È 
+\tabref{tab:right} ¤Î¤è¤¦¤Ë¸Ä¡¹¤Î¿ÞÉ½¤È³Æ¡¹¤Î \|\caption|/\|\ecaption| 
+¤ò \|minipage| ´Ä¶­¤ËÆþ¤ì¤ë¤³¤È¤Ç¼Â¸½¤Ç¤­¤ë¡¥¤Ê¤ª¿Þ¤ÈÉ½¤¬º®ºß¤¹¤ë¾ì¹ç¡¤
+\|minipage| ´Ä¶­¤ÎÃæ¤Ç\|\CaptionType{figure}| ¤¢¤ë¤¤¤Ï \|\CaptionType|
+\|{table}| ¤ò»ØÄê¤¹¤ì¤Ð¡¤³°Â¦¤Î´Ä¶­¤¬ \|figure| ¤Ç¤¢¤Ã¤Æ¤â \|table| ¤Ç¤¢¤Ã
+¤Æ¤â»ØÄê¤µ¤ì¤¿¸«½Ð¤·¤¬ÆÀ¤é¤ì¤ë¡¥
 
-2ªªª´¢ðªÂª±«ò¢ðª³¢ð©°¢ð¢Ä¢ð¢Ì¢ð«³¢Ä©°¢ðªÁ¢Â¢ð\figref{fig:double} ¢ðªÂ ª¡ ¡ë¢ðª® ©¬ª£«´¢ð ¢ð«³¢Â(J\(B
-¡ëªÀªªªÓ¢ðªÂ ©¬ª£«´¢ðªÁ \|t| ¢ð ¢ð  ª²¢ð¡¯¢ðª´¢ð¢ð¢Â(J\(B
+2ÃÊ¤ÎÉý¤Ë¤Þ¤¿¤¬¤ë¿Þ¤Ï¡¤\figref{fig:double} ¤Î·Á¼°¤Ç»ØÄê¤¹¤ë¡¥
+°ÌÃÖ¤Î»ØÄê¤Ï \|t| ¤·¤«»È¤¨¤Ê¤¤¡¥
 
-¢Ä©°¢ðªÂªª©Á¢Äª²¢ðª®¢ðªÁª³ªäª´¢±¢ðª²¡ë«ª¢ð¢ð¢Â¢ð¢ðª±¢ðªÂ¢ð«²¢ð¢Ã¢ðª´ª¤«®¢ð ¢ð ¢ðªÂ(J\ªØ\¢í\«Ñ\ª²¢ð«Ò(B ª²ª¿ªÐ¢ð ¢ð©¡¢ð«¤  ¢ð«Á¢ðª´¢ð¢ð
-¢Âª´\figref{fig:double}    ª²¢Âª³¢Â(J\¢ð©°¢ð¢Ä¢Ä©°¢ðªÂªª©Á¢Äª²¢ðª²¢ð(B ¢ð©¡¢Â¢ðencapsulate ¢ð ¢ð«À¢ð¢Ä
-PostScript(J\ªØ\¢Â\¢ð\«³¢Âª´¢ð¢ð¢ð«Á¢ð©Á¢ð«³EPS\ªØ\¢Â\¢ð\«³¢Âª³¢ð«Ò©¡ª±¢ð©Î(B ©Ð¢ð«¢¢ð ¢ðª²¢ð«¤¢ðª®¢ð ¢ð«³¢Â(J\©¡ª±¢ð©Î(B ©Ð
-¢ð©Î¢ðªÂ¢ð¢Ä¢ð«¡¢ðª³¢ðªÁ¢Â¢ð(J\¡ß\«´\¡ñ\«Ñ\ªÓ\«³¢ðª®(B
+¿Þ¤ÎÃæ¿È¤Ç¤ÏËÜÊ¸¤È°ã¤¤¡¤¤É¤Î¤è¤¦¤ÊÂç¤­¤µ¤Î¥Õ¥©¥ó¥È¤ò»ÈÍÑ¤·¤Æ¤â¹½¤ï¤Ê¤¤
+¡Ê\figref{fig:double} »²¾È¡Ë¡¥¤Þ¤¿¿Þ¤ÎÃæ¿È¤È¤·¤Æ¡¤encapsulate ¤µ¤ì¤¿
+PostScript¥Õ¥¡¥¤¥ë¡Ê¤¤¤ï¤æ¤ëEPS¥Õ¥¡¥¤¥ë¡Ë¤òÆÉ¤ß¹þ¤à¤³¤È¤â¤Ç¤­¤ë¡¥ÆÉ¤ß¹þ
+¤ß¤Î¤¿¤á¤Ë¤Ï¡¤¥×¥ê¥¢¥ó¥Ö¥ë¤Ç
 %
 \begin{quote}
 \|\usepackage{graphicx}|
 \end{quote}
 %
-¢ð«Ò ªÔ¢ðªª¢ð¢Ä «©¢ðª®¢Â¢ð\|\includegraphics| (J\(B (J\©°\«Ñ\ª±¢ð«Ò¢Ä©°¢ð«Òª³«£¢ð«¡(B ©Ð¢ð«¢ ªØ «´¢ðª³ªªªÓ¢ð ¢Â¢ð¢ð ¢ðªÂ
-¡ë«â¢Ä«Ô¢ðª³(J\ªØ\¢Â\¢ð\«³ªÀ(B ¢Âª´¢ðª´¢ðª±¢Âª³¢ð«Ò ©¬ª£«´¢ð ¢ð«³¢Â(J\(B
+¤ò¹Ô¤Ã¤¿¾å¤Ç¡¤\|\includegraphics| ¥³¥Þ¥ó¥É¤ò¿Þ¤òËä¤á¹þ¤à²Õ½ê¤ËÃÖ¤­¡¤¤½¤Î
+°ú¿ô¤Ë¥Õ¥¡¥¤¥ëÌ¾¡Ê¤Ê¤É¡Ë¤ò»ØÄê¤¹¤ë¡¥
 
 %4.6
-\subsection{ª± }
+\subsection{É½}
 
-ª± ¢ðªÂ ªÑª¢©Ð¢ðªÁ¢ðª´¢ð«³¢ðªã¢ð¢´ ¢´¢ðª´¢ð¢´¢ð ¢ð«³¢ðªÂ¢ð¢Ì¢Â¢ð ª© «©¢ð¢Ì¢ð«´¢ð«Ò¢ð ¢ðªª¢ð ¢ð«´¢ð ¢ð ¢ð«³(J\(B (J\ª£¢ðª®¢ð¡ñ¢ð«³¢Â\(B ªÑ
-ª¢©Ð¢ð«Ò¢ðª£¢ð¡Þ¢ð«³ «À «®¢ðª³¢ðªÁ¢Â¢ð¡ë«Àª²ªÓ «©¢ðªÂ ªÑª¢©Ð¢ðª³¢ðªÁ©¡«Ñ ª©ª¢©Ð¢ð«Ò ª²¢ð¢ð¢Â¢ð¢ë¢±¡Þ¢Ã¢ðªÂªª ¢ðª³¢ðªÁ ª£¢ðªÂ ªÑª¢©Ð¢ð«Ò
-¢ðª£¢ð¡Þ¢ðª´¢ð¢ð ¢Âª´\tabref{tab:example}¢Âª³¢Â(J\ª±(B ªª©Á¢ðªÂ(J\ªØ\¢í\«Ñ\ª²\(B (J\¢ð\¢ë¢ðªÂ\ª®\ªØ\¢í\«³\ª²¢ðªÁ(B
-\|\footnotesize|¢ðª®¢ð¡ñ¢ð«³¢Â(J\(B
+É½¤Î·ÓÀþ¤Ï¤Ê¤ë¤Ù¤¯¾¯¤Ê¤¯¤¹¤ë¤Î¤¬¡¤»Å¾å¤¬¤ê¤ò¤¹¤Ã¤­¤ê¤µ¤»¤ë¥³¥Ä¤Ç¤¢¤ë¡¥·Ó
+Àþ¤ò¤Ä¤±¤ë¾ì¹ç¤Ë¤Ï¡¤°ìÈÖ¾å¤Î·ÓÀþ¤Ë¤ÏÆó½ÅÀþ¤ò»È¤¤¡¤º¸±¦¤ÎÃ¼¤Ë¤Ï½Ä¤Î·ÓÀþ¤ò
+¤Ä¤±¤Ê¤¤ ¡Ê\tabref{tab:example}¡Ë¡¥É½Ãæ¤Î¥Õ¥©¥ó¥È¥µ¥¤¥º¤Î¥Ç¥Õ¥©¥ë¥È¤Ï
+\|\footnotesize|¤Ç¤¢¤ë¡¥
 
-¢ð©°¢ð¢Ä¢Â¢ðª± ¢ðªÂ «©¢ðª³ªÁª¤ª´¢±¢ðª²¡ÞªÐª´¢±¢ðªÂª¡ ª´«ò¢ðªÂ¢±   ¢ð ¢ð«Ò¢Â¢ð \|\caption|¢ðª² \|\ecaption| ¢ðª®
- ©¬ª£«´¢ð ¢ð«³¢Â(J\ª±(B ¢ðªÂ   ª²¢ðªÁ \|\tabref{<|(J\«±\ªã\«³\|>}| ¢ð«Òª¿ªÐ¢ð¢ð¢ð©¡(B ªÔ¢ðª´¢ð¢Ã¢Â(J\(B
+¤Þ¤¿¡¤É½¤Î¾å¤ËÏÂÊ¸¤È±ÑÊ¸¤ÎÁÐÊý¤Î¸«½Ð¤·¤ò¡¤ \|\caption|¤È \|\ecaption| ¤Ç
+»ØÄê¤¹¤ë¡¥É½¤Î»²¾È¤Ï \|\tabref{<|¥é¥Ù¥ë\|>}| ¤òÍÑ¤¤¤Æ¹Ô¤Ê¤¦¡¥
 
 \begin{table}[tb] 
-\caption{ª± ¢ðªÂªÂ«ª} 
+\caption{É½¤ÎÎã} 
 \ecaption{An Example of Table.}
 \label{tab:example}
 \hbox to\hsize{\hfil
@@ -607,194 +555,194 @@ row4 &	item 1,4 & item 2,4 & item 3,4 \\\hline
 \end{table}
 
 %4.7
-\subsection{   ª¿ª´¢±¢±(J\¢Â¢Ã(B ªØ  }
+\subsection{»²¹ÍÊ¸¸¥¡¦¼Õ¼­}
 
 %4.7.1
-\subsubsection{   ª¿ª´¢±¢±(J\¢ðªÂ(B   ª²}
+\subsubsection{»²¹ÍÊ¸¸¥¤Î»²¾È}
 
-ª³ªäª´¢±ªª©Á¢ðª®   ª¿ª´¢±¢±(J\¢ð«Ò(B   ª²¢ð ¢ð«³ «À «®¢ðª³¢ðªÁ%¢Â¢ð%   ª¿ª´¢±¢±(J\ª²ªÓ(B ©Á¢ð¢Ìª´¢±ªª©Á¢ðªÂªª¡Þ¢±«À¢ðª²¢ð ¢ð©¡ ª²¢ð«Á¢ð«À
-%¢ð«³ «À «®¢ðª²¢Â¢ð¢ð ¢ð¢Ã¢ðª®¢ðª´¢ð¢ð   ª²¢ðª²¢ðª®¢ðªÁ¢Â¢ð ª²ª¿ªÐ¢ð ¢ð«³ª´¢± «â¢ðªÂª¤«®¢ð ¢ð ¢ð¢Ì¡ëªå¢ðª´¢ð«³¢Â(J\ª¡¡ë(B ªÔ¢ðªÁ
-%\|\Cite|¢ðª³¢ð«²¢ð«´   ª²¢ð ¢Â¢ð¢±«© ªÔ¢ðªÁ
-%\|\cite|¢ðª³¢ð«²¢ð«´   ª²¢ð ¢ð«³¢Â(J\¢ð¢Ä¢ðª²¢ð¡¯¢ð(B ¢Â¡¯
-\|\cite|¢ð«Ò ª²ª¿ªÐ¢ð ¢ð«³¢Â(J\(B   ª²¢ð ¢ð«À¢ð¢Ä(J\«±\ªã\«³¢ðªÁ(B  ©¡¡ëª©¢ì¢ðª³(J\(B ¢Â (J\ª²¢ð(B ¢ð«À¢Â¢ð
-\|[]|¢ðª®¢ð ¢ð«À¢ð ¢ð«À¢ù«²ª¢ªâ¢ð«±¢ð«À¢ð«³¢Â(J\(B
+ËÜÊ¸Ãæ¤Ç»²¹ÍÊ¸¸¥¤ò»²¾È¤¹¤ë¾ì¹ç¤Ë¤Ï%¡¤%»²¹ÍÊ¸¸¥ÈÖ¹æ¤¬Ê¸Ãæ¤ÎÃ±¸ì¤È¤·¤Æ»È¤ï¤ì
+%¤ë¾ì¹ç¤È¡¤¤½¤¦¤Ç¤Ê¤¤»²¾È¤È¤Ç¤Ï¡¤»ÈÍÑ¤¹¤ëÊ¸»ú¤ÎÂç¤­¤µ¤¬°Û¤Ê¤ë¡¥Á°¼Ô¤Ï
+%\|\Cite|¤Ë¤è¤ê»²¾È¤·¡¤¸å¼Ô¤Ï
+%\|\cite|¤Ë¤è¤ê»²¾È¤¹¤ë¡¥¤¿¤È¤¨¤Ð¡¨
+\|\cite|¤ò»ÈÍÑ¤¹¤ë¡¥»²¾È¤µ¤ì¤¿¥é¥Ù¥ë¤Ï¼«Æ°Åª¤Ë¥½¡¼¥È¤µ¤ì¡¤
+\|[]|¤Ç¤½¤ì¤¾¤ì¶èÀÚ¤é¤ì¤ë¡¥
 %
 \begin{quote}
-ª´¢±¢±(J\ \|\cite{companion,okumura}| ¢ðªÁ \LaTeX ¢ðªÂª¡«¿(B «®ª©¢ì¢ðª´ «Òª¢«¤ «Ð¢ðª®¢ð¡ñ¢ð«³¢Â(J\(B
+Ê¸¸¥ \|\cite{companion,okumura}| ¤Ï \LaTeX ¤ÎÁí¹çÅª¤Ê²òÀâ½ñ¤Ç¤¢¤ë¡¥
 \end{quote}
 %
-¢ðª² «Ð¢ð¢´¢ðª²¢Â¡¯
+¤È½ñ¤¯¤È¡¨
 %
 \begin{quote}
-ª´¢±¢±(J\\cite{companion,okumura}¢ðªÁ \LaTeX ¢ðªÂª¡«¿(B «®ª©¢ì¢ðª´ «Òª¢«¤ «Ð¢ðª®¢ð¡ñ¢ð«³¢Â(J\(B
+Ê¸¸¥\cite{companion,okumura}¤Ï \LaTeX ¤ÎÁí¹çÅª¤Ê²òÀâ½ñ¤Ç¤¢¤ë¡¥
 \end{quote}
 %
-¢ð¢Ì©¡ª¢¢ð«±¢ð«À¢ð«³¢Â(J\(B
+¤¬ÆÀ¤é¤ì¤ë¡¥
 
 %4.7.2
-\subsubsection{   ª¿ª´¢±¢±(J\\«´\(B (J\ª²}(B
+\subsubsection{»²¹ÍÊ¸¸¥¥ê¥¹¥È}
 
-   ª¿ª´¢±¢±(J\\«´\(B (J\ª²¢ðª³¢ðªÁ¢Â¢ð¢±¢ùª¤¡ø¢ðª²¢ð(B ¢ð©¡ª³ªäª´¢±ªª©Á¢ðª®¡ë«âª¿ªÐ¢ð ¢ð¢Äª´¢±¢±(J\¢ðªÂ¢ð©Î¢ð«ÒªÂ«Ñ(B «Ñ¢ð ¢ð«³¢Â(J\(B «® ©Ì¢ðªÁ
-   ª² «®¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁª¤«²¡ë«Àªª©Ì ªÔ¢ðªÂª±ª£ «â¢ðªÂ(J\¡ñ\«³\ªØ\¢Â\ªã\ªª\ª²(B «®¢ðª²¢ð ¢ð«³¢Â(J\(B
+»²¹ÍÊ¸¸¥¥ê¥¹¥È¤Ë¤Ï¡¤¸¶Â§¤È¤·¤ÆËÜÊ¸Ãæ¤Ç°úÍÑ¤·¤¿Ê¸¸¥¤Î¤ß¤òÎóµó¤¹¤ë¡¥½ç½ø¤Ï
+»²¾È½ç¤¢¤ë¤¤¤ÏÂè°ìÃø¼Ô¤ÎÉÄ»ú¤Î¥¢¥ë¥Õ¥¡¥Ù¥Ã¥È½ç¤È¤¹¤ë¡¥
 
 %4.7.3
-\subsubsection{ ªØ  }
+\subsubsection{¼Õ¼­}
 
- ªØ  ¢ð¢Ì¢ð¡ñ¢ð«³ «À «®¢ðª³¢ðªÁ¢Â¢ð   ª¿ª´¢±¢±(J\\«´\(B (J\ª²¢ðªÂª£(B ª¡¡ë¢ðª³ªªªÓ¢ð ¢Â¢ð\|acknowledgment|¡­ª£¢ù ¢ðªÂ
-ªª©Á¢ðª³©¡©Ð¢ð«À¢ð«³¢Â(J\¢ð(B ¢ðªÂ¡­ª£¢ù ¢ðªÂªª©Á¢Äª²¢ðªÁª©«´ ©¡ ©Ð¢ðª³¢ðªÁ  ªÂªÁ¢ð ¢ð«À¢ðª´¢ð¢ð¢Â(J\(B
+¼Õ¼­¤¬¤¢¤ë¾ì¹ç¤Ë¤Ï¡¤»²¹ÍÊ¸¸¥¥ê¥¹¥È¤ÎÄ¾Á°¤ËÃÖ¤­¡¤\|acknowledgment|´Ä¶­¤Î
+Ãæ¤ËÆþ¤ì¤ë¡¥¤³¤Î´Ä¶­¤ÎÃæ¿È¤ÏÅê¹Æ»þ¤Ë¤Ï½ÐÎÏ¤µ¤ì¤Ê¤¤¡¥
 
 %4.8
-\subsection{ªª©Ì ªÔ ªÒ ©Ã}
+\subsection{Ãø¼Ô¾Ò²ð}
 
-ª³ªäª´¢±¢ðªÂ¢ëª®¢±«©¢Âª´\|\end{document}| ¢ðªÂª£ ª¡¡ë¢Âª³¢ðª³¢Â¢ð¡ëª´  ¢ðªÂ¢ð«²¢ð¢Ã¢ðª³ªª©Ì ªÔ ªÒ ©Ã¢ð«Ò   ªÒ¢ð ¢ð«³¢Â(J\(B
+ËÜÊ¸¤ÎºÇ¸å¡Ê\|\end{document}| ¤ÎÄ¾Á°¡Ë¤Ë¡¤°Ê²¼¤Î¤è¤¦¤ËÃø¼Ô¾Ò²ð¤òµ­½Ò¤¹¤ë¡¥
 
 \begin{quote}
 \|\begin{biography}|\\
-\|\profile{m}{<|ª¤«²¡ë«Àªª©Ì ªÔªÀ \|>}{|ª¤«²¡ë«Àªª©Ì ªÔ¢ðªÂ ªÒ ©Ã\|}|\\
-\|\profile{m}{<|ª¤«²©¡«Ñªª©Ì ªÔªÀ \|>}{|ª¤«²©¡«Ñªª©Ì ªÔ¢ðªÂ ªÒ ©Ã\|}|\\
+\|\profile{m}{<|Âè°ìÃø¼ÔÌ¾\|>}{|Âè°ìÃø¼Ô¤Î¾Ò²ð\|}|\\
+\|\profile{m}{<|ÂèÆóÃø¼ÔÌ¾\|>}{|ÂèÆóÃø¼Ô¤Î¾Ò²ð\|}|\\
 \|\profile{m}{<|$\dots$\|>}{|$ldots$\|}|\\
 \|\end{biography}|
 \end{quote}
 
-¢ðª´¢ð¢ì¢ëª® «±¢ðªÂ¡ë«â¢Ä«Ô¢ð«Òª´ªÐ¢ð¡¯¢ð«³¢ð ¢ðª²¢ðª®¢Â¢ð «Ð¡ë¡à «Áª´ªÀ¢ð¢Ìª´ªÐ¢ð«Á¢ð«³¢Â(J\(B ©¬ª¢¢± «Ð¡ë¡à¢ðªÂ «À «®¢ðªÁ\|s|¢Â¢ð(J\ªØ\¡ø(B
-(J\«¿¢Â(B ¢ðªÂ «À «®¢ðªÁ\|f|¢Â¢ðª²«Ñ «Ð¡ë¡à¢ðªÂ «À «®¢ðªÁ\|n|¢ð«Ò©¡©Ð¢ð«À¢ð«³¢Â(J\(B
+¤Ê¤ªºÇ½é¤Î°ú¿ô¤òÊÑ¤¨¤ë¤³¤È¤Ç¡¤²ñ°÷¼ïÊÌ¤¬ÊÑ¤ï¤ë¡¥³ØÀ¸²ñ°÷¤Î¾ì¹ç¤Ï\|s|¡¤¥Õ¥§
+¥í¡¼¤Î¾ì¹ç¤Ï\|f|¡¤Èó²ñ°÷¤Î¾ì¹ç¤Ï\|n|¤òÆþ¤ì¤ë¡¥
 \begin{quote}
-\|\profile{n}{<|ª¤«²¡ë«Àªª©Ì ªÔªÀ \|>}{|ª¤«²¡ë«Àªª©Ì ªÔ¢ðªÂ ªÒ ©Ã\|}|
+\|\profile{n}{<|Âè°ìÃø¼ÔÌ¾\|>}{|Âè°ìÃø¼Ô¤Î¾Ò²ð\|}|
 \end{quote}
-¢ðª´¢ð¢ìªª©Ì ªÔ ªÒ ©Ã¢ðªÁª©«´ ©¡ ©Ð¢ðª³¢ðªÁ  ªÂªÁ¢ð ¢ð«À¢ðª´¢ð¢ð¢Â(J\(B
+¤Ê¤ªÃø¼Ô¾Ò²ð¤ÏÅê¹Æ»þ¤Ë¤Ï½ÐÎÏ¤µ¤ì¤Ê¤¤¡¥
 
 %5
-\section{ªÁª¢ª´¢±©¡«¤ª¿©¡¢ðª³¡­©¬¢ð ¢ð«³ ©¬¢Äª³}
+\section{ÏÀÊ¸ÆâÍÆ¤Ë´Ø¤¹¤ë»Ø¿Ë}
 
-ªÁª¢ª´¢±¢ðªÂ©¡«¤ª¿©¡¢ðª³¢ðª£¢ð¢ð¢ð©¡¢Â¢ðªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢ðª®¢ë«Âª¢¢î¢ð ¢ð¢Ä¢ÂªÓ¢ðªã¢ð ¢ð«±¢ð¢ë ¢±¢Â¡ß¢ð«Ò
-¡ëª´  ¢ðª³ ¡¯¢ð ¢Â(J\ª©«´(B ©¡ª¡¡ë¢ðªÂ(J\ª¡\¡ø\ªª\¢´\«´\(B (J\ª²¢ðª²¢ð(B ¢ð©¡ª¿©Ìª¿ªÐª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\¢ð(B ¢ð«À¡ëª´ ¡ë¢ðª³¢ð«¤¢Â¢ð¢ë¢ë©¡ª±
- ªÔª¿ªÐ¢Â¢ð(J\«¡\¢Ä¢ë¢ë©¡ª±(B ªÔª¿ªÐ¢ðªÂ¢ÂªÓ¢ðªã¢ð ¢ð«±¢ð¢ë ¢±¢Â¡ß\cite{webpage2}¢ð«¤¢±©Ì  ¢ð ¢ð©¡¢ð¢ð¢ð«³¢ðªÂ¢ðª®¢Â¢ð  
- ª²¢ð ¢ð«À¢ð¢Ä¢ð¢ð¢Â(J\¢ð©°¢ð¢Ä¢Â¢ð¢ë«Âª´¢±(B   ªÐ¢ðª³¡­©¬¢ð ¢ð«³ \cite{book1, book2, book3, book4}¢ðªÂ¢ð«²
-¢ð¢Ã¢ðª´ «Ðª¢ªÒ¢ð«¤   ª¿¢ðª³¢ðª´¢ð«³¢Â(J\(B
+ÏÀÊ¸¤ÎÆâÍÆ¤Ë¤Ä¤¤¤Æ¡¤ÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¤ÇºîÀ®¤·¤¿¡Ö¤Ù¤«¤é¤º½¸¡×¤ò
+°Ê²¼¤Ë¼¨¤¹¡¥Åê¹ÆÁ°¤Î¥Á¥§¥Ã¥¯¥ê¥¹¥È¤È¤·¤ÆÍøÍÑÄº¤­¤¿¤¤¡¥¤³¤ì°Ê³°¤Ë¤â¡¤ººÆÉ
+¼ÔÍÑ¡¤¥á¥¿ººÆÉ¼ÔÍÑ¤Î¡Ö¤Ù¤«¤é¤º½¸¡×\cite{webpage2}¤â¸ø³«¤·¤Æ¤¤¤ë¤Î¤Ç¡¤»²
+¾È¤µ¤ì¤¿¤¤¡¥¤Þ¤¿¡¤ºîÊ¸µ»½Ñ¤Ë´Ø¤¹¤ë \cite{book1, book2, book3, book4}¤Î¤è
+¤¦¤Ê½ñÀÒ¤â»²¹Í¤Ë¤Ê¤ë¡¥
 
 %5.1
-\subsection{ «Ð¢ð ª´«ò¢ðªÂ¡­©Ãª³ªä}
+\subsection{½ñ¤­Êý¤Î´ðËÜ}
 
 \begin{itemize}
- \item[$\Box$] ¢±¢Ã ©Á¢ðªÂ¢Ä  ¢Ìª¢ ¢Â¢ðª¿ ª¿ªÐª¢ ¢Â¢ð¢Ä¢îª¿«´ª¢ ¢ð¢Ì©¡ª± ªÔ¢ðª³ª©ª¡¢ð«Á¢ð«³¢ð«²¢ð¢Ã¢ðª³   ªÒ¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ©¡ª±¢ð©Î «´¢ðª³¢Â¢ð©¡ª±¢ð©Î¢ð«£¢ð ¢ð¢ðª´¢± ªÁ¢ð«Ò¢Ä¡­¢ð¢Ì¢ð¡Þ¢ð«³¢Âª´©¡«¤ª¿©¡¢ð¢Ìª¡¡ë¢±«©¢ð ¢ð«³¢Â¢ðª®©¬ ª´¢Â¢Ã
-	        ªòª¤«´¢ðªÂª¢©Îª£«´¢ð¢Ìª±ªÔªÀª¢ªÂ©¡¢ðª´¢ðª±¢ðªÁ©¡ª± ªÔ¢ðª³¢ðª²¢ðªª¢ð©¡ª±«±ªª¡­¢Âª³¢Â(J\(B
- \item[$\Box$]  «Ò «²¢ð ¢ðªã¢ð ªÀ«£ª¤«´¢ð¢Ìª²©¡ª¿ªÐ  ¢Âª´¡ë«Àª²ªÀª©¢ì¢ðª³   ªÒ¢Âª³¢ð ¢ð«À¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡
-	        ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Âª´XXª¤«® ©¬¢ðªÂªÀ«£ª¤«´¢ðª²¢ð¢ð¢ð¢Ã   ªÒ¢ðª³ ¢ì ªÁ¢Âª³¢Â(J\¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁ¢Â¢ð(B
-	       ¢Âª´ªª¡Þ¢ðª³¢ÂªÓ¢ë«Â¢ð«´¢ð©°¢ð ¢ð¢Ä¢Â¡ß¢ðª¢¢ð¡Þ¢ðª®¢Âª³ «Ò «²¢ð ¢ðªã¢ð ªÀ«£ª¤«´¢ð ¢ðªÂ¢ð«¤¢ðªÂ¢ðªÂ   ªÒ
-	       ¢ð¢Ì¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$]  «³ªÁª¢¢ð¢ÌªÀª¢ ªÂ¢ðª³  ¢ð ¢ð«À¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¢Â¢ðª²ªÁ¡ëªÁ¢Â¢ð¢±ª¤ ¢Ã¢Â¢ðªÀ«£ª¤«´ª©ª¢¢ðª´
-	       ¢ðª±¢ðªÂ ©¬ª©¢Ã¢ð¢Ìª©¢Ìª¢ªâ¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¢Â¢ð «³ªÁª¢¢ð¢Ì©¡«¤ª¿©¡¢ðª³¢ð ¢ðªª¢ð¢Ä¢ð«¤¢ðªÂ¢ðª®
-	       ¢ðªÁ¢ðª´¢ð¢ð¢ð«¤¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$]  ª´ ©¬   ªÐªÁª¢ª´¢±¢ðª²¢ð ¢ð©¡ª±ªÔª©¢Ìª©«Ó¢ðª´ª± ¢± ¢ð«£¢Â¢ðª´¢Ì¢ð ¢ð«´¢ðª³¢ð¢´¢ð¢ðª± ¢± ¢ð¢Ì¢ð¡ñ¢ð«³
-	       ¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ¢ùª³ªª ¢ðª´¢±«ò¢±«Àª¤ªÂ¢ð«£¢Â¢ðª£ ª´¢±¢ðªÂªÁ¡ñª¤ ¢ðª´¢ðª±¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$]  ªÁ¢Â¢ðª¢«¡¢ðªÂ¢ð¢Ä¢ð©¡ª´«ò¢Â¢ðª¡¡­ª¤ªÂ¢ðªÂ  ª¢¢îª©«ã¢ð¢Ìª©¢Ìª¢ªâ¢ðª®¢ðª´¢ð¢ðª´¢± ªÁ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð 
-	       ¢ð«³¢Â(J\(B
- \item[$\Box$] ª´¢±ªª©Á¢ðªÂª´¢±ªÀ¢î¢ð ¢ð«±¢Ä«£ª¤¢Ì¢ð ¢ðª´¢ð¢ð¢ðª²©¡«¤ª¿©¡¢ðªÂª®ª£¡ë¢î¢ð¢Ì¢ë¢ð©¡«Ð¢ðª´ªÁª¢ª´¢±¢ðª³¢ð ¢ðª´¢ð¢ð¢Â(J\(B
- \item[$\Box$] ª¢«¤ªÀª¢¢ðª³ª²«ÔªÀ«Ó¢ð ¢ð¢Äª©ª¢¢ð¢Ì¢ð¡ñ¢ð«´¢Â¢ð  ª¢«¤ª©«ã¢ðªÂª¢«¤ªÀª¢¢ð¢Ì  ª´¢Ì¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡
-	        ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ª¢«¤ªÀª¢¢ðª³ «±ª£ ¢ðª´ª©ª¢¢Â¢ð ªØ¢ðª³¡­ª´ªª¡Þ¢ð ¢ð¢î¢ð«³ª©ª¢¢ð¢Ì¢ð¡ñ¢ð«³¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ªÀ¢ðª£«´ ª¡¢±«À¢ð«Ò¢±¢ë¢ð«±¢ð ¢Â(J\(B
+ \item[$\Box$] ¸¦µæ¤Î¿·µ¬À­¡¤Í­ÍÑÀ­¡¤¿®ÍêÀ­¤¬ÆÉ¼Ô¤ËÅÁ¤ï¤ë¤è¤¦¤Ëµ­½Ò¤¹¤ë¡¥
+ \item[$\Box$] ÆÉ¤ß¼ê¤Ë¡¤ÆÉ¤ß¤ä¤¹¤¤Ê¸¾Ï¤ò¿´¤¬¤±¤ë¡ÊÆâÍÆ¤¬Á°¸å¤¹¤ë¡¤ÇØ·Ê¡¦
+	       ²ÝÂê¤ÎÀßÄê¤¬ÉÔÌÀÎÆ¤Ê¤É¤ÏÆÉ¼Ô¤Ë¤È¤Ã¤ÆÉéÃ´¡Ë¡¥
+ \item[$\Box$] ²ò·è¤¹¤Ù¤­ÌäÂê¤¬ÈÆÍÑ²½¡Ê°ìÈÌÅª¤Ëµ­½Ò¡Ë¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤ÏºÆ
+	       ¹Í¤òÍ×¤¹¤ë¡ÊXXÂç³Ø¤ÎÌäÂê¤È¤¤¤¦µ­½Ò¤Ë½ª»Ï¡Ë¡¥¤¢¤ë¤¤¤Ï¡¤
+	       ¡ÊÃ±¤Ë¡Öºî¤ê¤Þ¤·¤¿¡×¤À¤±¤Ç¡Ë²ò·è¤¹¤Ù¤­ÌäÂê¤½¤Î¤â¤Î¤Îµ­½Ò
+	       ¤¬¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ·ëÏÀ¤¬ÌÀ³Î¤Ëµ­¤µ¤ì¤Æ¤¤¤Ê¤¤¡¤¤Þ¤¿¤Ï¡¤ÈÏ°Ï¡¤¸Â³¦¡¤ÌäÂêÅÀ¤Ê
+	       ¤É¤Î»ØÅ¦¤¬Å¬ÀÚ¤Ç¤Ï¤Ê¤¤¡¤¤Þ¤¿¤Ï¡¤·ëÏÀ¤¬ÆâÍÆ¤Ë¤½¤Ã¤¿¤â¤Î¤Ç
+	       ¤Ï¤Ê¤¤¤â¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ²Ê³Øµ»½ÑÏÀÊ¸¤È¤·¤ÆÉÔÅ¬Åö¤ÊÉ½¸½¤ä¡¤Ê¬¤«¤ê¤Ë¤¯¤¤É½¸½¤¬¤¢¤ë
+	       ¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ¶ËÃ¼¤Ê¸ý¸ìÂÎ¤ä¡¤Ä¹Ê¸¤ÎÏ¢Â³¤Ê¤É¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ¾Ï¡¤Àá¤Î¤¿¤ÆÊý¡¤Á´ÂÎ¤Î¹½À®Åù¤¬Å¬ÀÚ¤Ç¤Ê¤¤Ê¸¾Ï¤ÏºÆ¹Í¤òÍ×¤¹
+	       ¤ë¡¥
+ \item[$\Box$] Ê¸Ãæ¤ÎÊ¸Ì®¤«¤é¿äÂ¬¤·¤Ê¤¤¤ÈÆâÍÆ¤ÎÇÄ°®¤¬º¤Æñ¤ÊÏÀÊ¸¤Ë¤·¤Ê¤¤¡¥
+ \item[$\Box$] ÀâÌÀ¤ËÈôÌö¤·¤¿ÅÀ¤¬¤¢¤ê¡¤²¾ÀâÅù¤ÎÀâÌÀ¤¬½½Ê¬¤Ç¤Ï¤Ê¤¤¤Î¤ÏºÆ
+	       ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ÀâÌÀ¤Ë¾éÄ¹¤ÊÅÀ¡¤µÕ¤Ë´ÊÃ±¤¹¤®¤ëÅÀ¤¬¤¢¤ë¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] Ì¤ÄêµÁ¸ì¤ò¸º¤é¤¹¡¥
 \end{itemize}
 
 %5.2
-\subsection{¢Ä  ¢Ìª¢ ¢ðª²ª¿ ¢±«âª¢ ¢ð«ÒªÀª¢ ªÂ¢ðª³ ¡¯¢ð }
+\subsection{¿·µ¬À­¤ÈÍ­¸úÀ­¤òÌÀ³Î¤Ë¼¨¤¹}
 
 \begin{itemize}
- \item[$\Box$] ¢ë©Îª¿«²¢±¢Ã ©Á¢ðª²¢ðªÂ¡­©¬ªÁ¡ñ¢Â¢ð¢±¢Ã ©Á¢ðªÂ©¡¡ë ¢Â¢Â¢ð¢ðª¿¢ð«±¢ð¢ðª©«ã¢ð¢ÌªÀª¢ ªÂ¢ðª³ª¢«¤ªÀª¢¢ð ¢ð«À¢ð©¡
-	       ¢ð¢ð¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ¡­«åªªªÂ¢Â¢Ä¢±©ÌªªªÂ¢ðªÂ   ªÐ¢ð¢Ì ¢Ä¢ðª®¢ð¡ñ¢ðªª¢ð©¡¢Â¢ð ¢Ä¢ð«Ò¢Ä ¢ð ¢ð¢ð(J\¡ñ\¢ð\ª®\¡ñ¢ðª²¢ð(B ¢ð©¡ª£«Ñ
-	       ¡ë©¡¢ð ¢ð©¡¢ð¢ð¢ð«³¢ðªÂ¢ð ¢ð¢Ì «Ð¢ð ¢ð«À¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$]   ª´¢Ì¢ðª´   ª¿ª´¢±¢±(J\¢ðªÁ¢Ä(B  ¢Ìª¢ ¢ðªÂ «®ª£(J\¢ðª³(B «®¢ð ¢ð ¢ðª´¢ð¢ð¢Â(J\(B
- \item[$\Box$] ª£«Ñ¡ë©¡©¡«¤ª¿©¡¢ðªÂª¢«¤ªÀª¢¢ð¢Ì¢Â¢ð  ª®¡ëª©¢ì¢ð©°¢ð¢Ä¢ðªÁªª«´ ªòª©¢ì¢ðª´¢Ä«© «¢¢ðª³ ¢ì ªÁ¢ð ¢ð©¡¢ð¢ð¢ð©¡¢Â¢ð
-	       ©¡ª± ªÔ¢ð¢Ìª£«Ñ¡ë©¡©¡«¤ª¿©¡¢ð«Òª¿«ò «Ò¢ðª®¢ð ¢ðª´¢ð¢ð¢Âª´¢ð ¢ð«À¢ðª¢¢ð¡Þ¢ðª®¢Ä  ¢Ìª¢ ¢ð¢Ì¡­¢ù¢ð¢±¢ð«±¢ð«À
-	       ¢ðª´¢ð¢ð¢ð«¤¢ðªÂ¢Âª³¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ªÁª¢ª´¢±¢ðª®ª£«Ñ¡ë©¡¢ð ¢ð¢Äª´«òª³¢Â¢ðªÂª¿ ¢±«âª¢ ¢ðªÂ «®ª£(J\¢ð¢Ì¢ðª´¢ð¢ð¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¢ð(B ¢ð«Á¢ð«¡¢ð©¡ª±ªÁ
-	        «©¢ðª´¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
+ \item[$\Box$] ºßÍè¸¦µæ¤È¤Î´ØÏ¢¡¤¸¦µæ¤ÎÆ°µ¡¡¤¤Í¤é¤¤Åù¤¬ÌÀ³Î¤ËÀâÌÀ¤µ¤ì¤Æ
+	       ¤¤¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ´ûÃÎ¡¿¸øÃÎ¤Îµ»½Ñ¤¬²¿¤Ç¤¢¤Ã¤Æ¡¤²¿¤ò¿·¤·¤¤¥¢¥¤¥Ç¥¢¤È¤·¤ÆÄó
+	       °Æ¤·¤Æ¤¤¤ë¤Î¤«¤¬½ñ¤«¤ì¤Æ¤¤¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ½½Ê¬¤Ê»²¹ÍÊ¸¸¥¤Ï¿·µ¬À­¤Î¼çÄ¥¤Ë·ç¤«¤»¤Ê¤¤¡¥
+ \item[$\Box$] Äó°ÆÆâÍÆ¤ÎÀâÌÀ¤¬¡¤³µÇ°Åª¤Þ¤¿¤ÏÃê¾ÝÅª¤Ê¿å½à¤Ë½ª»Ï¤·¤Æ¤¤¤Æ¡¤
+	       ÆÉ¼Ô¤¬Äó°ÆÆâÍÆ¤òÍý²ò¤Ç¤­¤Ê¤¤¡Ê¤½¤ì¤À¤±¤Ç¿·µ¬À­¤¬´¶¤¸¤é¤ì
+	       ¤Ê¤¤¤â¤Î¡Ë¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ÏÀÊ¸¤ÇÄó°Æ¤·¤¿ÊýË¡¤ÎÍ­¸úÀ­¤Î¼çÄ¥¤¬¤Ê¤¤¡¤¤Þ¤¿¤Ï¤­¤ï¤á¤ÆÉÏ
+	       ¼å¤Ê¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
 \end{itemize}
 
 %5.3
-\subsection{ «Ð¢ð ª´«ò¢ðª³¡­©¬¢ð ¢ð«³¢ù«Ðª¤ªÂª©¢ì¢ðª´ªª«¿¡ëªØ}
+\subsection{½ñ¤­Êý¤Ë´Ø¤¹¤ë¶ñÂÎÅª¤ÊÃí°Õ}
 
 \begin{itemize}
- \item[$\Box$] ªÁª¤ª´¢±ª±¢±ª¤«´¢ð¢Ì©¡«¤ª¿©¡¢ð«Òª©¢Ìª¢ªâ¢ðª³ª± ¢± ¢ð ¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ¡ÞªÐª´¢±ª±¢±ª¤«´¢ð¢Ì©¡«¤ª¿©¡¢ð«Òª©¢Ìª¢ªâ¢ðª³ª± ¢± ¢ð ¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¡ÞªÐ¢±«À¢ðª²¢ð ¢ð©¡ª©¢Ì
-	       ª¢ªâ¢ðª®¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] (J\¡ñ\ªÓ\(B (J\ª²\«±\¢´\ª²¢ð¢Ì(B «® ªò¢ð«Òª©¢Ìª¢ªâ¢ðª³ª± ¢± ¢ð ¢ð©¡¢ð¢ð¢ðª´¢ð¢ð¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¡ÞªÐª´¢±¢ð¢Ì
-	       ª©¢Ìª¢ªâ¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$]    ©Á¢Â¢ÃªÂ¢Ì ©Áª©«ã¢ð¢Ì ©ÐªªªÂ¢ðªÂ¢ð«¤¢ðªÂ¢ðª®¢ðª´¢ð¢´¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¢Â¢ðª¿ªÐ¢±«À¢ð¢Ìª©¢Ìª¢ªâ¢ðª®¢ðª´¢ð¢´¢Â¢ð
-	       ¢ð©°¢ð¢Ä¢ðªÁ¢Â¢ð¢Ä©°¢Â¢Ãª± ¢ðªÂª¢«¤ªÀª¢¢ð¢Ìª©¢Ìª©«Ó¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ¢±ª£¢Äª¿ª©¢ì¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁª²«Ñ «Á¢ðª³ ¢î¢ð ¢ðª´(J\¡ë\«³¢Â(B (J\¡ß¢Â¢Ä¡­«³¢ùª²¢ðª¢¢ð¡Þ¢ðª®ª£ªÀª¿ªÐ¢ð(B ¢ð«³¢ð«²
-	       ¢ð¢Ã¢ðª´ª¿ªÐ¢±«À¢ð¢Ì©¡ªªª´ªÀ¢ðª´ª¢«¤ªÀª¢¢ð«¤¢ðª´¢ð ¢ðª³ª¤¢Äª¿ªÐ¢ð ¢ð«À¢ð©¡¢ð¢ð¢ð«³¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð 
-	       ¢ð«³¢Â(J\(B
- \item[$\Box$] ¢Ä©°ª±   ª¤ªÂ¢ðªÁ  ª´¢Ì¢ðª³ªÀª¢ ªÂ¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢Â¢ð¢ð©°¢ð¢Ä¢ðªÁ¢±«¿¢ð«´¢ð¢Ì¢ð¡ñ¢ð«³¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Ò
-	       ª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ¢Ä©°ª± ¢ð¢Ìª¡¢´ªÀª¢¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ¢Ä©°ª± ¢ð¢Ìª¤«®¢ð ¢ð ¢Â¢ð ªÀ ªä¢ðªÂ ©¬ª£«´¢ð¢Ìª©¢Ìª¢ªâ¢ðª®¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³.
+ \item[$\Box$] ÏÂÊ¸É¸Âê¤¬ÆâÍÆ¤òÅ¬ÀÚ¤ËÉ½¸½¤·¤Æ¤¤¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ±ÑÊ¸É¸Âê¤¬ÆâÍÆ¤òÅ¬ÀÚ¤ËÉ½¸½¤·¤Æ¤¤¤Ê¤¤¡¤¤Þ¤¿¤Ï±Ñ¸ì¤È¤·¤ÆÅ¬
+	       ÀÚ¤Ç¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ¥¢¥Ö¥¹¥È¥é¥¯¥È¤¬¼ç»Ý¤òÅ¬ÀÚ¤ËÉ½¸½¤·¤Æ¤¤¤Ê¤¤¡¤¤Þ¤¿¤Ï±ÑÊ¸¤¬
+	       Å¬ÀÚ¤Ç¤Ï¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] µ­¹æ¡¦Î¬¹æÅù¤¬¼þÃÎ¤Î¤â¤Î¤Ç¤Ê¤¯¡¤¤Þ¤¿¤Ï¡¤ÍÑ¸ì¤¬Å¬ÀÚ¤Ç¤Ê¤¯¡¤
+	       ¤Þ¤¿¤Ï¡¤¿Þ¡¦É½¤ÎÀâÌÀ¤¬Å¬Åö¤Ç¤Ï¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ¸Ä¿ÍÅª¤¢¤ë¤¤¤ÏÈó¾ï¤Ë¾®¤µ¤Ê¥°¥ë¡¼¥×¡¿´ë¶È¤À¤±¤ÇÄÌÍÑ¤¹¤ë¤è
+	       ¤¦¤ÊÍÑ¸ì¤¬ÆÃÊÌ¤ÊÀâÌÀ¤â¤Ê¤·¤ËÂ¿ÍÑ¤µ¤ì¤Æ¤¤¤ë¤Î¤ÏºÆ¹Í¤òÍ×¤¹
+	       ¤ë¡¥
+ \item[$\Box$] ¿ÞÉ½¼«ÂÎ¤Ï½½Ê¬¤ËÌÀ³Î¤Ç¤Ï¤Ê¤¤¡¤¤Þ¤¿¤Ï¸í¤ê¤¬¤¢¤ë¤Î¤ÏºÆ¹Í¤ò
+	       Í×¤¹¤ë¡¥
+ \item[$\Box$] ¿ÞÉ½¤¬Á¯ÌÀ¤Ç¤Ï¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ¿ÞÉ½¤¬Âç¤­¤µ¡¤½Ì¼Ü¤Î»ØÄê¤¬Å¬ÀÚ¤Ç¤Ê¤¤¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë.
 \end{itemize}
 
 %5.4
-\subsection{   ª¿ª´¢±¢±(J\}(B
+\subsection{»²¹ÍÊ¸¸¥}
 
 \begin{itemize}
- \item[$\Box$]    ª¿ª´¢±¢±(J\¢ðªÁ10(B «Á¡ëª´ «©ª±¢Ìª¿¡ß¢Âª´ª´¢ÌªÀ«Â¢ðª³¢ð«²¢ðªª¢ð©¡¢ðªÁ20 «Á¡ëª´ «©¢Â¢ð30 «Á¡ëª´ «©
-	       ¢ðª²¢ð¢ð¢ð¢Ã¡ëªØ¢± ¢ð«¤¢ð¡ñ¢ð«³¢Âª³.
- \item[$\Box$]   ª´¢Ì¢ðª´   ª¿ª´¢±¢±(J\¢ðªÁ¢Ä(B  ¢Ìª¢ ¢ðªÂ «®ª£(J\¢ðª³(B «®¢ð ¢ð ¢ðª´¢ð¢ð¢Â(J\(B
- \item[$\Box$] ª©¢Ìª¢ªâ¢ðª´ª´¢±¢±(J\¢ð¢Ì¡ë«âª¿ªÐ¢ð(B ¢ð«À¢ð©¡¢ð¢ì¢ð«±¢ð¢ë¢Â¢ð¢ð ¢ðªÂ¢Ä«Ô¢ð«¤ª©¢Ìª¢ªâ¢ðª®¢ðªÁ¢ðª´¢ð¢ð¢ðªÂ¢ðªÁ¢ë©¡
-	        ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
- \item[$\Box$] ©¡«äª³ªä¢Äª¿¢ðª³¢ð«²¢ð«³¢ð ¢ð ¢ð«³¢ðªã¢ð ªÁª¢ª´¢±¢ð«Ò¡ë«âª¿ªÐ¢ð ¢ð«³¢ð ¢ðª²¢ðª®©¡«äª³ªä¢Äª¿¢±¢Ã ©Á(J\(B (J\©Î\«©(B
-	       (J\ª³\©¡\¡ò¢ðªÂª²¢´ª©¢±¢ðª³¢ðª£¢ðª´¢ð¢Ì¢ð«³¢Â\(B
- \item[$\Box$]    ª¿ª´¢±¢±(J\¢ðªÁ(B  ª´¢Ì¢ðªÂ¢ð«¤¢ðªÂ¢ð ¢ð ¢ð«´¢ðª®¢ðªÁ¢ðª¢¢ð«¡¢Â(J\(B
+ \item[$\Box$] »²¹ÍÊ¸¸¥¤Ï10·ï°Ê¾åÉ¬Í×¡ÊÊ¬Ìî¤Ë¤è¤Ã¤Æ¤Ï20·ï°Ê¾å¡¤30·ï°Ê¾å
+	       ¤È¤¤¤¦°Õ¸«¤â¤¢¤ë¡Ë.
+ \item[$\Box$] ½½Ê¬¤Ê»²¹ÍÊ¸¸¥¤Ï¿·µ¬À­¤Î¼çÄ¥¤Ë·ç¤«¤»¤Ê¤¤¡¥
+ \item[$\Box$] Å¬ÀÚ¤ÊÊ¸¸¥¤¬°úÍÑ¤µ¤ì¤Æ¤ª¤é¤º¡¤¤½¤Î¿ô¤âÅ¬ÀÚ¤Ç¤Ï¤Ê¤¤¤Î¤ÏºÆ
+	       ¹Í¤òÍ×¤¹¤ë¡¥
+ \item[$\Box$] ÆüËÜ¿Í¤Ë¤è¤ë¤·¤«¤ë¤Ù¤­ÏÀÊ¸¤ò°úÍÑ¤¹¤ë¤³¤È¤ÇÆüËÜ¿Í¸¦µæ¥³¥ß¥å
+	       ¥Ë¥Æ¥£¤ÎÈ¯Å¸¤Ë¤Ä¤Ê¤¬¤ë¡¥
+ \item[$\Box$] »²¹ÍÊ¸¸¥¤Ï¼«Ê¬¤Î¤â¤Î¤Ð¤«¤ê¤Ç¤Ï¤À¤á¡¥
 \end{itemize}
 
 %5.5
-\subsection{©¡«Ñ ª©ª©«´ ©¡}
+\subsection{Æó½ÅÅê¹Æ}
 
 \begin{itemize}
- \item[$\Box$] ©¡«Ñ ª©ª©«´ ©¡¢ðªÁ¢ð ¢ð©¡¢ðªÁ¢ðª´¢ð«±¢ðª´¢ð¢ð ¡¯¢Â ¢ð¢Ä¢ðª¢¢ð  «Ð¢ëªò «Ð ª£¢ðª³¢ëªÂª¤«Ò¢ð ¢ð«À¢ð¢ÄªÁª¢
-	       ª´¢±¢ð«Òªª©Ì¢ë«Â¢±¡ñ¢ð¢ÌªÀ«£ª¤«´¢ðª³¢ðª´¢ð«±¢ðª´¢ð¢ð¢ð«²¢ð¢Ã¢ðª³ª©«´ ©¡¢ð ¢ð«³¢ð ¢ðª²¢ðªÁ  ¢ð«Á¢ðª´¢ð¢ð¢Â(J\(B
- \item[$\Box$] ª¤ ¢ðªÂªÁª¢ª´¢±¢ðª²¢ð©°¢ðªª¢ð¢Ä¢ð¢´©¡¡Þ¢ð¢±¢Ä©°ª± ¢ð«Ò¡ë«âª¿ªÐ¢ðªÂªÀª¢ ¡¯¢ðª´¢ð ¢ðª³ª¿©Ìª¿ªÐ¢ð ¢ð«³¢ð ¢ðª²
-	       ¢ðªÁ¢ù©¬ ©Î¢Â(J\(B
- \item[$\Box$] ¡­«åª²¢´ª± ¢ðªÂªÁª¢ª´¢±ª©«ã¢ðª²¢ðªÂ¡­ªÓ¢ðª³ ª©ª´¡ò¢ð¢Ì¢ð¡ñ¢ð«³¢ðªÂ¢ðªÁ¢ë©¡ ª¿¢ð«Òª¿¡ß¢ð ¢ð«³¢Â(J\(B
+ \item[$\Box$] Æó½ÅÅê¹Æ¤Ï¤·¤Æ¤Ï¤Ê¤é¤Ê¤¤ ¨¡ ¤¿¤À¤·¹ñºÝ²ñµÄ¤ËºÎÂò¤µ¤ì¤¿ÏÀ
+	       Ê¸¤òÃøºî¸¢¤¬ÌäÂê¤Ë¤Ê¤é¤Ê¤¤¤è¤¦¤ËÅê¹Æ¤¹¤ë¤³¤È¤Ï¹½¤ï¤Ê¤¤¡¥
+ \item[$\Box$] Â¾¤ÎÏÀÊ¸¤È¤Þ¤Ã¤¿¤¯Æ±¤¸¿ÞÉ½¤ò°úÍÑ¤ÎÌÀ¼¨¤Ê¤·¤ËÍøÍÑ¤¹¤ë¤³¤È
+	       ¤Ï¶Ø»ß¡¥
+ \item[$\Box$] ´ûÈ¯É½¤ÎÏÀÊ¸Åù¤È¤Î´Ö¤Ë½ÅÊ£¤¬¤¢¤ë¤Î¤ÏºÆ¹Í¤òÍ×¤¹¤ë¡¥
 \end{itemize}
 
 %5.6
-\subsection{ª¤ ¢ðªÂ¢Äª¿¢ðª³©¡ª±¢ð«Ñ¢ðª®¢ð«¤¢ð«±¢ð¢Ã}
+\subsection{Â¾¤Î¿Í¤ËÆÉ¤ó¤Ç¤â¤é¤¦}
 
 \begin{itemize}
- \item[$\Box$] ª©«´ ©¡  ¢± ¢ð¢Ì ¢´¢ðª´¢ð¢ð¢Äª¿¢ðªÁ¢Â¢ð¢ëªÂªÁ¢Ä¢ð ¢ð«À¢ð¢Ä  ¢± ¢ðªÂª³ ª±ªã¢ðª´¢Äª¿¢ðª³  ª¢ ¢ð ¢ð©¡
-	       ¢ð«¤¢ð«±¢ð¢Ã¢Â(J\(B
- \item[$\Box$] ©¡ª± ªÔ¢ðªÂªÂ¢í «À¢ð ¢ð«±¢± ¢ð©¡ªÁª¢ª¿«òª©¢ì¢ðª´ª²«ÔªÀ«Ó¢ð¢Ì¢ðª´¢ð¢ð¢ð ¢ðª³ªª«¿¡ëªØ¢ð ¢ð©¡   ªÒ¢ð ¢ð«³¢Â(J\(B
+ \item[$\Box$] Åê¹Æ·Ð¸³¤¬¾¯¤Ê¤¤¿Í¤Ï¡¤ºÎÏ¿¤µ¤ì¤¿·Ð¸³¤ÎË­ÉÙ¤Ê¿Í¤Ë¹»Àµ¤·¤Æ
+	       ¤â¤é¤¦¡¥
+ \item[$\Box$] ÆÉ¼Ô¤ÎÎ©¾ì¤«¤é¸«¤ÆÏÀÍýÅª¤ÊÈôÌö¤¬¤Ê¤¤¤«¤ËÃí°Õ¤·¤Æµ­½Ò¤¹¤ë¡¥
 \end{itemize}
 
 %5.7
-\subsection{¢ð ¢ðªÂª¤ }
+\subsection{¤½¤ÎÂ¾}
 
 \begin{itemize}
- \item[$\Box$]  «Ò «Áª±ªØ¢ëªÂªÁ¢Ä¢±«©¢ðªÂ ¢ðª¢ ¢ðª®¢Â¢ð¢ëªÂªÁ¢Ä «Ò «Á¡ëª´ ¡ë¢ð«Òª¿«òª¿ ¢ð«¤¢ðª´¢ð¢´ ¢ðª¢ ¢ð ¢ð«³¢ð 
-	       ¢ðª²¢ðªÁ¢ù©¬ ©Î¢Â(J\(B
- \item[$\Box$] (J\ª¢\ªÓ\«³\ªÓ\«±\¢ð\«Ñ\ª±¢ðª´¢ðªÂ¢ðª®¢ë¢ë©¡ª±(B ªÔ¢ðªÁª¡¢ì¢ðªã¢ðª´¢ð¢ð¢Â(J\(B
- \item[$\Box$] ª©«´ ©¡ª¡¡ë¢ðª³(J\ª¡\¡ø\ªª\¢´\«´\(B (J\ª²¢ðªÂ(B ©¡ «¢ªÀªä¢ð«Òª³©Ð¢ð¢Ä¢ð ¢ð©¡¢ð¢ð¢ð«³¢ð ¢Â¢ðª±¢Ì¢ð¢ë ªÂª®¡ø
-	       ¢ð ¢ð«³¢Â(J\ (B
+ \item[$\Box$] ¾ò·ïÉÕºÎÏ¿¸å¤Î½¤Àµ¤Ç¡¤ºÎÏ¿¾ò·ï°Ê³°¤òÍýÍ³¤â¤Ê¤¯½¤Àµ¤¹¤ë¤³
+	       ¤È¤Ï¶Ø»ß¡¥
+ \item[$\Box$] ¥À¥Ö¥ë¥Ö¥é¥¤¥ó¥É¤Ê¤Î¤ÇººÆÉ¼Ô¤ÏÁª¤Ù¤Ê¤¤¡¥
+ \item[$\Box$] Åê¹ÆÁ°¤Ë¥Á¥§¥Ã¥¯¥ê¥¹¥È¤Î³Æ¹àÌÜ¤òËþ¤¿¤·¤Æ¤¤¤ë¤«¡¤É¬¤º³ÎÇ§
+	       ¤¹¤ë¡¥ 
 \end{itemize}
 
 %6
-\section{¢ð¢ì¢ð«Á¢ð«´¢ðª³}
+\section{¤ª¤ï¤ê¤Ë}
 
-ª³ªä ©¡¢ðª®¢ðªÁ¢Â¢ðA4 ª£ ¢Ä2ªªª´ª¡ª²¢ð©Îª¿ªÐ¢ðª³ª´ªÐ  ¢ð ¢ð¢Ä(J\(B (J\¢Ä\¢ð\«³\ªØ\¢Â\¢ð\«³¢ð«Òª¿ªÐ¢ð¢ð¢ð¢ÄªÁª¢ª´¢±¢ðªÂ\ªØ\¢í¢Â(B 
-(J\©°\ªª\ª²ª´«òª³¢Â¢ðª²¢Â¢ðªÁª¢ª´¢±(B «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢ð¢Ì¢ð©°¢ðª²¢ð«¡¢ð¢Ä¢ÂªÓ¢ðªã¢ð ¢ð«±¢ð¢ë ¢±¢Â¡ß¢ðª³¡­©Ã¢ðª©¢ð¢´
-ªÁª¢ª´¢±¢ðªÂ «Ð¢ð ª´«ò¢ð«Ò ¡¯¢ð ¢ð¢Ä¢Â(J\©¡«¤ª¿©¡ª©¢ì¢ðª³¢ð©°¢ðª¢ª±ªÔ(B  ª´¢Ì¢ðªÂª±«Ôª´¢Ì¢ð¢Ìª¤¢Ä¢ð¢ð¢ð¢Ä¢ð«¡¢Â¢ð¡ëªØ¢± ¢Â¢ðª¿¡ßª³ ª©«ã¢ð«Ò
+ËÜ¹Æ¤Ç¤Ï¡¤A4½Ä·¿2ÃÊÁÈ¤ßÍÑ¤ËÊÑ¹¹¤·¤¿¥¹¥¿¥¤¥ë¥Õ¥¡¥¤¥ë¤òÍÑ¤¤¤¿ÏÀÊ¸¤Î¥Õ¥©¡¼
+¥Þ¥Ã¥ÈÊýË¡¤È¡¤ÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¤¬¤Þ¤È¤á¤¿¡Ö¤Ù¤«¤é¤º½¸¡×¤Ë´ð¤Å¤¯
+ÏÀÊ¸¤Î½ñ¤­Êý¤ò¼¨¤·¤¿¡¥ÆâÍÆÅª¤Ë¤Þ¤ÀÉÔ½½Ê¬¤ÎÉôÊ¬¤¬Â¿¤¤¤¿¤á¡¤°Õ¸«¡¤Í×Ë¾Åù¤ò
 \begin{quote}
  \|editt@ipsj.or.jp|
 \end{quote}
-¢ð©°¢ðª®¢ð¢ì¡­«Ñ¢ð ª£¢ë¢ð ¢ð¢Ä¢ð¢ð¢Â(J\(B
+¤Þ¤Ç¤ª´ó¤»Äº¤­¤¿¤¤¡¥
 
 
 
 \begin{acknowledgment}
-A4 ¡ò ¢Ä¢ðª³ª¤ ¢ð ¢ð«³(J\¢Ì\¢ð\ª±¢ð«Ò¡­©Ã¢ðª³¢Â¢ðª³ªä(B ©¡¢ð«Ò¢ë«Âª¢¢î¢ð ¢ð¢Ä¢Â(J\A4(B ¡ò ¢Ä¢ðª³ª¤ ¢ð ¢ð«³(J\¢Ì\¢ð\ª±¢ð«Ò¢ë«Âª¢¢î¢ð(B 
-¢ð«À¢ð¢Äª©«Ó ©Ð¢ðªÂª´ªÔ ¢±¡ëªÐ¡ë¡à «Ð¢ðªÂªª¡­ª©«Ó ªÔ¢ðª³¢Ä  ªØ¢ð ¢ð«³¢Â(J\(B
+A4²£·¿¤ËÂÐ¤¹¤ë¥¬¥¤¥É¤ò´ð¤Ë¡¤ËÜ¹Æ¤òºîÀ®¤·¤¿¡¥A4²£·¿¤ËÂÐ¤¹¤ë¥¬¥¤¥É¤òºîÀ®¤µ
+¤ì¤¿Åö»þ¤ÎÊÔ½¸°Ñ°÷²ñ¤ÎÃ´Åö¼Ô¤Ë¿¼¼Õ¤¹¤ë¡¥
 \end{acknowledgment}
 
 
@@ -803,17 +751,17 @@ A4 ¡ò ¢Ä¢ðª³ª¤ ¢ð ¢ð«³(J\¢Ì\¢ð\ª±¢ð«Ò¡­©Ã¢ðª³¢Â¢ðª³ªä(B ©¡
 %\bibitem{latex}
 %Lamport, L.: {\em A Document Preparation System \LaTeX User's Guide \&
 %  Reference Manual}, Addison Wesley, Reading, Massachusetts (1986).
-% ¢Âª´Cooke, E., et al.ªÀ«Ø¢Â¡øª´¢± «Ð «²ª¿«ò(J\(B (J\(B (J\©¡\«¢ \LaTeX¢Â¢ð\¡ñ\(B (J\(B ¢Â   ª²ª®¢ùª±
-%  (1990)¢Âª³.
+% ¡ÊCooke, E., et al.Ìõ¡§Ê¸½ñ½èÍý¥·¥¹¥Æ¥à \LaTeX¡¤¥¢¥¹¥­¡¼½ÐÈÇ¶É
+%  (1990)¡Ë.
 
 %\bibitem{total}
-%¡ëª³©¡¡òªÁª¤¢Äª¿¢Â¡ø \LaTeX (J\ª²¢Â(B (J\¢Ä\«³\¢Ì\¢ð\ª±¢Â¢ð(B ¡¯ªÁª¤(J\(B (J\(B (J\©¡\«¢\ª²\«À¢Â(B (J\ª®\¡ò\«Ñ\¡ë (1991).(B
+%°ËÆ£ÏÂ¿Í¡§ \LaTeX ¥È¡¼¥¿¥ë¥¬¥¤¥É¡¤½¨ÏÂ¥·¥¹¥Æ¥à¥È¥ì¡¼¥Ç¥£¥ó¥° (1991).
 %\bibitem{nodera}
-%ªÀ«Â «åªÂ¡­ ªÓ¢Â¡ø ªâ¢Â  \LaTeX¢Â¢ð¢ù¢ÃªÂ¢í  ª²ª® (1990).
+%Ìî»ûÎ´»Ö¡§³Ú¡¹ \LaTeX¡¤¶¦Î©½ÐÈÇ (1990).
 
 \bibitem{okumura}
-¡Þ«äª¤ ª¢ ª±¡ø¢Â¡ø ©Ðª£«åª¤«²5ª²ª® \LaTeXe ª²©Ðª´¢± «Ð¢ë«Âª¢¢î©¡©ÐªÀ«®¢Â¢ð
-   ªÐª± ªÁª¢ ªÒ(2010).
+±üÂ¼À²É§¡§²þÄûÂè5ÈÇ \LaTeXe ÈþÊ¸½ñºîÀ®ÆþÌç¡¤
+µ»½ÑÉ¾ÏÀ¼Ò(2010).
 
 \bibitem{companion}
 Goossens, M., Mittelbach, F. and Samarin, A.:
@@ -821,9 +769,9 @@ Goossens, M., Mittelbach, F. and Samarin, A.:
 Addison Wesley, Reading, Massachusetts (1993).
 
 \bibitem{book1}
-ªÀªâ  ª¢¡øª¿¢ë¢Â¡ø
-ª¿«ò ª´ ªÁ¢ðªÂ¢ë«Âª´¢±   ªÐ¢Â¢ð
-ªª©Á¢±©Ì¢Ä  «Ð(1981).
+ÌÚ²¼À§Íº¡§
+Íý²Ê·Ï¤ÎºîÊ¸µ»½Ñ¡¤
+Ãæ¸ø¿·½ñ(1981).
 
 \bibitem{book2}
 Strunk W. J. and White E.B.:
@@ -841,14 +789,14 @@ Higham N.J.:
 SIAM (1998).
 
 \bibitem{webpage1}
- ©Ãª´«Ñ «²ª¿«ò ©¬ «ÐªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢Â¡ø
-ª©«´ ©¡ ªÔ(J\©°\ª³\«©\¡ñ\«³(online)¢Â¢ð(B
+¾ðÊó½èÍý³Ø²ñÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¡§
+Åê¹Æ¼Ô¥Þ¥Ë¥å¥¢¥ë(online)¡¤
 \urlj{http://www.ipsj.or.jp/journal /submit/manual/j\_manual.html}
 (2007.04.05).
 
 \bibitem{webpage2}
- ©Ãª´«Ñ «²ª¿«ò ©¬ «ÐªÁª¢ª´¢± «Á(J\¢±\«ª¢Â(B (J\ª´\«³ª´ªÔ(B ¢±¡ëªÐ¡ë¡à «Ð¢Â¡ø
-¢ðªã¢ð ¢ð«±¢ð¢ë ¢±(online)¢Â¢ð
+¾ðÊó½èÍý³Ø²ñÏÀÊ¸»ï¥¸¥ã¡¼¥Ê¥ëÊÔ½¸°Ñ°÷²ñ¡§
+¤Ù¤«¤é¤º½¸(online)¡¤
 \urlj{http://www.ipsj.or.jp/journal/manual /bekarazu.html}
 (2011.09.15).
 
@@ -857,207 +805,209 @@ SIAM (1998).
 \appendix
 
 %7
-\section{ª±ªØªÁ¢Ä¢ðªÂ «Ð¢ð ª´«ò}
+\section{ÉÕÏ¿¤Î½ñ¤­Êý}
 
-ª±ªØªÁ¢Ä¢ð¢Ì¢ð¡ñ¢ð«³ «À «®¢ðª³¢ðªÁ¢Â¢ð   ª¿ª´¢±¢±(J\\«´\(B (J\ª²¢ðªÂª£(B ¢±«©¢ðª³(J\(B (J\©°\«Ñ\ª± \|\appendix| ¢ðª³¡ë«â¢ð(B ª¤ 
-¢ð¢ð¢ð©¡ «Ð¢ð¢´¢Â(J\ª±ªØªÁ¢Ä¢ðª®¢ðªÁ¢Â¢ð\|\section| \(B (J\©°\«Ñ\ª±¢ð¢Ì{\bf A.1}¢Â¢ð{\bf A.2}¢ðª´¢ðª±¢ðªÂ¢±(B   
-¢ð ¢ð«Òª¢¢±ª¢¢î¢ð ¢ð«³¢Â(J\(B
+ÉÕÏ¿¤¬¤¢¤ë¾ì¹ç¤Ë¤Ï¡¤»²¹ÍÊ¸¸¥¥ê¥¹¥È¤ÎÄ¾¸å¤Ë¥³¥Þ¥ó¥É \|\appendix| ¤Ë°ú¤­Â³
+¤¤¤Æ½ñ¤¯¡¥ÉÕÏ¿¤Ç¤Ï¡¤\|\section| ¥³¥Þ¥ó¥É¤¬{\bf A.1}¡¤{\bf A.2}¤Ê¤É¤Î¸«½Ð
+¤·¤òÀ¸À®¤¹¤ë¡¥
 
 %7.1
-\subsection{¢±   ¢ð ¢ðªÂªÂ«ª}
+\subsection{¸«½Ð¤·¤ÎÎã}
 
-ª±ªØªÁ¢Ä¢ðªÂ \|\subsetion| ¢ðª®¢ðªÁ¢ð ¢ðªÂ¢ð«²¢ð¢Ã¢±   ¢ð ¢ðª³¢ðª´¢ð«³¢Â(J\(B
+ÉÕÏ¿¤Î \|\subsetion| ¤Ç¤Ï¤³¤Î¤è¤¦¸«½Ð¤·¤Ë¤Ê¤ë¡¥
 
 %8
-\section{¢±¢Ã ©Á «ÐªÁª¢ª´¢±ª¿ªÐ(J\(B (J\©°\«Ñ\ª±}(B
+\section{¸¦µæ²ñÏÀÊ¸ÍÑ¥³¥Þ¥ó¥É}
 \label{sig}
 
- ©¡¢±¢Ã ©Á «ÐªÁª¢ª´¢± «Á¢Âª´(J\ª²\«±\«Ñ\¢ù\¢´\(B (J\«®\«Ñ¢Âª³¢ðª³¢ðªÁ(B ©¡¢Â ¢ðª³¢±ª®ª¿ ¢ðªÂ(J\(B (J\ªÓ\¢Ä\¢ð\ª²\«³¢Â¢ðªÂ¢Ì(B ªÂ¢Â¢ðª£ªÀ
-ª²ªÓ¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\¢ëª®(B ¢ì¢±¢ù ©¡¢ðª®¢ðªÁ¢Â¢ð¡ëª´  ¢ðªÂ(J\(B (J\©°\«Ñ\ª±¢ð«Ò \|\documentclass| ¢ðªÂ{\bf \¢ì\¡ß\(B (J\«®(B
-(J\«Ñ}¢ðª²¢ð(B ¢ð«³¢ð ¢ðª²¢ðª®¢Â¢ð¢ð ¢ð«À¢ð«±¢ðªÂ ©Ãª´«Ñ¢ð«Òª¿¢Ä¢ð¡¯¢ð«³¢Â(J\(B
+³Æ¸¦µæ²ñÏÀÊ¸»ï¡Ê¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¡Ë¤Ë¤Ï³Æ¡¹¤Ë¸ÇÍ­¤Î¥µ¥Ö¥¿¥¤¥È¥ë¡¤Î¬¾Î¡¤ÄÌ
+ÈÖ¤¬¤¢¤ë¡¥ºÇ½ª¸¶¹Æ¤Ç¤Ï¡¤°Ê²¼¤Î¥³¥Þ¥ó¥É¤ò \|\documentclass| ¤Î{\bf ¥ª¥×¥·¥ç
+¥ó}¤È¤¹¤ë¤³¤È¤Ç¡¤¤³¤ì¤é¤Î¾ðÊó¤òÍ¿¤¨¤ë¡¥
 
 \begin{itemize}
-\item \|PRO|¢Âª´(J\¡ß\«¿\¡ë\«±\©Î\«Ñ\¡ë¢Âª³(B
-\item \|TOM|¢Âª´¢Ä«Ôª¿«ò(J\«¤\ª®\«³(B  ¢ðª²¡Þ©Ðª¿ªÐ¢Âª³
-\item \|TOD|¢Âª´(J\ª®¢Â(B (J\¢Ä\ªã¢Â(B (J\(B ¢Âª³
-\item \|ACS|¢Âª´(J\(B (J\«Ñ\ªÔ\«©¢Â(B (J\©¡\¡ò\«Ñ\¡ë\(B (J\(B (J\©¡\«¢¢Âª³(B
-\item \|CDS|¢Âª´(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\ª®\(B (J\¢ð\(B \,\&\,(J\(B (J\(B (J\©¡\«¢¢Âª³(B
-\item \|TBIO|¢Âª´Bioinformatics¢Âª³\footnote{%
-TBIO, SLDM, CVA¢ðªÁ¡ÞªÐª´¢±ªÁª¢ª´¢± «Á¢ðª®¢ð¡ñ¢ð«³¢ðªÂ¢ðª®ªÁª¤ªÀ ¢ðªÁ¢ðª´¢ð¢ð¢Â(J\}(B
-\item \|SLDM|¢Âª´System LSI Design Methodology¢Âª³\footnotemark[5]
-\item \|CVA|¢Âª´Computer Vision and Applicaitons¢Âª³\footnotemark[5]
+\item \|PRO|¡Ê¥×¥í¥°¥é¥ß¥ó¥°¡Ë
+\item \|TOM|¡Ê¿ôÍý¥â¥Ç¥ë²½¤È±þÍÑ¡Ë
+\item \|TOD|¡Ê¥Ç¡¼¥¿¥Ù¡¼¥¹¡Ë
+\item \|ACS|¡Ê¥³¥ó¥Ô¥å¡¼¥Æ¥£¥ó¥°¥·¥¹¥Æ¥à¡Ë
+\item \|CDS|¡Ê¥³¥ó¥·¥å¡¼¥Þ¡¦¥Ç¥Ð¥¤¥¹\,\&\,¥·¥¹¥Æ¥à¡Ë
+\item \|TBIO|¡ÊBioinformatics¡Ë\footnote{%
+TBIO, SLDM, CVA¤Ï±ÑÊ¸ÏÀÊ¸»ï¤Ç¤¢¤ë¤Î¤ÇÏÂÌ¾¤Ï¤Ê¤¤¡¥}
+\item \|SLDM|¡ÊSystem LSI Design Methodology¡Ë\footnotemark[5]
+\item \|CVA|¡ÊComputer Vision and Applicaitons¡Ë\footnotemark[5]
 \end{itemize}
 
-¢ð©°¢ð¢Ä¡ÞªÐª´¢±ªÁª¢ª´¢±¢ë«Âª¢¢î¢ðªÂ¢ëªò¢ðª³¢ðªÁ \|english| ¢ð«Ò(J\¢ì\¡ß\(B (J\«®\«Ñ¢ðª³ª£ª±(B ªª¢ð ¢ð«À¢ð ¢ð«²¢ð¢ð¢Â(J\¢ð(B ¢ð¢Ä¢ð¢Ì¢ðªª
-¢ð©¡¢Â¢ð\|\documentclass[PRO]{ipsj}| ¢ðª²¢ð ¢ð«À¢ð ¢ÂªÓ(J\¡ß\«¿\¡ë\«±\©Î\«Ñ\¡ë¢Â¡ß¢ðªÂªÁª¤ª´¢±ª¿ªÐ¢Â¢ð(B
-\|\documentclass[PRO,english]| \|{ipsj}| ¢ðª²¢ð ¢ð«À¢ð ¡ÞªÐª´¢±ª¿ªÐ¢ðª²¢ðª´¢ð«³¢Â(J\(B
+¤Þ¤¿±ÑÊ¸ÏÀÊ¸ºîÀ®¤ÎºÝ¤Ë¤Ï \|english| ¤ò¥ª¥×¥·¥ç¥ó¤ËÄÉ²Ã¤¹¤ì¤Ð¤è¤¤¡¥¤·¤¿¤¬¤Ã
+¤Æ¡¤\|\documentclass[PRO]{ipsj}| ¤È¤¹¤ì¤Ð¡Ö¥×¥í¥°¥é¥ß¥ó¥°¡×¤ÎÏÂÊ¸ÍÑ¡¤
+\|\documentclass[PRO,english]| \|{ipsj}| ¤È¤¹¤ì¤Ð±ÑÊ¸ÍÑ¤È¤Ê¤ë¡¥
 
-¢ð©°¢ð¢Ä¢±¢Ã ©Á «Ð¢ðª³¢ðªÁ¢ÂªÓ ©Á¢Â¡ß¢ðª²ªÁ¡ñ©¡¡ë¢ð ¢ðª´¢ð¢ð¢ÂªÓª²¢´ ªÔ «Â¢Â¡ß¢ð¢Ì¢ð¡ñ¢ð«³¢ð¢Ä¢ð«¡¢Â¢ð ©¬ «Ð¢ð¡ñ¢ð«³¢ð¢ð¢ðªÁª´ªÔ ¢±¡ëªÐ
-¡ë¡à «Ð¢ðªÂ ©¬ ¡¯¢ðª³¡­©Ã¢ðª©¢ð ¢Â¢ðª²¢´ ªÔ «Â¢ð«Ò
+¤Þ¤¿¸¦µæ²ñ¤Ë¤Ï¡Ö¹æ¡×¤ÈÏ¢Æ°¤·¤Ê¤¤¡ÖÈ¯¹Ô·î¡×¤¬¤¢¤ë¤¿¤á¡¤³Ø²ñ¤¢¤ë¤¤¤ÏÊÔ½¸°Ñ
+°÷²ñ¤Î»Ø¼¨¤Ë´ð¤Å¤­¡¤È¯¹Ô·î¤ò
 %
 \begin{itemize}\item[]
-\|\setcounter{|{\bf  «Â¢Ä«Ô}\|}{<ª²¢´ ªÔ «Â>}|
+\|\setcounter{|{\bf ·î¿ô}\|}{<È¯¹Ô·î>}|
 \end{itemize}
 %
-¢ðª³¢ð«²¢ðªª¢ð©¡ ©¬ª£«´¢ð ¢ð«³¢Â(J\(B
+¤Ë¤è¤Ã¤Æ»ØÄê¤¹¤ë¡¥
 
-¢ð ¢ðªÂª¤ ¢Â¢ð¡ëª´  ¢ðªÂ ©¡ª¢«¡¢ðª® ¡¯¢ð ¢ð«²¢ð¢Ã¢ðª³¢Â¢ð¢ð¢ð¢ð¢´¢ðª£¢ð ¢ðªÂªÁª¢ª´¢± «Á¢ðª³¢±ª®ª¿ ¢ðªÂ ¢Âª® ¢ð«Ò ª¤¢± ¢ð ¢ð«³¢ð¢Ä
-¢ð«¡¢ðªÂ(J\(B (J\©°\«Ñ\ª±¢ðª´¢ðª±¢ð¢Ìª¿ªÐ¡ëªØ¢ð(B ¢ð«À¢ð©¡¢ð¢ð¢ð«³¢Â(J\(B
+¤³¤ÎÂ¾¡¤°Ê²¼¤Î³ÆÀá¤Ç¼¨¤¹¤è¤¦¤Ë¡¤¤¤¤¯¤Ä¤«¤ÎÏÀÊ¸»ï¤Ë¸ÇÍ­¤Îµ¡Ç½¤ò¼Â¸½¤¹¤ë¤¿
+¤á¤Î¥³¥Þ¥ó¥É¤Ê¤É¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤ë¡¥
 
 %\newpage%%
 
 %9
-\section{ ©¡ª´¢Ì¢ë«ò¢±ª®ª¿ (J\(B (J\©°\«Ñ\ª±}(B
+\section{³ÆÊ¬ºý¸ÇÍ­¥³¥Þ¥ó¥É}
 
- ©¡ª´¢Ì¢ë«ò¢ðª³¢ð«²¢ðªª¢ð©¡¢ð ¢ð«À¢ð ¢ð«À¢ëªã¢ð ¢ð¢ð ª©ª¿ª¿¢ð¢Ì¡ë«ª¢ð¢Ã¢ð¢Ä¢ð«¡¢Â¢ð©¡¡Þ¢ð¢±(J\(B (J\©°\«Ñ\ª±¢ðª®¢ð«¤(B  ªÂªÁ «³ ªÀ¢ð¢Ì¡ëªå
-¢ðª´¢ð«³ «À «®¢ð¢Ì¢ð¡ñ¢ð«³¢Â(J\¢ð©°¢ð¢Ä¢ÂªÓ¢ë©¡(B «Øª±ªØ¢Â¡ß¢Â¢ð¢ÂªÓ¢ë©¡¢Â  «Øª±ªØ¢Â¡ß¢ð¢Ì©¡©Ð¢ð«³ «À «®¢ð¢Ì¢ð¡ñ¢ð«´¢Â¢ð¢ð ¢ð«À¢ð«±¢ðªÁ
-
-\noindent
-ªÁª¤ª´¢±¢ðª®¢ðªÁ
-\begin{itemize}\item[]
-\|\|{\bf ¢ë©¡ «Øª±ªØ}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|\\
-\|\|{\bf ¢ë©¡¢ë©¡ «Øª±ªØ}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|
-\end{itemize}
-¡ÞªÐª´¢±¢ðª®¢ðªÁ
-\begin{itemize}\item[]
-\|\|{\bf rereceived}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|\\
-\|\|{\bf rerereceived}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|
-\end{itemize}
-¢ðª²(J\¡ß\«´\¡ñ\«Ñ\ªÓ\«³¢ðª³ª£ª±(B ªª¢ð ¢ð«³¢Â(J\(B
-
-%9.1
-\subsection{\<¢ÂªÓ(J\¡ß\«¿\¡ë\«±\©Î\«Ñ\¡ë¢Âª´PRO¢Âª³¢Â¡ß¢±ª®ª¿(B  ¢Âª® }
-
-\<¢ÂªÓªÁª¢ª´¢± «Á¢Â¡ø(J\¡ß\«¿\¡ë\«±\©Î\«Ñ\¡ë¢Â¡ß¢ðª³¢ðªÁªÁª¢ª´¢±¡ëª´(B ¡ë¢ðª³¢Â¢ð(J\¡ß\«¿\¡ë\«±\©Î\«Ñ\¡ë¢±¢Ã(B ©Á «Ð¢ðª®¢ðªÂ¢±¢Ã ©Á
-ª²¢´ª± ¢ðªÂ©¡«¤ª¿©¡    ¢ð¢Ì¡­©°¢ð©°¢ð«À¢ð©¡¢ð¢ð¢ð«³¢Â(J\¢ð(B ¢ðªÂ©¡«¤ª¿©¡    ¢ðªÁ¢Â¢ð\|\documentclass|¢ðªÂ(J\¢ì\¡ß\(B (J\«®(B
-(J\«Ñ¢ðª²¢ð(B ¢ð©¡\|abstract|¢ð«Ò ©¬ª£«´¢ð ¢ð«³¢Â(J\\ref{config}~ª¢«¡¢ðªÂ\|\maketitle|¢ð©°¢ðª®¢ðªÂ©¡«¤ª¿©¡(B
-¢ð ¢ð«±¢ðª´¢ð«³(J\ªØ\¢Â\¢ð\«³¢Âª´¢ð(B ¢ðª´¢ð«Á¢ðª¡ª³ªäª´¢±¢ð¢Ì¢ðª´¢ð¢ð(J\ªØ\¢Â\¢ð\«³¢Âª³¢ð(B ¢ð«±ª¢¢±ª¢¢î¢ð ¢ð«³¢Â(J\¢ðª´¢ð¢ì\|\|{\bf (B
- «Øª±ªØ}¢ð«£\|\|{\bf ¢ëªÂªÁ¢Ä}¢ðªÁª±ªÔª¿¡ß¢ðª®¢ð¡ñ¢ð«³¢ð¢Ì¢Â¢ðª¤«©¢ð«Á¢ð«´¢ðª³ª²¢´ª± ª®¢´ «Â©¡«ä¢ð«Ò¢Â¢ð
+³ÆÊ¬ºý¤Ë¤è¤Ã¤Æ¤½¤ì¤¾¤ìºÙ¤«¤¤»ÅÍÍ¤¬°ã¤¦¤¿¤á¡¤Æ±¤¸¥³¥Þ¥ó¥É¤Ç¤â½ÐÎÏ·ë²Ì¤¬°Û
+¤Ê¤ë¾ì¹ç¤¬¤¢¤ë¡¥¤Þ¤¿¡ÖºÆ¼õÉÕ¡×¡¤¡ÖºÆ¡¹¼õÉÕ¡×¤¬Æþ¤ë¾ì¹ç¤¬¤¢¤ê¡¤¤½¤ì¤é¤Ï
 
 \noindent
-ªÁª¤ª´¢±¢ðª®¢ðªÁ
+ÏÂÊ¸¤Ç¤Ï
 \begin{itemize}\item[]
-\|\|{\bf ª²¢´ª± }\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|
+\|\|{\bf ºÆ¼õÉÕ}\|{<Ç¯>}{<·î>}{<Æü>}|\\
+\|\|{\bf ºÆºÆ¼õÉÕ}\|{<Ç¯>}{<·î>}{<Æü>}|
 \end{itemize}
-¡ÞªÐª´¢±¢ðª®¢ðªÁ
+±ÑÊ¸¤Ç¤Ï
 \begin{itemize}\item[]
-\|\|{\bf Presents}\|{<ª®¢´>}{< «Â>}{<©¡«ä>}|
+\|\|{\bf rereceived}\|{<Ç¯>}{<·î>}{<Æü>}|\\
+\|\|{\bf rerereceived}\|{<Ç¯>}{<·î>}{<Æü>}|
 \end{itemize}
-¢ðª³¢ð«²¢ð«´ ©¬ª£«´¢ð ¢ð«³¢Â(J\(B
+¤È¥×¥ê¥¢¥ó¥Ö¥ë¤ËÄÉ²Ã¤¹¤ë¡¥
 
 %9.1
-\subsection{\<¢ÂªÓ(J\ª®¢Â(B (J\¢Ä\ªã¢Â(B (J\(B ¢Âª´TOD¢Âª³¢Â¡ß¢±ª®ª¿  ¢Âª® }
+\subsection{\<¡Ö¥×¥í¥°¥é¥ß¥ó¥°¡ÊPRO¡Ë¡×¸ÇÍ­µ¡Ç½}
 
-\<¢ÂªÓªÁª¢ª´¢± «Á¢Â¡ø(J\ª®¢Â(B (J\¢Ä\ªã¢Â(B (J\(B ¢Â¡ß¢ðªÂªÁª¢ª´¢±¢ðªÂªª¡­ª©«Óª´ªÔ ¢±¡ëªÐ¡ë¡à¢ðªÁ¢Â¢ð
+\<¡ÖÏÀÊ¸»ï¡§¥×¥í¥°¥é¥ß¥ó¥°¡×¤Ë¤ÏÏÀÊ¸°Ê³°¤Ë¡¤¥×¥í¥°¥é¥ß¥ó¥°¸¦µæ²ñ¤Ç¤Î¸¦µæ
+È¯É½¤ÎÆâÍÆ¹¼³µ¤¬´Þ¤Þ¤ì¤Æ¤¤¤ë¡¥¤³¤ÎÆâÍÆ¹¼³µ¤Ï¡¤\|\documentclass|¤Î¥ª¥×¥·¥ç
+¥ó¤È¤·¤Æ\|abstract|¤ò»ØÄê¤¹¤ë¡¥\ref{config}~Àá¤Î\|\maketitle|¤Þ¤Ç¤ÎÆâÍÆ
+¤«¤é¤Ê¤ë¥Õ¥¡¥¤¥ë¡Ê¤¹¤Ê¤ï¤ÁËÜÊ¸¤¬¤Ê¤¤¥Õ¥¡¥¤¥ë¡Ë¤«¤éÀ¸À®¤¹¤ë¡¥¤Ê¤ª\|\|{\bf 
+¼õÉÕ}¤ä\|\|{\bf ºÎÏ¿}¤ÏÉÔÍ×¤Ç¤¢¤ë¤¬¡¤Âå¤ï¤ê¤ËÈ¯É½Ç¯·îÆü¤ò¡¤
+
+\noindent
+ÏÂÊ¸¤Ç¤Ï
 \begin{itemize}\item[]
-\|\Editor{< «¡ªÀ >}|
+\|\|{\bf È¯É½}\|{<Ç¯>}{<·î>}{<Æü>}|
 \end{itemize}
-¢ðª³¢ð«²¢ð«´ ©¬ª£«´¢ð ¢ð«³¢Â(J\ªÁª¤ª´¢±¢ðª®¢ðªÁ¢ÂªÓªª¡­ª©«Óª´ªÔ(B ¢±¡ëªÐ¡ë¡à¢Â¡ß¢Â¢ð¡ÞªÐª´¢±¢ðª®¢ðªÁ¢ÂªÓEditor in Charge:¢Â¡ß
-¢ðª²©¡©Ð¢ð«³¢Â(J\(B
+±ÑÊ¸¤Ç¤Ï
+\begin{itemize}\item[]
+\|\|{\bf Presents}\|{<Ç¯>}{<·î>}{<Æü>}|
+\end{itemize}
+¤Ë¤è¤ê»ØÄê¤¹¤ë¡¥
 
-¢ð©°¢ð¢Ä(J\(B (J\¢Ä\¢ð\«³¢ðªÂª´ªÐ(B  ¢ðª³ª² ¢ð¢ð¢Â¢ð\underline{ª³ªäª´¢±¢ðªÂ¢ëª®¢±«©}¢ðª³©¡©Ð¢ð«³¢ðªÂ¢ðª®¢Â¢ð
-\|\end{document}|¢ðªÂª¡¡ë¢ðª³ª£ ª¢ªäªªªÓ¢ð¢´¢Â(J\(B
+%9.1
+\subsection{\<¡Ö¥Ç¡¼¥¿¥Ù¡¼¥¹¡ÊTOD¡Ë¡×¸ÇÍ­µ¡Ç½}
+
+\<¡ÖÏÀÊ¸»ï¡§¥Ç¡¼¥¿¥Ù¡¼¥¹¡×¤ÎÏÀÊ¸¤ÎÃ´ÅöÊÔ½¸°Ñ°÷¤Ï¡¤
+\begin{itemize}\item[]
+\|\Editor{<»áÌ¾>}|
+\end{itemize}
+¤Ë¤è¤ê»ØÄê¤¹¤ë¡¥ÏÂÊ¸¤Ç¤Ï¡ÖÃ´ÅöÊÔ½¸°Ñ°÷¡×¡¤±ÑÊ¸¤Ç¤Ï¡ÖEditor in Charge:¡×
+¤ÈÆþ¤ë¡¥
+
+¤Þ¤¿¥¹¥¿¥¤¥ë¤ÎÊÑ¹¹¤ËÈ¼¤¤¡¤\underline{ËÜÊ¸¤ÎºÇ¸å}¤ËÆþ¤ë¤Î¤Ç¡¤
+\|\end{document}|¤ÎÁ°¤ËÄ¾ÀÜÃÖ¤¯¡¥
 
 %9.2
-\subsection{\<¢ÂªÓ(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\ª®\(B (J\¢ð\(B \,\&\,(J\(B (J\(B (J\©¡\«¢¢Âª´CDS¢Âª³¢Â¡ß¢±ª®ª¿(B  ¢Âª® }
+\subsection{\<¡Ö¥³¥ó¥·¥å¡¼¥Þ¡¦¥Ç¥Ð¥¤¥¹\,\&\,¥·¥¹¥Æ¥à¡ÊCDS¡Ë¡×¸ÇÍ­µ¡Ç½}
 
-\<¢ÂªÓªÁª¢ª´¢± «Á¢Â¡ø(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\ª®\(B (J\¢ð\(B \,\&\,(J\(B (J\(B (J\©¡\«¢¢Â¡ß¢ðª®¢ðªÁ¢Â¢ð(B
-ªÁª¢ª´¢±¢ðªÂ «ÁªÂ«¢¢ðª³¢ð«²¢ðªª¢ð©¡¢±   ¢ð ¢ð¢Ìª´ªÐ¢ð«Á¢ð«³¢ð¢Ä¢ð«¡¢Â¢ð
-(J\¢ì\¡ß\(B (J\«®\«Ñ¢ðª®ª¢ªâª¤©¬¢ð¡¯¢ð«Ò(B ªÔ¢ð¢Ã¢Â(J\(B
+\<¡ÖÏÀÊ¸»ï¡§¥³¥ó¥·¥å¡¼¥Þ¡¦¥Ç¥Ð¥¤¥¹\,\&\,¥·¥¹¥Æ¥à¡×¤Ç¤Ï¡¤
+ÏÀÊ¸¤Î¼ïÎà¤Ë¤è¤Ã¤Æ¸«½Ð¤·¤¬ÊÑ¤ï¤ë¤¿¤á¡¤
+¥ª¥×¥·¥ç¥ó¤ÇÀÚÂØ¤¨¤ò¹Ô¤¦¡¥
 
- ©¡ «Áª´ªÀ¢ðªÁ
+³Æ¼ïÊÌ¤Ï
 \begin{itemize}
-\item \|systems  |(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\(B (J\(B (J\©¡\«¢ªÁª¢ª´¢±\\(B
+\item \|systems  |¥³¥ó¥·¥å¡¼¥Þ¡¦¥·¥¹¥Æ¥àÏÀÊ¸\\
 \|         |Paper on Consumer Systems
 
-\item \|services |(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\(B ¢Â (J\ªÑ\(B ªÁª¢ª´¢±\\
+\item \|services |¥³¥ó¥·¥å¡¼¥Þ¡¦¥µ¡¼¥Ó¥¹ÏÀÊ¸\\
 \|         |Paper on Consumer Services
 
-\item \|devices  |(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\ª®\(B (J\¢ð\(B ªÁª¢ª´¢±\\
+\item \|devices  |¥³¥ó¥·¥å¡¼¥Þ¡¦¥Ç¥Ð¥¤¥¹ÏÀÊ¸\\
 \|         |Paper on Consumer Devices
 
-\item \|research |¢±¢Ã ©ÁªÁª¢ª´¢±\\
+\item \|research |¸¦µæÏÀÊ¸\\
 \|         |Research Paper
 \end{itemize}
-¢ðª²¢ðª´¢ð«³¢Â(J\(B
+¤È¤Ê¤ë¡¥
 
-ªÁª¤ª´¢±¢ðªÂ(J\(B (J\«Ñ\(B (J\«©¢Â(B (J\©°¢Â¢Ã\(B (J\(B (J\©¡\«¢ªÁª¢ª´¢±¢ðª´¢ð«±¢Â¢ð\\(B
+ÏÂÊ¸¤Î¥³¥ó¥·¥å¡¼¥Þ¡¦¥·¥¹¥Æ¥àÏÀÊ¸¤Ê¤é¡¤\\
 \|\documentclass[CDS,systems]{ipsj}|
-¢ðª²¢ðª´¢ð«´¢Â¢ð¡ÞªÐª´¢±¢±¢ù ©¡¢ðª´¢ð«± \|english|¢ð«Òª£ª± ªª¢ð ¢ð«À¢ð ¢ð«²¢ð¢ð¢Â(J\(B
+¤È¤Ê¤ê¡¤±ÑÊ¸¸¶¹Æ¤Ê¤é \|english|¤òÄÉ²Ã¤¹¤ì¤Ð¤è¤¤¡¥
 
 %9.3
-\subsection{\<¢ÂªÓBioinformatics¢Âª´TBIO¢Âª³¢Â¡ß¢±ª®ª¿  ¢Âª® }
+\subsection{\<¡ÖBioinformatics¡ÊTBIO¡Ë¡×¸ÇÍ­µ¡Ç½}
 
-Trans.\ Bioinformatics (TBIO)¢ðªÁ¡ÞªÐª´¢±ªÁª¢ª´¢± «Á¢ðª®¢ð¡ñ¢ð«³¢ðªÂ¢ðª®¢Â¢ð\|TBIO|(J\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÂ(B
- ©¬ª£«´¢ðª³¢ð«²¢ðªª¢ð©¡  ©¡¡ëª©¢ì¢ðª³\|english|(J\¢ì\¡ß\(B (J\«®\«Ñ¢ð¢Ì(B ©¬ª£«´¢ð ¢ð«À¢ð¢Ä¢ð«¤¢ðªÂ¢ðª²¢ð©Î¢ðª´¢ð ¢ð«À¢Â¢ð
-\|english| (J\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÂ(B ª´ªÂ¢Ì¢ð¢Ì ª£ª® ¢Â(J\(B
+Trans.\ Bioinformatics (TBIO)¤Ï±ÑÊ¸ÏÀÊ¸»ï¤Ç¤¢¤ë¤Î¤Ç¡¤\|TBIO|¥ª¥×¥·¥ç¥ó¤Î
+»ØÄê¤Ë¤è¤Ã¤Æ¼«Æ°Åª¤Ë\|english|¥ª¥×¥·¥ç¥ó¤¬»ØÄê¤µ¤ì¤¿¤â¤Î¤È¤ß¤Ê¤µ¤ì¡¤
+\|english| ¥ª¥×¥·¥ç¥ó¤Î¾ÊÎ¬¤¬²ÄÇ½¡¥
 
-ªÁª¢ª´¢± «Áª´ªÀ¢ðªÁ¡ëª´  ¢ðªÂ3 «Á¢Â(J\(B
+ÏÀÊ¸¼ïÊÌ¤Ï°Ê²¼¤Î3¼ï¡¥
 \begin{itemize}
-\item \makebox[4.9zw][l]{ ©¬ª£«´¢ðª´¢ð } Original Paper (Default)
+\item \makebox[4.9zw][l]{»ØÄê¤Ê¤·} Original Paper (Default)
 \item \|Data     | Database/Software Paper
 \item \|Survey   | Survey Paper
 \end{itemize}
 
-\|\documentclass[TBIO]{ipsj}|¢ðª®Original Paper¢Â¢ð\\
-\|\documentclass[TBIO,Survey]{ipsj}|¢ðª®Survey Paper¢ðª²¢ðª´¢ð«³¢Â(J\(B
+\|\documentclass[TBIO]{ipsj}|¤ÇOriginal Paper¡¤\\
+\|\documentclass[TBIO,Survey]{ipsj}|¤ÇSurvey Paper¤È¤Ê¤ë¡¥
 
-¢ð©°¢ð¢Ä¢Â¢ðªª¡­ª©«Óª´ªÔ ¢±¡ëªÐ¡ë¡à¢ðªÁTOD©¡¡Þª¿ª¿¢Â¢ð\|\Editor|¢ðª®ª£«´ ª¡¢ð ¢ð«³¢ð¢Ì¢Â¢ð¢ÂªÓCommunicated by¢Â¡ß
-¢ðª²¢ðª´¢ð«³¢Â(J\TOD©¡¡Þª¿ª¿¢Â¢ð\|\end{document}|¢ðªÂª¡¡ë¢ðª³ª£(B ª¢ªäªªªÓ¢ð¢´¢Â(J\(B
+¤Þ¤¿¡¤Ã´ÅöÊÔ½¸°Ñ°÷¤ÏTODÆ±ÍÍ¡¤\|\Editor|¤ÇÄêµÁ¤¹¤ë¤¬¡¤¡ÖCommunicated by¡×
+¤È¤Ê¤ë¡¥TODÆ±ÍÍ¡¤\|\end{document}|¤ÎÁ°¤ËÄ¾ÀÜÃÖ¤¯¡¥
 
 %9.4
-\subsection{\<¢ÂªÓComputer Vision and Applicaitons\\\<¢Âª´CVA¢Âª³¢Â¡ß¢±ª®ª¿  ¢Âª® }
+\subsection{\<¡ÖComputer Vision and Applicaitons\\\<¡ÊCVA¡Ë¡×¸ÇÍ­µ¡Ç½}
 
-Trans.\ CVA¢ð«¤¡ÞªÐª´¢±ªÁª¢ª´¢± «Á¢ðª®¢ð¡ñ¢ð«³¢ð¢Ä¢ð«¡¢Â¢ð\|english| (J\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÂ(B ª´ªÂ¢Ì¢ð¢Ì ª£¢Â(J\(B
+Trans.\ CVA¤â±ÑÊ¸ÏÀÊ¸»ï¤Ç¤¢¤ë¤¿¤á¡¤\|english| ¥ª¥×¥·¥ç¥ó¤Î¾ÊÎ¬¤¬²Ä¡¥
 
-ªÁª¢ª´¢± «Áª´ªÀ¢ðªÁ2 «ÁªÂ«¢¢ð¡ñ¢ð«´¢Â¢ð
+ÏÀÊ¸¼ïÊÌ¤Ï2¼ïÎà¤¢¤ê¡¤
 \begin{itemize}
-\item \makebox[4.9zw][l]{ ©¬ª£«´¢ðª´¢ð } Regular Paper (Default)
+\item \makebox[4.9zw][l]{»ØÄê¤Ê¤·} Regular Paper (Default)
 \item \|Research | Research Paper
 \end{itemize}
-¢ðª²¢ðª´¢ð«³¢Â(J\(B
+¤È¤Ê¤ë¡¥
 
-TBIO©¡¡Þª¿ª¿¢Â¢ðªª¡­ª©«Óª´ªÔ ¢±¡ëªÐ¡ë¡à¢ð¢Ì©¡©Ð¢ð«´¢Â¢ð
-ª¡©°©¡©Ðª´¢± ªÁ¢ð«¤TBIO©¡¡Þª¿ª¿¢Â¢ð¢ÂªÓCommunicated by¢Â¡ß¢ðª²¢ðª´¢ð«³¢Â(J\(B
+TBIOÆ±ÍÍ¡¤Ã´ÅöÊÔ½¸°Ñ°÷¤¬Æþ¤ê¡¤
+ÁÞÆþÊ¸¾Ï¤âTBIOÆ±ÍÍ¡¤¡ÖCommunicated by¡×¤È¤Ê¤ë¡¥
 
 %9.5
-\subsection{\<¢ÂªÓSystem LSI Design Methodology¢Âª´SLDM¢Âª³¢Â¡ß¢±ª®ª¿  ¢Âª® }
+\subsection{\<¡ÖSystem LSI Design Methodology¡ÊSLDM¡Ë¡×¸ÇÍ­µ¡Ç½}
 
-Trans.\ SLDM¢ð«¤¡ÞªÐª´¢±ªÁª¢ª´¢± «Á¢ðª®¢ð¡ñ¢ð«³¢ð¢Ä¢ð«¡¢Â¢ð\|english| (J\¢ì\¡ß\(B (J\«®\«Ñ¢ðªÂ(B ª´ªÂ¢Ì¢ð¢Ì ª£¢Â(J\(B
+Trans.\ SLDM¤â±ÑÊ¸ÏÀÊ¸»ï¤Ç¤¢¤ë¤¿¤á¡¤\|english| ¥ª¥×¥·¥ç¥ó¤Î¾ÊÎ¬¤¬²Ä¡¥
 
-ªÁª¢ª´¢± «Áª´ªÀ¢ðªÁ2 «ÁªÂ«¢¢ð¡ñ¢ð«´¢Â¢ð
+ÏÀÊ¸¼ïÊÌ¤Ï2¼ïÎà¤¢¤ê¡¤
 \begin{itemize}
-\item \makebox[4.9zw][l]{ ©¬ª£«´¢ðª´¢ð } Regular Paper (Default)
+\item \makebox[4.9zw][l]{»ØÄê¤Ê¤·} Regular Paper (Default)
 \item \|Short    | Short Paper
 \end{itemize}
-¢ðª²¢ðª´¢ð«³¢Â(J\(B
+¤È¤Ê¤ë¡¥
 
-SLDM¢ð«¤ªª¡­ª©«Óª´ªÔ ¢±¡ëªÐ¡ë¡à¢ð¢Ì©¡©Ð¢ð«³¢ð¢Ìª¡©°©¡©Ðª´¢± ªÁ¢ð¢ÌªÁª¢ª´¢±¢ðª³¢ð«²¢ðªª¢ð©¡  ©¡¡ëª¡©°©¡©Ðª´¢± ªÁ¢ð¢Ì¡ëªå¢ðª´¢ð«³¢Â(J\(B
+SLDM¤âÃ´ÅöÊÔ½¸°Ñ°÷¤¬Æþ¤ë¤¬ÁÞÆþÊ¸¾Ï¤¬ÏÀÊ¸¤Ë¤è¤Ã¤Æ¼«Æ°ÁÞÆþÊ¸¾Ï¤¬°Û¤Ê¤ë¡¥
 
-ª£ªÀ «Á¢ðªÁ¢ÂªÓRecommended by Associate Editor:¢Â¡ß¢Â¢ð\|invited|¢ðªÂ(J\¢ì\¡ß\(B (J\«®\«Ñ¢ð¢Ì©¡©Ð¢ðªª(B
-¢ð¢Ä «À «®¢ðªÂ¢ð©Î¢Â¢ð¢ÂªÓInvited by Editor-in-Chief:¢Â¡ß¢ðª²¢ðª´¢ð«³¢Â(J\(B
+ÄÌ¾ï¤Ï¡ÖRecommended by Associate Editor:¡×¡¤\|invited|¤Î¥ª¥×¥·¥ç¥ó¤¬Æþ¤Ã
+¤¿¾ì¹ç¤Î¤ß¡¤¡ÖInvited by Editor-in-Chief:¡×¤È¤Ê¤ë¡¥
 
 
 
-%% ¡ëª´  ¢ðªÁªÀ  «³¢ð ¢ð«À¢ð©°¢ð 
+%% °Ê²¼¤ÏÌµ»ë¤µ¤ì¤Þ¤¹
 
 \begin{biography}
-\profile{m}{ ©Ãª´«Ñ ª¤ª¢ªÁ¢ë}{1970ª®¢´ª¢¢±¢Â(J\1992ª®¢´(B ©Ãª´«Ñ «²ª¿«òª¤«® ©¬ª¿«ò ©¬ª±«Ô ©Ãª´«Ñ ª´ ©¬ ª´ª¤¡­¢Â(J\(B
-1994ª®¢´©¡¡Þª¤«®ª¤«® ©¬¡Þ¢Â ¢ð ªÂ ªòª£©ÌªÂ ¢Â(J\©¡¡Þª®¢´(B ©Ãª´«Ñ «²ª¿«ò ©¬ «Ð©¡©Ð ªÒ¢Â(J\\¢ì\«Ñ\«±\¢ð\«Ñ(B  ª²ª®¢ðªÂ¢±¢Ã ©Á
-¢ðª³   «Ó¢Â(J\ª©ª©(B ªÒ ©Ãª´«Ñª£ªÀ¢Ä¢î ©¬ «Ð¢Â¢ðIEEE¢Â¢ðACM  ©¡ «Ð¡ë¡à}
+\profile{m}{¾ðÊó ÂÀÏº}{1970Ç¯À¸¡¥1992Ç¯¾ðÊó½èÍýÂç³ØÍý³ØÉô¾ðÊó²Ê³Ø²ÊÂ´¡¥
+1994Ç¯Æ±ÂçÂç³Ø±¡½¤»Î²ÝÄøÎ»¡¥Æ±Ç¯¾ðÊó½èÍý³Ø²ñÆþ¼Ò¡¥¥ª¥ó¥é¥¤¥ó½ÐÈÇ¤Î¸¦µæ
+¤Ë½¾»ö¡¥ÅÅ»Ò¾ðÊóÄÌ¿®³Ø²ñ¡¤IEEE¡¤ACM ³Æ²ñ°÷}
 %
-\profile{n}{ «²ª¿«ò  ªÓ ªÒ}{1960ª®¢´ª¢¢±¢Â(J\1982ª®¢´(B ©Ãª´«Ñ «²ª¿«òª¤«® ©¬ª¿«ò ©¬ª±«Ô ©Ãª´«Ñ ª´ ©¬ ª´ª¤¡­¢Â(J\(B
-1984ª®¢´©¡¡Þª¤«®ª¤«® ©¬¡Þ¢Â ¢ð ªÂ ªòª£©ÌªÂ ¢Â(J\1987ª®¢´©¡¡Þª®«Â(B ªÂ ªòª£©ÌªÂ ¢Â(J\ª¿«ò(B ©¬ª®«Â ªÂ¢Â(J\1987ª®¢´(B ©Ãª´«Ñ «²
-ª¿«òª¤«® ©¬ «Ø «´¢Â(J\1992ª®¢´(B ª¿¢ù«Øª¤«® ©¬ «Ø¢ù  ©Ì¢Â(J\1997ª®¢´©¡¡Þª¤«®¢ù(B  ©Ì¢Â(J\\¢ì\«Ñ\«±\¢ð\«Ñ(B  ª²ª®¢ðªÂ¢±¢Ã ©Á
-¢ðª³   «Ó¢Â(J\2010ª®¢´(B ©Ãª´«Ñ «²ª¿«ò  ª®¡ë ©° «Ø ©°¢Â(J\ª©ª©(B ªÒ ©Ãª´«Ñª£ªÀ¢Ä¢î ©¬ «Ð¢Â¢ðIEEE¢Â¢ðIEEE-CS¢Â¢ðACM
- ©¡ «Ð¡ë¡à}
+\profile{n}{½èÍý ²Ö»Ò}{1960Ç¯À¸¡¥1982Ç¯¾ðÊó½èÍýÂç³ØÍý³ØÉô¾ðÊó²Ê³Ø²ÊÂ´¡¥
+1984Ç¯Æ±ÂçÂç³Ø±¡½¤»Î²ÝÄøÎ»¡¥1987Ç¯Æ±Çî»Î²ÝÄøÎ»¡¥Íý³ØÇî»Î¡¥1987Ç¯¾ðÊó½è
+ÍýÂç³Ø½õ¼ê¡¥1992Ç¯²Í¶õÂç³Ø½õ¶µ¼ø¡¥1997Ç¯Æ±Âç¶µ¼ø¡¥¥ª¥ó¥é¥¤¥ó½ÐÈÇ¤Î¸¦µæ
+¤Ë½¾»ö¡¥2010Ç¯¾ðÊó½èÍýµ­Ç°¾Þ¼õ¾Þ¡¥ÅÅ»Ò¾ðÊóÄÌ¿®³Ø²ñ¡¤IEEE¡¤IEEE-CS¡¤ACM
+³Æ²ñ°÷}
 %
-\profile{s}{ ©¬ «Ð  ¢ÂªÁ¢ë}{1950ª®¢´ª¢¢±¢Â(J\1974ª®¢´(B ª¿¢ù«Øª¤«® ©¬ª¤«® ©¬¡Þ¢Â ¢ð ªÂ ªòª£©ÌªÂ ¢Â(J\(B
-1987ª®¢´©¡¡Þª®«Â ªÂ ªòª£©ÌªÂ ¢Â(J\(B ¢í ©¬ª®«Â ªÂ¢Â(J\1977ª®¢´(B ª¿¢ù«Øª¤«® ©¬ «Ø «´¢Â(J\1992ª®¢´(B ©Ãª´«Ñ «²ª¿«òª¤«® ©¬ «Ø
-¢ù  ©Ì¢Â(J\1987ª®¢´©¡¡Þª¤«®¢ù(B  ©Ì¢Â(J\2000ª®¢´¢ð(B ¢ð«± ©Ãª´«Ñ «²ª¿«ò ©¬ «Ð¢±ªäªÀ«£¢Â(J\\¢ì\«Ñ\«±\¢ð\«Ñ(B  ª²ª®¢ðªÂ¢±¢Ã ©Á
-¢ðª³   «Ó¢Â(J\2010ª®¢´(B ©Ãª´«Ñ «²ª¿«ò  ª®¡ë ©° «Ø ©°¢Â(J\(B ©Ãª´«Ñ «²ª¿«ò ©¬ «Ðª¿«ò «Ó¢Â(J\ª©ª©(B ªÒ ©Ãª´«Ñª£ªÀ¢Ä¢î ©¬ «Ð¢Â¢ð
-IEEE¢Â¢ðIEEE-CS¢Â¢ðACM  ©¡ «Ð¡ë¡à}
+\profile{s}{³Ø²ñ ¼¡Ïº}{1950Ç¯À¸¡¥1974Ç¯²Í¶õÂç³ØÂç³Ø±¡½¤»Î²ÝÄøÎ»¡¥
+1987Ç¯Æ±Çî»Î²ÝÄøÎ»¡¥¹©³ØÇî»Î¡¥1977Ç¯²Í¶õÂç³Ø½õ¼ê¡¥1992Ç¯¾ðÊó½èÍýÂç³Ø½õ
+¶µ¼ø¡¥1987Ç¯Æ±Âç¶µ¼ø¡¥2000Ç¯¤«¤é¾ðÊó½èÍý³Ø²ñ¸ÜÌä¡¥¥ª¥ó¥é¥¤¥ó½ÐÈÇ¤Î¸¦µæ
+¤Ë½¾»ö¡¥2010Ç¯¾ðÊó½èÍýµ­Ç°¾Þ¼õ¾Þ¡¥¾ðÊó½èÍý³Ø²ñÍý»ö¡¥ÅÅ»Ò¾ðÊóÄÌ¿®³Ø²ñ¡¤
+IEEE¡¤IEEE-CS¡¤ACM ³Æ²ñ°÷}
 %
 \end{biography}
 
 
+
+\end{document}
