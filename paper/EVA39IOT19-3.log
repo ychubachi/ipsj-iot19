@@ -1,4 +1,4 @@
-This is pTeXk, Version 3.141592-p3.1.11 (euc) (Web2C 7.5.4) (format=platex 2012.8.31)  31 AUG 2012 23:32
+This is pTeXk, Version 3.141592-p3.1.11 (euc) (Web2C 7.5.4) (format=platex 2012.8.31)  31 AUG 2012 23:41
  %&-line parsing enabled.
 **EVA39IOT19-3.tex
 (./EVA39IOT19-3.tex
@@ -86,79 +86,118 @@ File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 \@compare@result=\count101
  (./ipsjtech.sty
 Document Class: ipsj 2012/06/01 v3.00 IPSJTECH.STY
-)) (./EVA39IOT19-3.aux)
+)) (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+)
+\Gin@req@height=\dimen130
+\Gin@req@width=\dimen131
+) (./EVA39IOT19-3.aux)
 \openout1 = `EVA39IOT19-3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8.8711> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 36.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 35.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8.8711> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 36.
-LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 39.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 35.
+LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 38.
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <19.2207> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 46.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <19.2207> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 46.
-LaTeX Font Info:    Calculating math sizes for size <9.61035> on input line 46.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 45.
+LaTeX Font Info:    Calculating math sizes for size <9.61035> on input line 45.
 
-LaTeX Font Info:    Calculating math sizes for size <11.82813> on input line 46
+LaTeX Font Info:    Calculating math sizes for size <11.82813> on input line 45
 .
-LaTeX Font Info:    Calculating math sizes for size <8.13184> on input line 46.
+LaTeX Font Info:    Calculating math sizes for size <8.13184> on input line 45.
 
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <11.82813> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 48.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 47.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <11.82813> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 48.
- (I search kanjifont definition file: . . )
-(I search font definition file: . . . . . . . )
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 49.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 47.
+File: ./figure/backlog_screenshot.eps Graphic file (type eps)
 
+<./figure/backlog_screenshot.eps>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8.13184> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8.13184> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 51.
+File: ./figure/File.eps Graphic file (type eps)
+ <./figure/File.eps>
+File: ./figure/Git.eps Graphic file (type eps)
+ <./figure/Git.eps>
+File: ./figure/Issue.eps Graphic file (type eps)
 
-(/usr/share/texmf-texlive/tex/latex/txfonts/omstxsy.fd
+<./figure/Issue.eps>
+File: ./figure/Wiki1.eps Graphic file (type eps)
+ <./figure/Wiki1.eps>
+File: ./figure/Wiki2.eps Graphic file (type eps)
+ <./figure/Wiki2.eps>
+(I search kanjifont definition file: . . ) (I search font definition file: . .
+. . . . . )
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 85.
+
+ (/usr/share/texmf-texlive/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for OT1+txsy on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+txsy on input line 85.
 
-LaTeX Font Info:    No file OT1txsy.fd. on input line 49.
+LaTeX Font Info:    No file OT1txsy.fd. on input line 85.
 
 
 LaTeX Font Warning: Font shape `OT1/txsy/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 49.
+(Font)              using `OT1/cmr/m/n' instead on input line 85.
 
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 85.
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) [1
 
 
+] [2
 
-] (./EVA39IOT19-3.aux)
+]
+(./EVA39IOT19-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1266 strings out of 257674
- 16950 string characters out of 1191153
- 65483 words of memory out of 3000000
- 4465 multiletter control sequences out of 10000+50000
- 28816 words of font info for 120 fonts, out of 2000000 for 2000
+ 1499 strings out of 257674
+ 19954 string characters out of 1191153
+ 69370 words of memory out of 3000000
+ 4675 multiletter control sequences out of 10000+50000
+ 29406 words of font info for 123 fonts, out of 2000000 for 2000
  14 hyphenation exceptions out of 8191
- 31i,10n,22p,244b,562s stack positions out of 5000i,500n,6000p,200000b,40000s
+ 35i,10n,24p,244b,562s stack positions out of 5000i,500n,6000p,200000b,40000s
 
-Output written on EVA39IOT19-3.dvi (1 page, 2820 bytes).
+Output written on EVA39IOT19-3.dvi (2 pages, 4496 bytes).
