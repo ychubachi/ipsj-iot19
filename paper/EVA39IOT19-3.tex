@@ -37,98 +37,175 @@ AIIT, Shinagawa, Tokyo 140--0011, Japan}
 \cite{中鉢欣秀:2012-03-15, 小山裕司:2011, 石島辰太郎:2010, 中鉢欣秀:2010}
 ．また，実践的な業務遂行能力を育成するために，1年間のプロジェクト
 型学修を必修とし，すべての学生が修士課程の2年次にプロジェクト活動を行なう
-ことがカリキュラムの柱となっている．
+ことがカリキュラムの柱となっている\cite{加藤由花:2009, 戸沢義夫:2007-08-23}．
 
 情報アーキテクチャ専攻では「情報システム学特別演習」を，想像技術専攻で
 は「イノベーションデザイン特別演習」をそれぞれ開講し，計20組のプロジェ
-クトがあり，各プロジェクトには5〜8名程度の学生が所属している．
+クトがあり，各プロジェクトには3〜8名程度の学生が所属している．
 
 このプロジェクト活動を支援するためのグループウェアとして
-iPBL（Infrastructure for PBL）と呼ぶシステムを導入し運用してきた
+iPBL（Infrastructure for PBL）を導入し運用してきた
 \cite{chubachi:2010:pbl, 中鉢欣秀:2009-05}．従来のシステムは，
-Microsoft社のProject Server 2010を中心とした構成で，WBSによるプロジェ
-クト管理システム
+Microsoft社のProject Server 2010を中心とした構成で，WBSによるプロジェク
+ト管理システムとShare Point Servicesによるファイル共有機能を提供した．
+しかしながら，Windows OSにおいてInternet Explorerでの利用を前提としてい
+ることやユーザインタフェイスの使い勝手などについて，学生や教員から改善
+要求が多く出されていた．
 
+そこで，AIITでは2012年度春より，新たに
+Backlog\footnote{http://www.backlog.jp/}をプロジェクト内でのコラボレー
+ション・ツールとして導入した．初年度のため，従来のiPBLと併用する形で用
+いることを想定し，全学生に利用を推奨しているわけではない．ここでは，半
+年間の予備的な運用を通して，従来よりも改善された点や明らかになった課題
+点などについて考察する．
 
-\section{Backlog活用の考察}
+\section{Backlogの導入と考察}
 
-PBLでは，今年度（2012年度）からBacklogをプロジェクト支援ツールとして使
-い始めた\footnote{今年度，Backlogはツールとしての提供にとどめ，使用を強
-制したわけでは無い．}．
+\subsection{Backlogについて}
+Backlogはnulab社が提供するプロジェクト管理ツールである．従来のiPBLは学
+内に専用サーバを設置して運用していたが，ASPの形態でライセンスを購入した．
+AIITで利用しているBacklogのトップページを図\ref{fig:backlog}に示す．
 
-Backlogの機能は先に示したように「課題管理」，「Wiki」，「ファイル共有」，
-「バージョン管理」から構成される．
+Backlogの主要な機能は，
 
-\section{Backlogの利用状況}
-今年度前期が終わった8/31現在の
-Backlogのストレージの使用量を表1及び図1に示す．
+\begin{enumerate}
+ \item 課題管理
+ \item ガントチャート
+ \item ファイル共有
+ \item バーンダウンチャート
+\end{enumerate}
 
-バージョン管理は
-SubversionとGitが利用できる．また，各プロジェクトごとの容量は5GBにし，
-大きめのファイルを扱いたいときは別途ファイルストレージを準備してもらう
-ことにした．
-
-Backlogの活用はプロジェクトごとに偏りがみられた．1/4程度のプロジェクトは
-まったく未使用である．ストレージの使用量だけをみるとファイル共有の消費が
-目立ち，実際ファイル共有だけに使っているプロジェクトが多い．Wikiは8プロジェ
-クトのみが使い，バージョン管理は利用開始願いが必要であり，5プロジェクトだ
-けがこれを使っている．
-
-表2及び図2に4/1から8/25までの課題アクション数をまとめた．8月は8/11の前期
-プロジェクト成果発表会でだいたいの活動は終了している．課題アクション数は
-新規課題の作成，コメント，作業進捗及び完了の報告の数である．情報アーキテ
-クチャ専攻では突出して利用しているプロジェクトとほとんど未使用だと思われ
-るプロジェクトがある等，程度の違いはあるが，すべてのプロジェクトで課題管
-理を使っているが，創造技術専攻では4プロジェクトがかろうじて使っているだけ
-であった．情報アーキテクチャ専攻では，各プロジェクトの3から6名のメンバに
-よって構成される．情報アーキテクチャ専攻の各プロジェクトのひとりあたりの
-課題アクション数を整理したものが，表3及び図3である．平均すると1メンバあた
-り1日1件程度のアクションである．これを構成メンバの関与の程度を100\%で\%示
-したものが図4である．メンバ間での役割\%に依存するが，3プロジェクトでは特
-定の1 \%名が50\%以上関与し，あるプロジェクトでは\%約87\%が特定の1名のアク
-ションであるよう\%に偏りがみられた．
-
-\bibliographystyle{junsrt}
-\bibliography{bibliography/chubachi}
-
-\newpage
-\appendix
+である．また，プログラミングを行うプロジェクト向けに，ソースコードのバー
+ジョン管理をSubversionとGitで行えるようにした．
 
 \begin{figure}[tb]
+\begin{center}
 \includegraphics[width=7.5cm]{./figure/backlog_screenshot.eps}
+\end{center}
 \caption{AIITにおけるBacklogの利用画面}
 \label{fig:backlog}
 \end{figure}
 
+\subsection{ストレージの使用量からみる利用状況}
+はじめに，ファイル共有機能の利用状況を示す．各プロジェクトごとの容量は
+5GBに設定し，大きめのファイルを扱いたいときは別途ファイルストレージを準
+備してもらうことにした．
+
 \begin{figure}[tb]
+\begin{center}
+\includegraphics[width=7.5cm]{./figure/fig1.eps}
+\end{center}
+\caption{ストレージの使用量}
+\label{fig:fig1}
+\end{figure}
+
+今年度前期が終わった8/31現在のBacklogのストレージの使用量を図
+\ref{fig:fig1}に示す．Backlogの活用はプロジェクトごとに偏りがみられた．
+1/4程度のプロジェクトはまったく未使用である．ストレージの使用量だけをみ
+るとファイル共有の消費が目立ち，実際ファイル共有だけに使っているプロジェ
+クトが多い．Wikiは8プロジェクトのみが使い，バージョン管理は利用開始願い
+が必要であり，5プロジェクトだけがこれを使っている．
+
+\subsection{課題アクション数の状況}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=7.5cm]{./figure/fig2.eps}
+\end{center}
+\caption{課題アクション数}
+\label{fig:fig2}
+\end{figure}
+
+図\ref{fig:fig2}に4/1から8/25までの課題アクション数をまとめた
+\footnote{なお，8/11以降は夏休み期間のため活動量が少ない．}．課題アク
+ション数とは新規課題の作成，コメント，作業進捗及び完了の報告の数である．
+情報アーキテクチャ専攻では突出して利用しているプロジェクトと，ほとんど
+未使用だと思われるプロジェクトがある等，程度の違いはあるが，すべてのプ
+ロジェクトで課題管理を使っている．これに対して，創造技術専攻では4プロジェ
+クトがかろうじて使っているだけであった．
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=7.5cm]{./figure/fig3.eps}
+\end{center}
+\caption{1メンバあたり課題アクション数}
+\label{fig:fig3}
+\end{figure}
+
+\subsection{一人あたりの課題アクション数}
+情報アーキテクチャ専攻の各プロジェクトのひとりあたりの課題アクション数
+を整理したものが，図\ref{fig:fig3}である．平均すると1メンバあたり1日1件
+程度のアクションである．
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=7.5cm]{./figure/fig4.eps}
+\end{center}
+\caption{1メンバあたり課題アクション数}
+\label{fig:fig4}
+\end{figure}
+
+これを構成メンバの関与の程度をパーセンテージで示したものが図4である．
+メンバ内での役割の違いに依存するが，3プロジェクトでは特定の1名が50\%以
+上関与している状況が見られる．特に，あプロジェクトでは約87\%が特定の1
+名のアクションである．このように，メンバーが実施したアクションに関する
+パーセンテージには，偏りがみられた．
+
+\section{Backlog利用状況に関する考察}
+ここまで見てきたとおり，現状においてはBacklogはすべてのプロジェクトで
+活用できている状況ではない．これは試行的に導入しているという現状ではや
+むを得ないが，ファイルの共有機能など，有効に利用されているものもあるの
+で，今後はより積極的に活用するように促していく必要がある．
+
+また，本稿で述べたとおり，Backlogの課題管理を有効に活用することで，プ
+ロジェクトメンバーごとの活動の状況を定量的に表すことができる．PBLにお
+けるメンバーの活動状況の見える化に有効に利用できるものと期待する．
+
+\section{おわりに}
+
+専門職大学院におけるPBLによる学習を支援するためのコラボレーションツー
+ルとして，Backlogを導入した事例について報告した．現状においては活用で
+きているプロジェクト毎によって活用の度合いにばらつきがある．今後はこの
+ツールのより積極的な利用を促し，AIITにおけるPBLの教育効果を向上させる
+ための仕組みとして活用することを目指したい．
+
+\bibliographystyle{junsrt}
+\bibliography{bibliography/chubachi}
+
+\appendix
+
+Backlogの主要な機能について，画面のイメージを図\ref{fig:File}〜
+\ref{fig:Wiki1}までに示す．
+
+\begin{figure}[t]
 \includegraphics[width=7.5cm]{./figure/File.eps}
 \caption{プロジェクトでのファイル共有}
 \label{fig:File}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[t]
 \includegraphics[width=7.5cm]{./figure/Git.eps}
 \caption{Gitによるソースコード管理}
 \label{fig:Git}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[t]
 \includegraphics[width=7.5cm]{./figure/Issue.eps}
 \caption{課題の管理画面}
 \label{fig:Issue}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[t]
 \includegraphics[width=7.5cm]{./figure/Wiki1.eps}
 \caption{Wikiによる議事録の作成}
 \label{fig:Wiki1}
 \end{figure}
 
-\begin{figure}[tb]
-\includegraphics[width=7.5cm]{./figure/Wiki2.eps}
-\caption{Wikiの利用例}
-\label{fig:Wiki2}
-\end{figure}
+% \begin{figure}[tb]
+% \includegraphics[width=7.5cm]{./figure/Wiki2.eps}
+% \caption{Wikiの利用例}
+% \label{fig:Wiki2}
+% \end{figure}
 
 \end{document}
 
