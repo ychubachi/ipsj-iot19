@@ -1,34 +1,31 @@
 %% -*- coding:euc-jp -*-
 %%
-%% 研究報告用スイッチ
-%% [techrep]
-%%
-%% 欧文表記無しのスイッチ(etitle,jkeyword,eabstract,ekeywordは任意)
-%% [noauthor]
-%%
 
 \documentclass[submit,techreq,noauthor]{ipsj}
 
-\usepackage[dvips]{graphicx}
+%% 作成上の注意（中鉢 2012-09-02）
+%% ・texliveパッケージを利用（Ubuntuはaptで, Winはインストーラで導入）
+%% ・漢字コードはEUCを使用．プリアンプルに設定．
+%% ・jbiblatexを用いるので，.emacs.d/init.elにその旨を設定
+%%   -> http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?YaTeX#j78164d5
+%% ・従来提供されていたipsjunsrt.bstがないのでjunsrt.bstで代用
+%% ・ipsjのクラスファイルでcopyrightがwarningになるので修正
+%% ・bibtexが生成する\newblockがないので追加
+%% ・dummy.texを使用
 
-\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
-\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
-\def\|{\verb|}
+\input{dummy}
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+\usepackage[dvips]{graphicx}
 
 \setcounter{巻数}{53}%vol53=2012
 \setcounter{号数}{2}
 \setcounter{page}{1}
 
-\input{dummy}
-
 \begin{document}
-
-
 \title{AIITにおけるプロジェクト型学修（PBL）のためのBacklogシステムの導入}
-
 \affiliate{AIIT}{産業技術大学院大学\\
 AIIT, Shinagawa, Tokyo 140--0011, Japan}
-
 \author{中鉢 欣秀}{Yoshihide Chubachi}{AIIT}[yc@aiit.ac.jp]
 \author{小山 裕司}{Hiroshi Koyama}{AIIT}
 
@@ -46,14 +43,66 @@ AIIT, Shinagawa, Tokyo 140--0011, Japan}
 
 産業技術大学院大学（Advanced Institute of Industrial Technology）では，高
 度な職業人材を育成するために必要となる学修のための情報インフラストラクチャ
-を，在学生・修了生に対して提供している\cite{中鉢欣秀:2012-03-15, 小山裕%
-司:2011}．また，実践的な業務遂行能力を育成するために，1年間のプロジェクト
+を，在学生・修了生等に対して提供している
+\cite{中鉢欣秀:2012-03-15, 小山裕司:2011, 石島辰太郎:2010, 中鉢欣秀:2010}
+．また，実践的な業務遂行能力を育成するために，1年間のプロジェクト
 型学修を必修とし，すべての学生が修士課程の2年次にプロジェクト活動を行なう
 ことがカリキュラムの柱となっている．
 
-このプロジェクト活動を支援するためのグループウェアとして，
+情報アーキテクチャ専攻では「情報システム学特別演習」を，想像技術専攻で
+は「イノベーションデザイン特別演習」をそれぞれ開講し，計20組のプロジェ
+クトがあり，各プロジェクトには5〜8名程度の学生が所属している．
 
-このPBLを実施するために，グループウェアを導入している
+このプロジェクト活動を支援するためのグループウェアとして
+iPBL（Infrastructure for PBL）と呼ぶシステムを導入し運用してきた
+\cite{chubachi:2010:pbl, 中鉢欣秀:2009-05}．従来のシステムは，
+Microsoft社のProject Server 2010を中心とした構成で，WBSによるプロジェ
+クト管理システム
+
+
+\section{Backlog活用の考察}
+
+PBLでは，今年度（2012年度）からBacklogをプロジェクト支援ツールとして使
+い始めた\footnote{今年度，Backlogはツールとしての提供にとどめ，使用を強
+制したわけでは無い．}．
+
+Backlogの機能は先に示したように「課題管理」，「Wiki」，「ファイル共有」，
+「バージョン管理」から構成される．
+
+\section{Backlogの利用状況}
+今年度前期が終わった8/31現在の
+Backlogのストレージの使用量を表1及び図1に示す．
+
+バージョン管理は
+SubversionとGitが利用できる．また，各プロジェクトごとの容量は5GBにし，
+大きめのファイルを扱いたいときは別途ファイルストレージを準備してもらう
+ことにした．
+
+Backlogの活用はプロジェクトごとに偏りがみられた．1/4程度のプロジェクトは
+まったく未使用である．ストレージの使用量だけをみるとファイル共有の消費が
+目立ち，実際ファイル共有だけに使っているプロジェクトが多い．Wikiは8プロジェ
+クトのみが使い，バージョン管理は利用開始願いが必要であり，5プロジェクトだ
+けがこれを使っている．
+
+表2及び図2に4/1から8/25までの課題アクション数をまとめた．8月は8/11の前期
+プロジェクト成果発表会でだいたいの活動は終了している．課題アクション数は
+新規課題の作成，コメント，作業進捗及び完了の報告の数である．情報アーキテ
+クチャ専攻では突出して利用しているプロジェクトとほとんど未使用だと思われ
+るプロジェクトがある等，程度の違いはあるが，すべてのプロジェクトで課題管
+理を使っているが，創造技術専攻では4プロジェクトがかろうじて使っているだけ
+であった．情報アーキテクチャ専攻では，各プロジェクトの3から6名のメンバに
+よって構成される．情報アーキテクチャ専攻の各プロジェクトのひとりあたりの
+課題アクション数を整理したものが，表3及び図3である．平均すると1メンバあた
+り1日1件程度のアクションである．これを構成メンバの関与の程度を100\%で\%示
+したものが図4である．メンバ間での役割\%に依存するが，3プロジェクトでは特
+定の1 \%名が50\%以上関与し，あるプロジェクトでは\%約87\%が特定の1名のアク
+ションであるよう\%に偏りがみられた．
+
+\bibliographystyle{junsrt}
+\bibliography{bibliography/chubachi}
+
+\newpage
+\appendix
 
 \begin{figure}[tb]
 \includegraphics[width=7.5cm]{./figure/backlog_screenshot.eps}
@@ -91,35 +140,8 @@ AIIT, Shinagawa, Tokyo 140--0011, Japan}
 \label{fig:Wiki2}
 \end{figure}
 
-\section{Backlog活用の考察}
-本学では，2年次開講の情報システム学特別演習（情報アーキテクチャ専攻）及び
-イノベーションデザイン特別演習（創造技術専攻）の20組のプロジェクトでPBLが
-行われている．PBLでは，今年度（2012年度）からBacklogをプロジェクト支援ツー
-ルとして使い始めた．今年度，Backlogはツールとしての提供にとどめ，使用を強
-制したわけでは無い．Backlogの機能は先に示したように「課題管理」，「Wiki」，
-「ファイル共有」，「バージョン管理」から構成される．今年度前期が終わった
-8/31現在のBacklogのストレージの使用量を表1及び図1に示す．バージョン管理は
-SubversionとGitが利用できる．また，各プロジェクトごとの容量は5GBにし，大
-きめのファイルを扱いたいときは別途ファイルストレージを準備してもらうこと
-にした．
+\end{document}
 
-Backlogの活用はプロジェクトごとに偏りがみられた．1/4程度のプロジェクトはまったく未使用である．ストレージの使用量だけをみるとファイル共有の消費が目立ち，実際ファイル共有だけに使っているプロジェクトが多い．Wikiは8プロジェクトのみが使い，バージョン管理は利用開始願いが必要であり，5プロジェクトだけがこれを使っている．
-
-表2及び図2に4/1から8/25までの課題アクション数をまとめた．8月は8/11の前期
-プロジェクト成果発表会でだいたいの活動は終了している．課題アクション数は
-新規課題の作成，コメント，作業進捗及び完了の報告の数である．情報アーキテ
-クチャ専攻では突出して利用しているプロジェクトとほとんど未使用だと思われ
-るプロジェクトがある等，程度の違いはあるが，すべてのプロジェクトで課題管
-理を使っているが，創造技術専攻では4プロジェクトがかろうじて使っているだ
-けであった．情報アーキテクチャ専攻では，各プロジェクトの3から6名のメンバ
-によって構成される．情報アーキテクチャ専攻の各プロジェクトのひとりあたり
-の課題アクション数を整理したものが，表3及び図3である．平均すると1メンバ
-あたり1日1件程度のアクションである．これを構成メンバの関与の程度を100%で
-				%示したものが図4である．メンバ間での役割
-				%に依存するが，3プロジェクトでは特定の1
-				%名が50%以上関与し，あるプロジェクトでは
-				%約87%が特定の1名のアクションであるよう
-				%に偏りがみられた．
 
 \begin{thebibliography}{10}
 \bibitem{中鉢欣秀:2012-03-15}
@@ -128,13 +150,10 @@ Backlogの活用はプロジェクトごとに偏りがみられた．1/4程度のプロジェクトはまったく
 \bibitem{小山裕司:2011}
 	小山裕司, 中鉢欣秀: 外部アカウント認証を使った本人確認付き利用
 	者認証の試み, 産業技術大学院大学紀要, Vol.5（2011）
-
-@InProceedings{chubachi10:pbl,
-  author = 	 {Yoshihide Chubachi and Yuka Kato and Yoshio Tozawa},
-  title = 	 {Web-based groupware supporting PBL effectively},
-  booktitle = {1st Asia-Pacific Joint PBL Conference 2010},
-  year = 	 2010,
-  month = 	 10}
+\bibitem{chubachi10:pbl}
+	Chubachi, Y, Kato, Y, Tozawa, Y : \it{Web-based groupware
+	supporting PBL effectively},1st Asia-Pacific Joint PBL
+	Conference 2010 (2010.10)
 
 @InProceedings{ishijima10,
   author = 	 {Shintaro Ishijima and Hiroshi Koyama and Yoshihide Chubachi and Fumio Harashima},
@@ -168,8 +187,6 @@ Backlogの活用はプロジェクトごとに偏りがみられた．1/4程度のプロジェクトはまったく
 }
 
 \end{thebibliography}
-
-\end{document}
 
 
 %1

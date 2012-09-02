@@ -1193,7 +1193,8 @@ Research Paper%
 
 % copyright
 \DeclareTextCommandDefault{\textcopyrighttx}{%
-{\fontfamily{txsy}\textcircled{%
+%{\fontfamily{txsy}\textcircled{%
+{\fontfamily{cmr}\textcircled{%
 \usefont{OT1}{ptm}{m}{n}\selectfont%
 c}}}
 
