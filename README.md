@@ -8,3 +8,9 @@
 - bibtexが生成する\newblockがないので追加
 - dummy.texを使用
 - bibliographyはサブモジュールにした．
+
+将来的にUTF-8にするには
+- WindowsのplatexはUTF対応（-kanji=utf）->内部はeptex
+- Windowsではpbibtex利用可能（-kanji=utf）
+- ようするに，Ubuntuのaptで入るtexliveは古い（2009-15）
+
