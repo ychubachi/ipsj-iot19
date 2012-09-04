@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Sep 04 14:58:13 JST 2012
+markTmpDer=true
+builderNum=4
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=EVA39IOT19-3.tex
+outputFile=EVA39IOT19-3.pdf
+langSpell=en
+markDer=true
+srcDir=
